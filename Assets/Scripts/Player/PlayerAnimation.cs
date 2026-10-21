@@ -24,15 +24,8 @@ public class PlayerAnimation : MonoBehaviour
         anim.SetBool("isMoving", isMoving);
         if (isMoving)
         {
-            Vector2 dir;
-
-            if (playerController.moveDir.x != 0)
-                dir = new Vector2(Mathf.Sign(playerController.moveDir.x), 0);   // horizontal prioritaire
-            else
-                dir = new Vector2(0, Mathf.Sign(playerController.moveDir.y));   // sinon vertical
-
-            anim.SetFloat("moveX", dir.x);
-            anim.SetFloat("moveY", dir.y);
+            anim.SetFloat("moveX", playerController.LastDir.x);
+            anim.SetFloat("moveY", playerController.LastDir.y);
         }
     }
 
