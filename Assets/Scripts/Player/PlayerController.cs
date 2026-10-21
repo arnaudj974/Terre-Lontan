@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     PlayerInput playerInput;
     Vector2 moveInput;
-    Vector2 moveDir;
+    public Vector2 moveDir { get ; private set; }
 
     void Awake()
     {

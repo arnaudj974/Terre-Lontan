@@ -1,16 +1,32 @@
+
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+     Animator anim;
+     PlayerController playerController;
+
+    void Awake()
     {
-        
+        anim = GetComponent<Animator>();
+        playerController = GetComponent<PlayerController>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        HandleAnimVariable();
     }
+
+    void HandleAnimVariable()
+    {
+        bool isMoving = playerController.moveDir != Vector2.zero;
+        anim.SetBool("isMoving", isMoving);
+        if (isMoving)
+        {
+            anim.SetFloat("moveX", playerController.moveDir.x);
+            anim.SetFloat("moveY", playerController.moveDir.y);
+        }
+    }
+
 }
