@@ -1,16 +1,32 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float speed = 5f;
+    Rigidbody2D rb;
+    PlayerInput playerInput;
+    Vector2 moveInput;
+    Vector2 moveDir;
+
+    void Awake()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        playerInput = GetComponent<PlayerInput>();
+        // Désactive les actions de base et active les actions par défaut
+        InputSystem.actions.Disable();
+        playerInput.currentActionMap?.Enable();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        moveDir = moveInput * speed;
+        rb.linearVelocity = moveDir;
+    }
+
+    // Input de direction
+    public void Move(InputAction.CallbackContext ctx)
+    {
+        moveInput = ctx.ReadValue<Vector2>();
     }
 }

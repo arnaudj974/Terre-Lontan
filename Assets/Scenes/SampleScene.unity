@@ -171,13 +171,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrefabScene
       objectReference: {fileID: 0}
+    - target: {fileID: 5448844633046053661, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_Interpolate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448844633046053661, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448844633046053661, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492475361931053885, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: df70fa95-8a34-4494-b137-73ab6b9c7d37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492475361931053885, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7292838456576911053, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8109856
+      value: 0.99404246
       objectReference: {fileID: 0}
     - target: {fileID: 7292838456576911053, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.27033
+      value: 0.30900002
       objectReference: {fileID: 0}
     - target: {fileID: 8054918169738551476, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
