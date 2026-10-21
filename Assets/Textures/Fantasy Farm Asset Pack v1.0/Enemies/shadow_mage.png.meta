@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 01f25717b7367bc4a9476bf901783c8e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7348968484501442100
+    second: shadow_mage_0
+  - first:
+      213: -2243160472404320046
+    second: shadow_mage_1
+  - first:
+      213: -1913999902321744538
+    second: shadow_mage_2
+  - first:
+      213: -4174403645766130211
+    second: shadow_mage_3
+  - first:
+      213: -4831363905778307366
+    second: shadow_mage_4
+  - first:
+      213: 7901406622719543029
+    second: shadow_mage_5
+  - first:
+      213: 5217448267233317208
+    second: shadow_mage_6
+  - first:
+      213: -6702017143889429497
+    second: shadow_mage_7
+  - first:
+      213: 5951887798905465664
+    second: shadow_mage_8
+  - first:
+      213: -2986124149813447819
+    second: shadow_mage_9
+  - first:
+      213: 8223637852196375812
+    second: shadow_mage_10
+  - first:
+      213: 8426277144160030043
+    second: shadow_mage_11
+  - first:
+      213: 7766391324340147516
+    second: shadow_mage_12
+  - first:
+      213: 8560628286451190185
+    second: shadow_mage_13
+  - first:
+      213: -1801581486157372322
+    second: shadow_mage_14
+  - first:
+      213: 1810959001935741146
+    second: shadow_mage_15
+  - first:
+      213: -6144667998766526956
+    second: shadow_mage_16
+  - first:
+      213: 7395427802205196300
+    second: shadow_mage_17
+  - first:
+      213: -2305309209512960846
+    second: shadow_mage_18
+  - first:
+      213: 2479120782100532866
+    second: shadow_mage_19
+  - first:
+      213: 7076693239230479651
+    second: shadow_mage_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shadow_mage_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 331
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc130cf8918330a90800000000000000
+      internalID: -7348968484501442100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 251
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d0a4246f61bed0e0800000000000000
+      internalID: -2243160472404320046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_2
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 251
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665eaf9ca3b1075e0800000000000000
+      internalID: -1913999902321744538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_3
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 251
+        width: 46
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd5a309400a8116c0800000000000000
+      internalID: -4174403645766130211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 251
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adea077102c83fcb0800000000000000
+      internalID: -4831363905778307366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_5
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 171
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f60e1db57f67ad60800000000000000
+      internalID: 7901406622719543029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_6
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 171
+        width: 45
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8515b6a4e89186840800000000000000
+      internalID: 5217448267233317208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_7
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 171
+        width: 47
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70c74eb9ae6adf2a0800000000000000
+      internalID: -6702017143889429497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_8
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 171
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04bedbc2b6a599250800000000000000
+      internalID: 5951887798905465664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_9
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 171
+        width: 63
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 573772b28e72f86d0800000000000000
+      internalID: -2986124149813447819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_10
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 194
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d0f9d4e0b302270800000000000000
+      internalID: 8223637852196375812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_11
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 171
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5dc6a41b6620f470800000000000000
+      internalID: 8426277144160030043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_12
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 91
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3558f9e2c3c7cb60800000000000000
+      internalID: 7766391324340147516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_13
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 91
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a9851402167dc670800000000000000
+      internalID: 8560628286451190185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_14
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 91
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e546babfe2f7ff6e0800000000000000
+      internalID: -1801581486157372322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_15
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 91
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad00d2d0e91d12910800000000000000
+      internalID: 1810959001935741146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_16
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 11
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41e8fcec201c9baa0800000000000000
+      internalID: -6144667998766526956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_17
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 11
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c001d784766d1a660800000000000000
+      internalID: 7395427802205196300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_18
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 11
+        width: 45
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bc1b8dec75e100e0800000000000000
+      internalID: -2305309209512960846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_19
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 11
+        width: 45
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e0464673b976220800000000000000
+      internalID: 2479120782100532866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow_mage_20
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 11
+        width: 45
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32dbdb4d107753260800000000000000
+      internalID: 7076693239230479651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      shadow_mage_0: -7348968484501442100
+      shadow_mage_1: -2243160472404320046
+      shadow_mage_10: 8223637852196375812
+      shadow_mage_11: 8426277144160030043
+      shadow_mage_12: 7766391324340147516
+      shadow_mage_13: 8560628286451190185
+      shadow_mage_14: -1801581486157372322
+      shadow_mage_15: 1810959001935741146
+      shadow_mage_16: -6144667998766526956
+      shadow_mage_17: 7395427802205196300
+      shadow_mage_18: -2305309209512960846
+      shadow_mage_19: 2479120782100532866
+      shadow_mage_2: -1913999902321744538
+      shadow_mage_20: 7076693239230479651
+      shadow_mage_3: -4174403645766130211
+      shadow_mage_4: -4831363905778307366
+      shadow_mage_5: 7901406622719543029
+      shadow_mage_6: 5217448267233317208
+      shadow_mage_7: -6702017143889429497
+      shadow_mage_8: 5951887798905465664
+      shadow_mage_9: -2986124149813447819
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
