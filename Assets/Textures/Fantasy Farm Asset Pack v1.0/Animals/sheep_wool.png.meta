@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: f13f1e5c537be36479cbb1bae433fa34
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5203021455246254281
+    second: sheep_wool_0
+  - first:
+      213: 2253271748144683814
+    second: sheep_wool_1
+  - first:
+      213: 8153220941376855453
+    second: sheep_wool_2
+  - first:
+      213: -6162035342328269773
+    second: sheep_wool_3
+  - first:
+      213: 3497935331751653071
+    second: sheep_wool_4
+  - first:
+      213: -6736423272084770923
+    second: sheep_wool_5
+  - first:
+      213: 4827460783980843454
+    second: sheep_wool_6
+  - first:
+      213: -2100748664446834269
+    second: sheep_wool_7
+  - first:
+      213: 8596949031117803620
+    second: sheep_wool_8
+  - first:
+      213: 1436807534784419909
+    second: sheep_wool_9
+  - first:
+      213: 6925249721343191231
+    second: sheep_wool_10
+  - first:
+      213: -2286429543548567644
+    second: sheep_wool_11
+  - first:
+      213: -4119935068708929664
+    second: sheep_wool_12
+  - first:
+      213: -6491256534749068277
+    second: sheep_wool_13
+  - first:
+      213: 4250290984387154271
+    second: sheep_wool_14
+  - first:
+      213: 8221735047815913066
+    second: sheep_wool_15
+  - first:
+      213: 4433946610438391601
+    second: sheep_wool_16
+  - first:
+      213: 6130320198624726667
+    second: sheep_wool_17
+  - first:
+      213: -8376687316375075765
+    second: sheep_wool_18
+  - first:
+      213: 5270733872324322492
+    second: sheep_wool_19
+  - first:
+      213: 763009336285025586
+    second: sheep_wool_20
+  - first:
+      213: -2348280367436301875
+    second: sheep_wool_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sheep_wool_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 489
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73f9f41ad872bc7b0800000000000000
+      internalID: -5203021455246254281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 409
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62b569277ba354f10800000000000000
+      internalID: 2253271748144683814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_2
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 409
+        width: 58
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9d1b02af3f062170800000000000000
+      internalID: 8153220941376855453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_3
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 409
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 334fe17018d0c7aa0800000000000000
+      internalID: -6162035342328269773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_4
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 409
+        width: 58
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fce6850c6a92b8030800000000000000
+      internalID: 3497935331751653071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_5
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 329
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59f66b2a9ba6382a0800000000000000
+      internalID: -6736423272084770923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_6
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 329
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb19e4c81069ef240800000000000000
+      internalID: 4827460783980843454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_7
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 329
+        width: 59
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a9254d4834a8d2e0800000000000000
+      internalID: -2100748664446834269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_8
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 329
+        width: 59
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4605aef589f7e4770800000000000000
+      internalID: 8596949031117803620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_9
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 329
+        width: 59
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5481e6127d090f310800000000000000
+      internalID: 1436807534784419909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_10
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 329
+        width: 59
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb8a8851eed6b1060800000000000000
+      internalID: 6925249721343191231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_11
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 329
+        width: 59
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af34d4b178f440e0800000000000000
+      internalID: -2286429543548567644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_12
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 329
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08ffde322ec03d6c0800000000000000
+      internalID: -4119935068708929664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_13
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 249
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b044954e29c6ae5a0800000000000000
+      internalID: -6491256534749068277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_14
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 249
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f51117c91211cfa30800000000000000
+      internalID: 4250290984387154271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_15
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 249
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e52722778791270800000000000000
+      internalID: 8221735047815913066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_16
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 169
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1374a3c33fa888d30800000000000000
+      internalID: 4433946610438391601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_17
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 169
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8ecd66adb5431550800000000000000
+      internalID: 6130320198624726667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_18
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 169
+        width: 58
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4481f0744700cb80800000000000000
+      internalID: -8376687316375075765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_19
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 169
+        width: 58
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb4a2850888652940800000000000000
+      internalID: 5270733872324322492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_20
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 89
+        width: 58
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2355391e2f0c69a00800000000000000
+      internalID: 763009336285025586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_wool_21
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 9
+        width: 58
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc97fe1927b396fd0800000000000000
+      internalID: -2348280367436301875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sheep_wool_0: -5203021455246254281
+      sheep_wool_1: 2253271748144683814
+      sheep_wool_10: 6925249721343191231
+      sheep_wool_11: -2286429543548567644
+      sheep_wool_12: -4119935068708929664
+      sheep_wool_13: -6491256534749068277
+      sheep_wool_14: 4250290984387154271
+      sheep_wool_15: 8221735047815913066
+      sheep_wool_16: 4433946610438391601
+      sheep_wool_17: 6130320198624726667
+      sheep_wool_18: -8376687316375075765
+      sheep_wool_19: 5270733872324322492
+      sheep_wool_2: 8153220941376855453
+      sheep_wool_20: 763009336285025586
+      sheep_wool_21: -2348280367436301875
+      sheep_wool_3: -6162035342328269773
+      sheep_wool_4: 3497935331751653071
+      sheep_wool_5: -6736423272084770923
+      sheep_wool_6: 4827460783980843454
+      sheep_wool_7: -2100748664446834269
+      sheep_wool_8: 8596949031117803620
+      sheep_wool_9: 1436807534784419909
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
