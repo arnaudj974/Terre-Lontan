@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int tool { get; private set; } // 1=pioche, 2=hache, 3=houe, 4=mains, 5=arros
+    public Tool tool { get; private set; } 
     void Awake()
     {
-        if (tool == 0) tool = 4; // mets les mains par defaut
+        if (tool == null) tool = new Tool(4); // mets les mains par defaut
     }
 
 
@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     public void SetTool(int ind)
     {
-        if (ind > 0 && ind < 6)  tool = ind; 
+        if (ind > 0 && ind < 6)  tool = new Tool(ind); 
         else Debug.LogWarning("index Outil non valide");
     }
 }
