@@ -2,26 +2,22 @@ using UnityEngine;
 
 public class HarvestablePlant : MonoBehaviour
 {
-    [SerializeField] PlantData plantData;
+    public string plantName;
+    [SerializeField] PlantsCollection plantsCollection;
     [SerializeField] SpriteRenderer spriteRenderer;
-    [SerializeField] bool isNight;
     [SerializeField] int numberDaysWatered;
     [SerializeField] int daysPass;
     float timer;
+    PlantData plantData;
     int currentState = 0;
-
+    public bool isNight;
+    public bool harvest = false;
 
     void Start()
     {
+        plantData = plantsCollection.getPlantByName(plantName);
         SetSprite(currentState);
         isNight = false;
-    }
-
-    void Update()
-    {
-        Timer();
-        GrowingPlant();
-        
     }
 
     void SetSprite(int growthState)
@@ -36,26 +32,32 @@ public class HarvestablePlant : MonoBehaviour
         return  timer;
     }
 
-    void GrowingPlant()
+    void Harvest()
     {
-       if( GrowthCondition())
-        {   
-            currentState++;
-            currentState =Mathf.Clamp(currentState, 0, plantData.NumberStates-1);
-            Timer(true);
-            SetSprite(currentState);
+        if(harvest && plantData.harvestPossible)
+        {
+            spriteRenderer.sprite = plantData.harvestSprite;
         }
     }
 
-    bool GrowthCondition()
+    void GrowingPlant()
+    { 
+        currentState++;
+        currentState = Mathf.Clamp(currentState, 0, plantData.GetMaxGrowthStatesForArray());
+        SetSprite(currentState);
+    }
+
+    void SetNight()
     {
-        if(numberDaysWatered == plantData.growingTime)
+        isNight = true;
+    }
+
+    void IsNight()
+    {
+        if (isNight)
         {
-            return true;
-        }else if(daysPass == plantData.maxGrowingTime)
-        {
-            return true;
+            GrowingPlant();
+            isNight = false;
         }
-        return false;
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe9fd1d4691a19479d786c3b149de88, type: 3}
   m_Name: Grape
   m_EditorClassIdentifier: Assembly-CSharp::Plant
-  name: Grape
+  plantName: Raisin
   growthPeriod: 5
   NumberStates: 3
   growthState:
