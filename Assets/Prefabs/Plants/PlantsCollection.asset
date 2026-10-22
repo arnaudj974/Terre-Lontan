@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1d830953f21a1442bf8996074089cee, type: 3}
+  m_Name: PlantsCollection
+  m_EditorClassIdentifier: Assembly-CSharp::PlantsCollection
+  plantsName:
+  - Grape
+  - Chilli
+  - Cucumber
+  - Peas
+  - Salad
+  - Zucchinii
+  plantsData:
+  - {fileID: 11400000, guid: aea1dce7da656e14883aa3b6e3b7944a, type: 2}
+  - {fileID: 11400000, guid: 40f2a245cada17e44b471ad9120a56d2, type: 2}
+  - {fileID: 11400000, guid: d810e3de720d7134c8a74e82798b4f3c, type: 2}
+  - {fileID: 11400000, guid: 6913255a9c78ba542b28f1649e920c60, type: 2}
+  - {fileID: 11400000, guid: d5eaffbb6b5c2f143b1a8e0e49ee4fae, type: 2}
+  - {fileID: 11400000, guid: fcdbed5cbc435e547923b15a2564549b, type: 2}
