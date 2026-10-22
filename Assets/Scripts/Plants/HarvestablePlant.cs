@@ -13,26 +13,29 @@ public class HarvestablePlant : MonoBehaviour
     public bool isNight;
     public bool harvest = false;
 
-    void Start()
+    void Update()
+    {
+        IsNight();
+    }
+
+    public void SetPlantType(string name)
     {
         plantData = plantsCollection.getPlantByName(plantName);
         SetSprite(currentState);
         isNight = false;
     }
 
-    void SetSprite(int growthState)
+    public void SetNight()
+    {
+        isNight = true;
+    }
+
+    public void SetSprite(int growthState)
     {
         spriteRenderer.sprite = plantData.growthState[growthState];
     }
 
-    float Timer(bool reset = false)
-    {
-        if(reset){timer = 0;}
-        timer += Time.deltaTime * (1 / Time.timeScale);
-        return  timer;
-    }
-
-    void Harvest()
+    public void Harvest()
     {
         if(harvest && plantData.harvestPossible)
         {
@@ -40,16 +43,11 @@ public class HarvestablePlant : MonoBehaviour
         }
     }
 
-    void GrowingPlant()
+    public void GrowingPlant()
     { 
         currentState++;
         currentState = Mathf.Clamp(currentState, 0, plantData.GetMaxGrowthStatesForArray());
         SetSprite(currentState);
-    }
-
-    void SetNight()
-    {
-        isNight = true;
     }
 
     void IsNight()
