@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     Vector2 moveInput;
     public Vector2 moveDir { get ; private set; }
     public Vector2 LastDir { get; private set; }
+    public bool isAttacking { get; private set; }
 
     void Awake()
     {
@@ -21,6 +22,11 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isAttacking) //pour ne pas se déplacer quand le player attack
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
         moveDir = moveInput * speed;
         rb.linearVelocity = moveDir;
         if (moveDir != Vector2.zero)
@@ -34,5 +40,11 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext ctx)
     {
         moveInput = ctx.ReadValue<Vector2>();
+    }
+
+    public void Attack(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started) isAttacking = true;
+        else if(ctx.canceled) isAttacking = false;
     }
 }

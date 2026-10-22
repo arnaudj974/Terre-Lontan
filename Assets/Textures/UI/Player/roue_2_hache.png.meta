@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e0d1f26610c237b42a9a29df2baa823a
+guid: 8ed832a34cb81ab47b42457ccb4fdcae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 671841924507580933
-    second: Roue outils_0
+      213: 4995025872465042390
+    second: roue_2_hache_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Roue outils_0
+      name: roue_2_hache_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1254
-        height: 1254
+        x: 5
+        y: 2
+        width: 442
+        height: 444
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 50a3d77bbacd25900800000000000000
-      internalID: 671841924507580933
+      spriteID: 6db1a24f095e15540800000000000000
+      internalID: 4995025872465042390
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Roue outils_0: 671841924507580933
+      roue_2_hache_0: 4995025872465042390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

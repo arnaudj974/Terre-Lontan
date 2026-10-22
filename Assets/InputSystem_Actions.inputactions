@@ -30,7 +30,7 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "6c2ab1b8-8984-453a-af3d-a3c78ae1679a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false,
@@ -110,6 +110,16 @@
                     "name": "Dash",
                     "type": "Button",
                     "id": "c65b2144-9eb5-4855-af8f-056faf17ad54",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Wheel",
+                    "type": "Button",
+                    "id": "da4a5459-0375-4a8a-8f50-febb15273865",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -522,6 +532,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "845c046c-8077-4e74-8612-6db4555af0e8",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Wheel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
