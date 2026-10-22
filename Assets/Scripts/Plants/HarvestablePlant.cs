@@ -13,12 +13,24 @@ public class HarvestablePlant : MonoBehaviour
     public bool isNight;
     public bool harvest = false;
 
+    void Start()
+    {
+        SetPlantType();
+    }
+
     void Update()
     {
         IsNight();
     }
 
     public void SetPlantType(string name)
+    {
+        plantData = plantsCollection.getPlantByName(plantName);
+        SetSprite(currentState);
+        isNight = false;
+    }
+
+      public void SetPlantType()
     {
         plantData = plantsCollection.getPlantByName(plantName);
         SetSprite(currentState);
