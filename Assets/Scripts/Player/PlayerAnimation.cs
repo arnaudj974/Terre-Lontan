@@ -1,15 +1,17 @@
-
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-     Animator anim;
-     PlayerController playerController;
+    Animator anim;
+    PlayerController playerController;
+    Player player;
+    bool isattackingTemp;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
         playerController = GetComponent<PlayerController>();
+        player = GetComponent<Player>();
     }
 
 
@@ -27,6 +29,8 @@ public class PlayerAnimation : MonoBehaviour
             anim.SetFloat("moveX", playerController.LastDir.x);
             anim.SetFloat("moveY", playerController.LastDir.y);
         }
+        anim.SetFloat("tool", player.tool);
+        anim.SetBool("attack", playerController.isAttacking);
     }
 
 }
