@@ -42,11 +42,11 @@ public class Placer : MonoBehaviour
         //highlight.color = grid.IsFree(targetCell) ? validColor : invalidColor;
     }
 
-    void Attack()
+    void Attack(string plant)
     {
         if (grid.IsInside(targetCell))
         {
-            grid.ChangeCell(targetCell, player.tool);
+            grid.ChangeCell(targetCell, player.tool,plant);
         }
     }
 
@@ -62,7 +62,7 @@ public class Placer : MonoBehaviour
         if (ctx.started)
         {
             OnAttack?.Invoke(true);
-            Attack();
+            Attack("Grape");
         }
         else if (ctx.canceled)
         {
