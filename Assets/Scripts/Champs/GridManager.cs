@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
+using UnityEngine.WSA;
 
 
 public class GridManager : MonoBehaviour
@@ -69,7 +70,7 @@ public class GridManager : MonoBehaviour
     public void Place(Vector2Int cell, TypeCase obj)
     {
 
-        if (obj.isSprite)
+        if (obj.IsSprite())
         {
             GameObject temp = new GameObject("PlacedSprite");
             temp.transform.SetParent(transform);
@@ -77,41 +78,33 @@ public class GridManager : MonoBehaviour
             SpriteRenderer sr = temp.AddComponent<SpriteRenderer>();
             sr.sprite = obj.sprite;
             sr.sortingOrder = -Mathf.RoundToInt(CellToWorld(cell).y * 10);
-            obj.instance = temp;
+            obj.plante = temp;
         }
-        else if (obj.isTile)
+        else if (obj.IsTile())
         {
-            PlacerTile(cell, obj.tile);
+            tilemap.SetTile(new Vector3Int(cell.x, cell.y, 0), obj.tile);
         }
         else
         {
-            Debug.Log("plante");
             GameObject temp = new GameObject("PlacedPlant");
-            obj.instance.GetComponent<HarvestablePlant>().SetPlantType(obj.name);
-            obj.instance.GetComponent<SpriteRenderer>().sortingOrder = -Mathf.RoundToInt(CellToWorld(cell).y * 10);
-            temp = Instantiate(obj.instance, CellToWorld(cell), Quaternion.identity, transform);
+            obj.plante.GetComponent<HarvestablePlant>().SetPlantType(obj.name); //créer la nouvelle plante
+            obj.plante.GetComponent<SpriteRenderer>().sortingOrder = -Mathf.RoundToInt(CellToWorld(cell).y * 10);
+            temp = Instantiate(obj.plante, CellToWorld(cell), Quaternion.identity, transform);
         }
         occupied[cell] = obj;
     }
 
-    public void PlacerTile(Vector2Int cell, TileBase tile)
-    {
-        tilemap.SetTile(new Vector3Int(cell.x, cell.y, 0), tile);
-    }
-
-
-    IEnumerator Replace(Vector2Int cell, TypeCase obj,string name)
+    IEnumerator Replace(Vector2Int cell, TypeCase oldObj,TypeCase newObj)
     {
         isCoroutReplaceStarted = true;
         yield return new WaitForSeconds(timeRemove);
-        if (obj.instance != null && obj.isSprite) //supprime le gameobject et mets une tile d'herbe
+        if (oldObj.IsSprite()) //supprime le gameobject et mets une tile d'herbe
         {
-            Destroy(obj.instance);
-            Place(cell, new TypeCase(TypeCase.Type.Herbe, banqueTile.ObtenirRand("Herbe")));
+            Destroy(oldObj.plante);
         }
-        if (obj.type == TypeCase.Type.Herbe) Place(cell, new TypeCase(TypeCase.Type.Terre, banqueTile.ObtenirRand("Terre"))); // met de la terre à la place de l'herbe
-        if (obj.type == TypeCase.Type.Terre) Place(cell, new TypeCase(plantPrefab,name));
-        OnReplace?.Invoke(obj.GetEnergy());
+        Place(cell, newObj);
+
+        OnReplace?.Invoke(oldObj.GetEnergy());
         isCoroutReplaceStarted = false;
     }
 
@@ -120,12 +113,14 @@ public class GridManager : MonoBehaviour
         if(isCoroutReplaceStarted) StopCoroutine(coroutReplace);
     }
 
-    public void ChangeCell(Vector2Int cell, Tool tool,string plante)
+    public void ChangeCell(Vector2Int cell, Tool tool, string nomPlante)
     {
         if (!occupied.TryGetValue(cell, out TypeCase obj)) return;
         if (obj.tool.Same(tool)) // si le joueur a le bon outil
         {
-            coroutReplace = StartCoroutine(Replace(cell, obj, plante));
+
+            TypeCase newObj = obj.Evolution(obj.type, banqueTile.ObtenirRand("Terre"), banqueTile.ObtenirRand("Herbe"), plantPrefab, nomPlante); // créer la nouvelle typecase qui va remplacer l'ancienne
+            coroutReplace = StartCoroutine(Replace(cell, obj, newObj));
         }
     }
 

@@ -3,23 +3,19 @@ using UnityEngine.Tilemaps;
 
 public class TypeCase
 {
-    public GameObject instance;
+    
     public enum Type { Arbre, Rocher, Herbe, Terre, Plante };
     public Type type { get; private set; }
     public Tool tool { get; private set; }
     public bool canArros { get; private set; }
-    //public HarvestablePlant plant { get; private set; }
     public Sprite sprite { get; private set; }
     public TileBase tile { get; private set; }
-    public bool isTile { get; private set; }
-    public bool isSprite { get; private set; }
-    public float energy { get; private set; }
+    public GameObject plante;
     public string name;
     public TypeCase(Type type, Sprite sprite)
     {
         this.type = type;
         this.sprite = sprite;
-        this.isSprite = true;
         this.tool = type switch
         {
             Type.Arbre => new Tool(Tool.Type.Hache),
@@ -34,7 +30,6 @@ public class TypeCase
     {
         this.type = type;
         this.tile = tile;
-        this.isTile = true;
         this.tool = type switch
         {
             Type.Arbre => new Tool(Tool.Type.Hache),
@@ -45,13 +40,25 @@ public class TypeCase
         };
     }
 
-    public TypeCase(GameObject plant,string name)
+    public TypeCase(GameObject plante,string name)
     {
         this.canArros = true;
         this.tool = new Tool(Tool.Type.Mains);
         this.type = Type.Plante;
-        this.instance = plant;
+        this.plante = plante;
         this.name = name;
+    }
+
+    public TypeCase Evolution(Type type, TileBase tileTerre,TileBase tileHerbe,GameObject plant,string nom)
+    {
+        return type switch
+        {
+            Type.Arbre or Type.Rocher => new TypeCase(Type.Herbe, tileHerbe),
+            Type.Herbe => new TypeCase(Type.Terre, tileTerre),
+            Type.Terre => new TypeCase(plant, nom),
+            _ => null
+        }; 
+
     }
 
     public bool CanUse(Tool tool)
@@ -72,5 +79,14 @@ public class TypeCase
             Type.Plante => 2f,
             _=>2
         };
+    }
+
+    public bool IsSprite()
+    {
+        return sprite != null;
+    }
+    public bool IsTile()
+    {
+        return tile != null;
     }
 }
