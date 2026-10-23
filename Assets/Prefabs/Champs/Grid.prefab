@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d2281bab92f4498362879b182716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  banque: {fileID: 11400000, guid: 3df7347e7953d3148b4869edbbf98ebc, type: 2}
+  banqueCase: {fileID: 11400000, guid: 3df7347e7953d3148b4869edbbf98ebc, type: 2}
+  banqueTile: {fileID: 11400000, guid: b37e204d57ed0e041971d26cad4d1ded, type: 2}
   tilemap: {fileID: 0}
-  tile: {fileID: 0}
   size: {x: 30, y: 10}
   cellSize: 1
   prefab: {fileID: 0}

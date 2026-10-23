@@ -1,26 +1,46 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class TypeCase
 {
-    public enum Type { Arbre, Rocher, Herbe, Plantable, Plante };
+    public GameObject instance;
+    public enum Type { Arbre, Rocher, Herbe, Terre, Plante };
     public Type type { get; private set; }
     public Tool tool { get; private set; }
     public bool canArros { get; private set; }
     public HarvestablePlant plant { get; private set; }
     public Sprite sprite { get; private set; }
-    public TypeCase(Type type,Sprite sprite)
+    public TileBase tile { get; private set; }
+    public bool isTile { get; private set; }
+    public bool isSprite { get; private set; }
+    public TypeCase(Type type, Sprite sprite)
     {
-        canArros = type == Type.Plante;
         this.type = type;
         this.sprite = sprite;
+        this.isSprite = true;
         this.tool = type switch
         {
             Type.Arbre => new Tool(Tool.Type.Hache),
             Type.Rocher => new Tool(Tool.Type.Pioche),
             Type.Herbe => new Tool(Tool.Type.Houe),
-            Type.Plantable or Type.Plante => new Tool(Tool.Type.Mains),
+            Type.Terre or Type.Plante => new Tool(Tool.Type.Mains),
         };
     }
+
+    public TypeCase(Type type, TileBase tile)
+    {
+        this.type = type;
+        this.tile = tile;
+        this.isTile = true;
+        this.tool = type switch
+        {
+            Type.Arbre => new Tool(Tool.Type.Hache),
+            Type.Rocher => new Tool(Tool.Type.Pioche),
+            Type.Herbe => new Tool(Tool.Type.Houe),
+            Type.Terre or Type.Plante => new Tool(Tool.Type.Mains),
+        };
+    }
+
     public TypeCase(HarvestablePlant plant)
     {
         this.canArros = true;
@@ -38,4 +58,5 @@ public class TypeCase
     {
         return type.ToString();
     }
+
 }

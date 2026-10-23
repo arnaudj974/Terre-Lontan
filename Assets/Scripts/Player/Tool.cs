@@ -29,4 +29,9 @@ public class Tool
             5 => Type.Arros
         };
     }
+
+    public bool Same(Tool tool)
+    {
+        return this.type == tool.type;
+    }
 }

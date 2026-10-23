@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed77c38fdc3b6314583b0955706f3d16, type: 3}
+  m_Name: BanqueTile
+  m_EditorClassIdentifier: Assembly-CSharp::BiblioTile
+  entrees:
+  - nom: Herbe0
+    tile: {fileID: 11400000, guid: 13da309351f4dae4f9cae09f29854127, type: 2}
+  - nom: Herbe1
+    tile: {fileID: 11400000, guid: 8f66290a1b4ad4642997ed78b162da3e, type: 2}
+  - nom: Herbe2
+    tile: {fileID: 11400000, guid: 61d697bad74f697499fd1875d7992cf8, type: 2}
+  - nom: Terre0
+    tile: {fileID: 11400000, guid: 2b7331f62e586eb4d9f938a74a9066b0, type: 2}
+  - nom: Terre1
+    tile: {fileID: 11400000, guid: fe7a20e3456089f4d9e469fb3087664f, type: 2}
+  - nom: Terre2
+    tile: {fileID: 11400000, guid: cd13f167c4af57d4cb90b7edbceb09d5, type: 2}

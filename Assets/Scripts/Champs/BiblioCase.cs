@@ -20,4 +20,15 @@ public class BiblioCase : ScriptableObject
         Debug.LogWarning($"Sprite introuvable : {nom}");
         return null;
     }
+
+    public Sprite ObtenirRand(string nom)
+    {
+        int random = Random.Range(0, 3);
+        nom += random.ToString();
+        foreach (var e in entrees)
+            if (e.nom == nom) return e.sprite;
+
+        Debug.LogWarning($"Sprite introuvable : {nom}");
+        return null;
+    }
 }

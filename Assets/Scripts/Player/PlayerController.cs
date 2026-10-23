@@ -11,8 +11,6 @@ public class PlayerController : MonoBehaviour
     public Vector2 LastDir { get; private set; }
     public bool isAttacking { get; private set; }
 
-
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
