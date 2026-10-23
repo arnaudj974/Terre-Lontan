@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class HarvestablePlant : MonoBehaviour
@@ -30,7 +31,12 @@ public class HarvestablePlant : MonoBehaviour
         isNight = false;
     }
 
-      public void SetPlantType()
+    public List<string> GetPlantsCollectionName()
+    {
+        return plantsCollection.getListPLant();
+    }
+
+    public void SetPlantType()
     {
         plantData = plantsCollection.getPlantByName(plantName);
         SetSprite(currentState);
