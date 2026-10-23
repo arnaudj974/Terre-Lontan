@@ -18,7 +18,7 @@ MonoBehaviour:
   - Cucumber
   - Peas
   - Salad
-  - Zucchinii
+  - Zucchini
   plantsData:
   - {fileID: 11400000, guid: aea1dce7da656e14883aa3b6e3b7944a, type: 2}
   - {fileID: 11400000, guid: 40f2a245cada17e44b471ad9120a56d2, type: 2}
