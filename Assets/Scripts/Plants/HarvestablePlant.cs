@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class HarvestablePlant : MonoBehaviour
 {
@@ -22,7 +20,7 @@ public class HarvestablePlant : MonoBehaviour
         IsNight();
     }
 
-    void SetPlantType( string name)
+    public void SetPlantType(string name)
     {   
         plantName = name;
         plantData = plantsCollection.getPlantByName(plantName);
