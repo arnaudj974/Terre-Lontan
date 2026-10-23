@@ -13,7 +13,8 @@ public class Tool
             Type.Hache => 2,
             Type.Houe => 3,
             Type.Mains => 4,
-            Type.Arros => 5
+            Type.Arros => 5,
+            _=>4
         };
     }
 
@@ -26,7 +27,8 @@ public class Tool
             2 => Type.Hache,
             3 => Type.Houe,
             4 => Type.Mains,
-            5 => Type.Arros
+            5 => Type.Arros,
+            _=>Type.Mains
         };
     }
 

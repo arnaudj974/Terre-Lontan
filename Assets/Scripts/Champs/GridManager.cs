@@ -6,13 +6,14 @@ using UnityEngine.Tilemaps;
 
 public class GridManager : MonoBehaviour
 {
-    [SerializeField] private BiblioCase banqueCase;
-    [SerializeField] private BiblioTile banqueTile;
-    [SerializeField] private Tilemap tilemap;
-    [SerializeField] private Vector2Int size = new Vector2Int(10, 8);
+    [SerializeField] GameObject plantPrefab;
+    [SerializeField] BiblioCase banqueCase;
+    [SerializeField] BiblioTile banqueTile;
+    [SerializeField] Tilemap tilemap;
+    [SerializeField] Vector2Int size = new Vector2Int(10, 8);
     [SerializeField] float timeRemove = 3f;
     public float cellSize = 1f;
-    Coroutine coroutRemove;
+    Coroutine coroutReplace;
     private readonly Dictionary<Vector2Int, TypeCase> occupied = new();
 
     Vector3 Origin => tilemap.CellToWorld(Vector3Int.zero);
@@ -64,7 +65,7 @@ public class GridManager : MonoBehaviour
 
     public void Place(Vector2Int cell, TypeCase obj)
     {
-        occupied[cell] = obj;
+
         if (obj.isSprite)
         {
             GameObject temp = new GameObject("PlacedSprite");
@@ -74,13 +75,19 @@ public class GridManager : MonoBehaviour
             sr.sprite = obj.sprite;
             sr.sortingOrder = -Mathf.RoundToInt(CellToWorld(cell).y * 10);
             obj.instance = temp;
-            return;
         }
-        if (obj.isTile)
+        else if (obj.isTile)
         {
             PlacerTile(cell, obj.tile);
-            return;
         }
+        else
+        {
+            Debug.Log("plante");
+            GameObject temp = new GameObject("PlacedPlant");
+            obj.instance.GetComponent<HarvestablePlant>().SetPlantType(obj.name);
+            temp = Instantiate(obj.instance, CellToWorld(cell), Quaternion.identity, transform);
+        }
+        occupied[cell] = obj;
     }
 
     public void PlacerTile(Vector2Int cell, TileBase tile)
@@ -89,7 +96,7 @@ public class GridManager : MonoBehaviour
     }
 
 
-    IEnumerator Remove(Vector2Int cell, TypeCase obj)
+    IEnumerator Replace(Vector2Int cell, TypeCase obj,string name)
     {
         yield return new WaitForSeconds(timeRemove);
         if (obj.instance != null && obj.isSprite) //supprime le gameobject et mets une tile d'herbe
@@ -97,24 +104,21 @@ public class GridManager : MonoBehaviour
             Destroy(obj.instance);
             Place(cell, new TypeCase(TypeCase.Type.Herbe, banqueTile.ObtenirRand("Herbe")));
         }
-        if (obj.type == TypeCase.Type.Herbe) Place(cell, new TypeCase(TypeCase.Type.Herbe, banqueTile.ObtenirRand("Terre"))); // met de la terre à la place de l'herbe
+        if (obj.type == TypeCase.Type.Herbe) Place(cell, new TypeCase(TypeCase.Type.Terre, banqueTile.ObtenirRand("Terre"))); // met de la terre à la place de l'herbe
+        if (obj.type == TypeCase.Type.Terre) Place(cell, new TypeCase(plantPrefab,name));
     }
 
     public void StopAttack()
     {
-        StopCoroutine(coroutRemove);
+        StopCoroutine(coroutReplace);
     }
 
-    public void ChangeCell(Vector2Int cell, Tool tool)
+    public void ChangeCell(Vector2Int cell, Tool tool,string plante)
     {
         if (!occupied.TryGetValue(cell, out TypeCase obj)) return;
-        TypeCase temp = occupied[cell];
-        if (temp.tool.Same(tool)) // si le joueur a le bon outil
+        if (obj.tool.Same(tool)) // si le joueur a le bon outil
         {
-            if (!temp.canArros) //si ce n'est pas une plante
-            {
-                coroutRemove = StartCoroutine(Remove(cell, obj));
-            }
+            coroutReplace = StartCoroutine(Replace(cell, obj, plante));
         }
     }
 

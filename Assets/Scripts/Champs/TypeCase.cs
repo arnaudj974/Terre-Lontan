@@ -8,11 +8,12 @@ public class TypeCase
     public Type type { get; private set; }
     public Tool tool { get; private set; }
     public bool canArros { get; private set; }
-    public HarvestablePlant plant { get; private set; }
+    //public HarvestablePlant plant { get; private set; }
     public Sprite sprite { get; private set; }
     public TileBase tile { get; private set; }
     public bool isTile { get; private set; }
     public bool isSprite { get; private set; }
+    public string name;
     public TypeCase(Type type, Sprite sprite)
     {
         this.type = type;
@@ -24,6 +25,7 @@ public class TypeCase
             Type.Rocher => new Tool(Tool.Type.Pioche),
             Type.Herbe => new Tool(Tool.Type.Houe),
             Type.Terre or Type.Plante => new Tool(Tool.Type.Mains),
+            _=>null
         };
     }
 
@@ -38,15 +40,17 @@ public class TypeCase
             Type.Rocher => new Tool(Tool.Type.Pioche),
             Type.Herbe => new Tool(Tool.Type.Houe),
             Type.Terre or Type.Plante => new Tool(Tool.Type.Mains),
+            _=>null
         };
     }
 
-    public TypeCase(HarvestablePlant plant)
+    public TypeCase(GameObject plant,string name)
     {
         this.canArros = true;
         this.tool = new Tool(Tool.Type.Mains);
         this.type = Type.Plante;
-        this.plant = plant;
+        this.instance = plant;
+        this.name = name;
     }
 
     public bool CanUse(Tool tool)
