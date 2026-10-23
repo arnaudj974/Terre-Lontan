@@ -11,8 +11,6 @@ public class PlayerController : MonoBehaviour
     public Vector2 LastDir { get; private set; }
     public bool isAttacking { get; private set; }
 
-
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,16 +36,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void GetAttack(bool _isAttacking)
-    {
-        isAttacking = _isAttacking;
-    }
-
     // Input de direction
     public void Move(InputAction.CallbackContext ctx)
     {
         moveInput = ctx.ReadValue<Vector2>();
     }
 
-
+    public void Attack(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started) isAttacking = true;
+        else if(ctx.canceled) isAttacking = false;
+    }
 }
