@@ -5,13 +5,14 @@ public class PlayerAnimation : MonoBehaviour
     Animator anim;
     PlayerController playerController;
     Player player;
-    bool isattackingTemp;
+    SpriteRenderer sr;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
         playerController = GetComponent<PlayerController>();
         player = GetComponent<Player>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
 
@@ -29,8 +30,11 @@ public class PlayerAnimation : MonoBehaviour
             anim.SetFloat("moveX", playerController.LastDir.x);
             anim.SetFloat("moveY", playerController.LastDir.y);
         }
-        anim.SetFloat("tool", player.tool);
+        anim.SetFloat("tool", player.tool.index);
         anim.SetBool("attack", playerController.isAttacking);
     }
-
+    public void SetOrder(int i)
+    {
+        sr.sortingOrder = i;
+    }
 }
