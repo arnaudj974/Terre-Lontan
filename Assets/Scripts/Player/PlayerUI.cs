@@ -31,7 +31,7 @@ public class PlayerUI : MonoBehaviour
         Vector2 mousePos = Mouse.current.position.ReadValue();
         Vector2 screenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
 
-        // 3. Calculer la direction et l'angle
+        //  Calculer la direction et l'angle
         Vector2 direction = mousePos - screenCenter;
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
 

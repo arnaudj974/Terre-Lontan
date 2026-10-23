@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HarvestablePlant : MonoBehaviour
@@ -16,44 +15,24 @@ public class HarvestablePlant : MonoBehaviour
 
     void Start()
     {
-        SetPlantType();
-    }
-
-    void Update()
-    {
-        IsNight();
-    }
-
-    public void SetPlantType(string name)
-    {
         plantData = plantsCollection.getPlantByName(plantName);
         SetSprite(currentState);
         isNight = false;
     }
 
-    public List<string> GetPlantsCollectionName()
-    {
-        return plantsCollection.getListPLant();
-    }
-
-    public void SetPlantType()
-    {
-        plantData = plantsCollection.getPlantByName(plantName);
-        SetSprite(currentState);
-        isNight = false;
-    }
-
-    public void SetNight()
-    {
-        isNight = true;
-    }
-
-    public void SetSprite(int growthState)
+    void SetSprite(int growthState)
     {
         spriteRenderer.sprite = plantData.growthState[growthState];
     }
 
-    public void Harvest()
+    float Timer(bool reset = false)
+    {
+        if(reset){timer = 0;}
+        timer += Time.deltaTime * (1 / Time.timeScale);
+        return  timer;
+    }
+
+    void Harvest()
     {
         if(harvest && plantData.harvestPossible)
         {
@@ -61,11 +40,16 @@ public class HarvestablePlant : MonoBehaviour
         }
     }
 
-    public void GrowingPlant()
+    void GrowingPlant()
     { 
         currentState++;
         currentState = Mathf.Clamp(currentState, 0, plantData.GetMaxGrowthStatesForArray());
         SetSprite(currentState);
+    }
+
+    void SetNight()
+    {
+        isNight = true;
     }
 
     void IsNight()
