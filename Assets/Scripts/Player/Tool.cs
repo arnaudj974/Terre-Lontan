@@ -14,7 +14,7 @@ public class Tool
             Type.Houe => 3,
             Type.Mains => 4,
             Type.Arros => 5,
-            _=>4
+            _=>0
         };
     }
 

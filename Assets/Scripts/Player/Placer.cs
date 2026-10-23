@@ -1,7 +1,8 @@
-using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Events;
 using UnityEditor.Tilemaps;
+using UnityEditor.Timeline.Actions;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class Placer : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Placer : MonoBehaviour
     PlayerAnimation playerAnim;
     PlayerController playerCont;
     Player player;
+    bool canAttack;
     public UnityEvent<bool> OnAttack;
 
     
@@ -59,7 +61,7 @@ public class Placer : MonoBehaviour
     }
     public void Attack(InputAction.CallbackContext ctx)
     {
-        if (ctx.started)
+        if (ctx.started && canAttack)
         {
             OnAttack?.Invoke(true);
             Attack("Grape");
@@ -69,5 +71,10 @@ public class Placer : MonoBehaviour
             OnAttack?.Invoke(false);
             StopAttack();
         }
+    }
+
+    public void ChangeAttack(float f)
+    {
+        canAttack = f > 0;
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
+    [SerializeField] Slider sliderEnergy;
+    [SerializeField] float maxEnergy = 100f;
     [SerializeField] GameObject panelWheel;
     [SerializeField] Image imgWheel;
     [SerializeField] Sprite spriteWheelPioche;
@@ -18,6 +20,8 @@ public class PlayerUI : MonoBehaviour
     void Awake()
     {
         panelWheel.SetActive(false);
+        sliderEnergy.maxValue = maxEnergy;
+        sliderEnergy.value = maxEnergy;
     }
 
     void Update()
@@ -92,5 +96,10 @@ public class PlayerUI : MonoBehaviour
             wheelHeld = false;
             panelWheel.SetActive(false);
         }
+    }
+
+    public void ChangeSlider(float value)
+    {
+        sliderEnergy.value = value;
     }
 }

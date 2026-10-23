@@ -13,6 +13,7 @@ public class TypeCase
     public TileBase tile { get; private set; }
     public bool isTile { get; private set; }
     public bool isSprite { get; private set; }
+    public float energy { get; private set; }
     public string name;
     public TypeCase(Type type, Sprite sprite)
     {
@@ -62,5 +63,14 @@ public class TypeCase
     {
         return type.ToString();
     }
-
+    public float GetEnergy()
+    {
+        return this.type switch
+        {
+            Type.Arbre or Type.Rocher => 5f,
+            Type.Herbe or Type.Terre => 3f,
+            Type.Plante => 2f,
+            _=>2
+        };
+    }
 }

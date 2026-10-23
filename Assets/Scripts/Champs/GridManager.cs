@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 
 
@@ -14,7 +15,9 @@ public class GridManager : MonoBehaviour
     [SerializeField] float timeRemove = 3f;
     public float cellSize = 1f;
     Coroutine coroutReplace;
+    bool isCoroutReplaceStarted;
     private readonly Dictionary<Vector2Int, TypeCase> occupied = new();
+    public UnityEvent<float> OnReplace;
 
     Vector3 Origin => tilemap.CellToWorld(Vector3Int.zero);
     public bool IsFree(Vector2Int cell) => IsInside(cell) && !occupied.ContainsKey(cell);
@@ -85,6 +88,7 @@ public class GridManager : MonoBehaviour
             Debug.Log("plante");
             GameObject temp = new GameObject("PlacedPlant");
             obj.instance.GetComponent<HarvestablePlant>().SetPlantType(obj.name);
+            obj.instance.GetComponent<SpriteRenderer>().sortingOrder = -Mathf.RoundToInt(CellToWorld(cell).y * 10);
             temp = Instantiate(obj.instance, CellToWorld(cell), Quaternion.identity, transform);
         }
         occupied[cell] = obj;
@@ -98,6 +102,7 @@ public class GridManager : MonoBehaviour
 
     IEnumerator Replace(Vector2Int cell, TypeCase obj,string name)
     {
+        isCoroutReplaceStarted = true;
         yield return new WaitForSeconds(timeRemove);
         if (obj.instance != null && obj.isSprite) //supprime le gameobject et mets une tile d'herbe
         {
@@ -106,11 +111,13 @@ public class GridManager : MonoBehaviour
         }
         if (obj.type == TypeCase.Type.Herbe) Place(cell, new TypeCase(TypeCase.Type.Terre, banqueTile.ObtenirRand("Terre"))); // met de la terre à la place de l'herbe
         if (obj.type == TypeCase.Type.Terre) Place(cell, new TypeCase(plantPrefab,name));
+        OnReplace?.Invoke(obj.GetEnergy());
+        isCoroutReplaceStarted = false;
     }
 
     public void StopAttack()
     {
-        StopCoroutine(coroutReplace);
+        if(isCoroutReplaceStarted) StopCoroutine(coroutReplace);
     }
 
     public void ChangeCell(Vector2Int cell, Tool tool,string plante)

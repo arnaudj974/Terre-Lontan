@@ -1,10 +1,16 @@
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
     public Tool tool { get; private set; } 
+    public float energy { get; private set; }
+
+    public UnityEvent<float> OnEnergyChange;
     void Awake()
     {
+        energy = 100f;
         if (tool == null) tool = new Tool(4); // mets les mains par defaut
     }
 
@@ -18,5 +24,11 @@ public class Player : MonoBehaviour
     {
         if (ind > 0 && ind < 6)  tool = new Tool(ind); 
         else Debug.LogWarning("index Outil non valide");
+    }
+
+    public void RemoveEnergy(float amount)
+    {
+        energy -= amount;
+        OnEnergyChange?.Invoke(energy);
     }
 }
