@@ -45,7 +45,7 @@ public class HarvestablePlant : MonoBehaviour
         return  timer;
     }
 
-    void Harvest()
+    public void Harvest()
     {
         if(harvest && plantData.harvestPossible)
         {
@@ -60,12 +60,12 @@ public class HarvestablePlant : MonoBehaviour
         SetSprite(currentState);
     }
 
-    void SetNight()
+    public void SetNight()
     {
         isNight = true;
     }
 
-    void IsNight()
+    public void IsNight()
     {
         if (isNight)
         {

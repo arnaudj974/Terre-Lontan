@@ -89,4 +89,9 @@ public class TypeCase
     {
         return tile != null;
     }
+
+    public void IsNight()
+    {
+        if (this.type == Type.Plante) this.plante.GetComponent<HarvestablePlant>().IsNight();
+    }
 }

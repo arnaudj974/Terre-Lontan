@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
+    [SerializeField] Camera cam;
     [SerializeField] Slider sliderEnergy;
-    [SerializeField] float maxEnergy = 100f;
     [SerializeField] GameObject panelWheel;
     [SerializeField] Image imgWheel;
     [SerializeField] Sprite spriteWheelPioche;
@@ -14,14 +14,15 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] Sprite spriteWheelHoue;
     [SerializeField] Sprite spriteWheelMains;
     [SerializeField] Sprite spriteWheelArros;
+    [SerializeField] Player player;
     public UnityEvent<int> OnWheelChange;
     bool wheelHeld;
 
-    void Awake()
+    void Start()
     {
         panelWheel.SetActive(false);
-        sliderEnergy.maxValue = maxEnergy;
-        sliderEnergy.value = maxEnergy;
+        sliderEnergy.maxValue = player.energy;
+        sliderEnergy.value = player.energy;
     }
 
     void Update()
@@ -33,10 +34,9 @@ public class PlayerUI : MonoBehaviour
     {
         //  Récupérer la position via le New Input System
         Vector2 mousePos = Mouse.current.position.ReadValue();
-        Vector2 screenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
+        Vector2 playerScreenPos = cam.WorldToScreenPoint(player.transform.position);
 
-        //  Calculer la direction et l'angle
-        Vector2 direction = mousePos - screenCenter;
+        Vector2 direction = mousePos - playerScreenPos;
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
 
         if (angle < 0) angle += 360f;

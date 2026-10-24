@@ -4,13 +4,14 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] float maxEnergy = 100f;
     public Tool tool { get; private set; } 
     public float energy { get; private set; }
 
     public UnityEvent<float> OnEnergyChange;
     void Awake()
     {
-        energy = 100f;
+        energy = maxEnergy;
         if (tool == null) tool = new Tool(4); // mets les mains par defaut
     }
 

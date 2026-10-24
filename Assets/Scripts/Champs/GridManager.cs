@@ -122,6 +122,15 @@ public class GridManager : MonoBehaviour
         }
     }
 
+    public void IsNight()
+    {
+        foreach (var item in occupied)
+        {
+            item.Value.IsNight();
+        }
+    }
+    
+
     void OnDrawGizmos()
     {
         Vector3 origin = Origin;
