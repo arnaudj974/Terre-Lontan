@@ -129,25 +129,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c3176dbbd517d4d936ee9832090991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldLight
-  light: {fileID: 7398107207756730300}
+  _light: {fileID: 7398107207756730300}
   gradient:
     serializedVersion: 2
     key0: {r: 0.005033799, g: 0.16179144, b: 0.381132, a: 1}
     key1: {r: 0.007843138, g: 0.16470589, b: 0.38431373, a: 1}
     key2: {r: 1, g: 0.8542773, b: 0.5943396, a: 0}
     key3: {r: 0.9924528, g: 0.9924528, b: 0.9924528, a: 0}
-    key4: {r: 1, g: 0.91655666, b: 0.48867923, a: 0}
+    key4: {r: 1, g: 0.91655666, b: 1, a: 0}
     key5: {r: 1, g: 0.74459624, b: 0.3830188, a: 0}
     key6: {r: 1, g: 0.33018857, b: 0.35106236, a: 0}
     key7: {r: 0.007843138, g: 0.16470589, b: 0.38431373, a: 0}
     ctime0: 0
-    ctime1: 15497
-    ctime2: 20316
-    ctime3: 24441
-    ctime4: 42636
-    ctime5: 46954
-    ctime6: 51117
-    ctime7: 65535
+    ctime1: 13300
+    ctime2: 17926
+    ctime3: 21203
+    ctime4: 44718
+    ctime5: 48380
+    ctime6: 50693
+    ctime7: 53970
     atime0: 0
     atime1: 65535
     atime2: 0
