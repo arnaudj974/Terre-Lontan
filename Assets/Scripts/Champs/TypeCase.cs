@@ -3,19 +3,21 @@ using UnityEngine.Tilemaps;
 
 public class TypeCase
 {
-    
+    private BiblioCase biblioSprite;
+    private BiblioTile biblioTile;
     public enum Type { Arbre, Rocher, Herbe, Terre, Plante };
     public Type type { get; private set; }
     public Tool tool { get; private set; }
-    public bool canArros { get; private set; }
     public Sprite sprite { get; private set; }
     public TileBase tile { get; private set; }
     public GameObject plante;
     public string name;
-    public TypeCase(Type type, Sprite sprite)
+    public TypeCase(Type type, BiblioCase biblioSprite,BiblioTile biblioTile)
     {
+        this.biblioSprite = biblioSprite;
         this.type = type;
-        this.sprite = sprite;
+        this.sprite = biblioSprite.ObtenirRand(type.ToString());
+        this.tile = biblioTile.ObtenirRand("Herbe");
         this.tool = type switch
         {
             Type.Arbre => new Tool(Tool.Type.Hache),
@@ -26,10 +28,10 @@ public class TypeCase
         };
     }
 
-    public TypeCase(Type type, TileBase tile)
+    public TypeCase(Type type,  BiblioTile biblioTile)
     {
         this.type = type;
-        this.tile = tile;
+        this.tile = biblioTile.ObtenirRand(type.ToString());
         this.tool = type switch
         {
             Type.Arbre => new Tool(Tool.Type.Hache),
@@ -40,25 +42,24 @@ public class TypeCase
         };
     }
 
-    public TypeCase(GameObject plante,string name)
+    public TypeCase(GameObject plante,string name, BiblioTile biblioTile)
     {
-        this.canArros = true;
+        this.tile= biblioTile.ObtenirRand("Terre");
         this.tool = new Tool(Tool.Type.Mains);
         this.type = Type.Plante;
         this.plante = plante;
         this.name = name;
     }
 
-    public TypeCase Evolution(Type type, TileBase tileTerre,TileBase tileHerbe,GameObject plant,string nom)
+    public TypeCase Evolution(Type type,  GameObject plant, string nom, BiblioCase biblioSprite, BiblioTile biblioTile)
     {
         return type switch
         {
-            Type.Arbre or Type.Rocher => new TypeCase(Type.Herbe, tileHerbe),
-            Type.Herbe => new TypeCase(Type.Terre, tileTerre),
-            Type.Terre => new TypeCase(plant, nom),
+            Type.Arbre or Type.Rocher => new TypeCase(Type.Herbe, biblioTile),
+            Type.Herbe => new TypeCase(Type.Terre,  biblioTile),
+            Type.Terre => new TypeCase(plant, nom, biblioTile),
             _ => null
-        }; 
-
+        };
     }
 
     public bool CanUse(Tool tool)
@@ -83,11 +84,11 @@ public class TypeCase
 
     public bool IsSprite()
     {
-        return sprite != null;
+        return (type == Type.Arbre || type == Type.Rocher);
     }
     public bool IsTile()
     {
-        return tile != null;
+        return (type == Type.Herbe || type == Type.Terre);
     }
 
     public void IsNight()

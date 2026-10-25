@@ -49,14 +49,14 @@ public class GridManager : MonoBehaviour
         {
             for (int j = 0; j < size.x; j++)
             {
-                Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Herbe, banqueTile.ObtenirRand("Herbe")));
+                Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Herbe,banqueTile));
                 switch (Random.Range(0, 6))
                 {
                     case 0:
-                        Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Arbre, banqueCase.ObtenirRand("Arbre")));
+                        Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Arbre,banqueCase,banqueTile));
                         break;
                     case 1:
-                        Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Rocher, banqueCase.ObtenirRand("Rocher")));
+                        Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Rocher, banqueCase, banqueTile));
                         break;
                     default: break;
                 }
@@ -67,7 +67,7 @@ public class GridManager : MonoBehaviour
 
     public void Place(Vector2Int cell, TypeCase obj)
     {
-
+        tilemap.SetTile(new Vector3Int(cell.x, cell.y, 0), obj.tile);
         if (obj.IsSprite())
         {
             GameObject temp = new GameObject("PlacedSprite");
@@ -78,11 +78,7 @@ public class GridManager : MonoBehaviour
             sr.sortingOrder = -Mathf.RoundToInt(CellToWorld(cell).y * 10);
             obj.plante = temp;
         }
-        else if (obj.IsTile())
-        {
-            tilemap.SetTile(new Vector3Int(cell.x, cell.y, 0), obj.tile);
-        }
-        else
+        else if (obj.type == TypeCase.Type.Plante)
         {
             GameObject temp = new GameObject("PlacedPlant");
             obj.plante.GetComponent<HarvestablePlant>().SetPlantType(obj.name); //créer la nouvelle plante
@@ -91,6 +87,7 @@ public class GridManager : MonoBehaviour
         }
         occupied[cell] = obj;
     }
+
 
     IEnumerator Replace(Vector2Int cell, TypeCase oldObj,TypeCase newObj)
     {
@@ -117,7 +114,7 @@ public class GridManager : MonoBehaviour
         if (obj.tool.Same(tool)) // si le joueur a le bon outil
         {
 
-            TypeCase newObj = obj.Evolution(obj.type, banqueTile.ObtenirRand("Terre"), banqueTile.ObtenirRand("Herbe"), plantPrefab, nomPlante); // créer la nouvelle typecase qui va remplacer l'ancienne
+            TypeCase newObj = obj.Evolution(obj.type, plantPrefab, nomPlante,banqueCase,banqueTile); // créer la nouvelle typecase qui va remplacer l'ancienne
             coroutReplace = StartCoroutine(Replace(cell, obj, newObj));
         }
     }
