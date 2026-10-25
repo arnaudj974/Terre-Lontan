@@ -66,6 +66,11 @@ public class WorldTime : MonoBehaviour
         currentTime = TimeSpan.FromHours(hour);
     }
 
+    public void SpendNight()
+    {
+        currentTime = TimeSpan.FromHours(timeSetting.startHour);
+    }
+
     bool isDayTime() => currentTime.Hours > sunriseTime.Hours && currentTime.Hours < sunsetTime.Hours;
     IEnumerator AddMinute()
     {
