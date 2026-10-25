@@ -14,10 +14,21 @@ public class HarvestablePlant : MonoBehaviour
     public bool isNight;
     public bool harvest = false;
 
-
-    void Update()
+    void Start()
     {
-        IsNight();
+        plantData = plantsCollection.getPlantByName(plantName);
+        SetSeedSprite();
+        WorldTime.instance.Sunset += IsNight;
+    }
+
+    public void SetSeedSprite()
+    {
+        spriteRenderer.sprite = plantData.seedSprite;
+    }
+
+    void OnDisable()
+    {
+        WorldTime.instance.Sunset -= IsNight;
     }
 
     public void SetPlantType(string name)
@@ -67,10 +78,6 @@ public class HarvestablePlant : MonoBehaviour
 
     public void IsNight()
     {
-        if (isNight)
-        {
-            GrowingPlant();
-            isNight = false;
-        }
+        GrowingPlant();
     }
 }

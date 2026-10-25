@@ -35,7 +35,6 @@ public class Timer : MonoBehaviour
     void OnTimeChanged(TimeSpan timer)
     {
         displayTime.SetText(timer.ToString(@"dd\:hh\:mm"));
-        Debug.Log(timer.ToString());
     }
 
 }

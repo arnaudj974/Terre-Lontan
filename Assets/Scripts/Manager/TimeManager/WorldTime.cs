@@ -46,23 +46,35 @@ public class WorldTime : MonoBehaviour
 
     void Start()
     {
-        currentTime = DateTime.Now.TimeOfDay;
+        currentTime = TimeSpan.FromHours(timeSetting.startHour);
         StartCoroutine(AddMinute());
     }
 
     void Update()
     {
         if(isDay == isDayTime()) return;
-        if(isDayTime()){Sunrise?.Invoke();}else{ Sunset?.Invoke();}
+        if(isDayTime()){
+            Sunrise?.Invoke();
+        }else{ 
+            Sunset?.Invoke();
+        }
         isDay = isDayTime();
+    }
+
+    public void SetHoursAt(float hour)
+    {
+        currentTime = TimeSpan.FromHours(hour);
     }
 
     bool isDayTime() => currentTime.Hours > sunriseTime.Hours && currentTime.Hours < sunsetTime.Hours;
     IEnumerator AddMinute()
     {
-        currentTime+= TimeSpan.FromMinutes(1);
-        TimePass?.Invoke(currentTime);
-        yield return new WaitForSeconds(minuteLength);
-        StartCoroutine(AddMinute());
+        while (true)
+        {
+            currentTime += TimeSpan.FromMinutes(1);
+            TimePass?.Invoke(currentTime);
+            yield return new WaitForSeconds(minuteLength);
+        }
+
     }
 }
