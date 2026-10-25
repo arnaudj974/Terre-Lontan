@@ -71,7 +71,7 @@ public class HarvestablePlant : MonoBehaviour
         SetSprite(currentState);
     }
 
-    void IsNight()
+    public void IsNight()
     {
         GrowingPlant();
     }
