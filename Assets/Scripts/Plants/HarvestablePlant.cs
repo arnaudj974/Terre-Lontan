@@ -8,7 +8,7 @@ public class HarvestablePlant : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] int numberDaysWatered;
     [SerializeField] int daysPass;
-    float timer;
+  
     PlantData plantData;
     int currentState = 0;
     public bool isNight;
@@ -49,12 +49,6 @@ public class HarvestablePlant : MonoBehaviour
         spriteRenderer.sprite = plantData.growthState[growthState];
     }
 
-    float Timer(bool reset = false)
-    {
-        if(reset){timer = 0;}
-        timer += Time.deltaTime * (1 / Time.timeScale);
-        return  timer;
-    }
 
     public void Harvest()
     {
@@ -64,6 +58,12 @@ public class HarvestablePlant : MonoBehaviour
         }
     }
 
+    public void Planted()
+    {
+        currentState = 0;
+        SetSprite(currentState);
+    }
+
     void GrowingPlant()
     { 
         currentState++;
@@ -71,12 +71,7 @@ public class HarvestablePlant : MonoBehaviour
         SetSprite(currentState);
     }
 
-    public void SetNight()
-    {
-        isNight = true;
-    }
-
-    public void IsNight()
+    void IsNight()
     {
         GrowingPlant();
     }
