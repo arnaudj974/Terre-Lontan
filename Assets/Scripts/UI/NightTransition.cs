@@ -1,10 +1,25 @@
+using Microsoft.Unity.VisualStudio.Editor;
+using TMPro;
 using UnityEngine;
 
 public class NightTransition : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    Image screen;
+    public TextMeshProUGUI text;
     void Start()
     {
+        screen = GetComponent<Image>();
+        WorldTime.instance.Sunset += NightsTransition;   
+    }
+
+    void OnDisable()
+    {
+        WorldTime.instance.Sunset -= NightsTransition;
+    }
+
+    void NightsTransition()
+    {
+        gameObject.SetActive(true);
         
     }
 

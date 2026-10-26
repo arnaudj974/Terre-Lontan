@@ -74,6 +74,10 @@ public class HarvestablePlant : MonoBehaviour
         currentState++;
         currentState = Mathf.Clamp(currentState, 0, plantData.GetMaxGrowthStatesForArray());
         SetSprite(currentState);
+        if(plantData.harvestPossible && plantData.GetMaxGrowthStatesForArray() == currentState)
+        {
+            harvest = true;
+        }
     }
 
     public void IsNight()
