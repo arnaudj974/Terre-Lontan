@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: testpatateitemdrag Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7176430581089693051, guid: a731e6d8d17204c41b61be2e4c3f1c24, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4727212774405997460, guid: dd73d04eaa163e6458bdf2d9d1a1acb9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

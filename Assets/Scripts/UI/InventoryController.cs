@@ -31,6 +31,23 @@ public class InventoryController : MonoBehaviour
 
     }
 
+    public bool AddItem(GameObject itemPrefabs)
+    {
+        foreach (Transform slotTransform in InventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+            if (slot != null && slot.CurrentItem == null)
+            {
+                GameObject newItem = Instantiate(itemPrefabs, slot.transform);
+                newItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                slot.CurrentItem = newItem;
+                return true;
+            }
+        }
+        Debug.Log("inventory is full");
+        return false;
+    }
+
     public List<inventorySaveData> GetInventoryitems()
     {
         List<inventorySaveData> invData = new List<inventorySaveData>();
