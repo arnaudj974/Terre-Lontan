@@ -18,7 +18,8 @@ public class HarvestablePlant : MonoBehaviour
     void Start()
     {
         plantData = plantsCollection.getPlantByName(plantName);
-        SetSeedSprite();
+        //SetSeedSprite();
+        Planted();
         WorldTime.instance.Sunset += IsNight;
     }
 
@@ -36,7 +37,8 @@ public class HarvestablePlant : MonoBehaviour
     {   
         plantName = name;
         plantData = plantsCollection.getPlantByName(plantName);
-        SetSprite(currentState);
+        //Planted();
+        //SetSprite(currentState);
     }
 
     List<string> GetPlantsNameInCollection()
