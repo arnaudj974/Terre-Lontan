@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -5,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI txtMoney;
     [SerializeField] Camera cam;
     [SerializeField] Slider sliderEnergy;
     [SerializeField] GameObject panelWheel;
@@ -23,6 +25,7 @@ public class PlayerUI : MonoBehaviour
         panelWheel.SetActive(false);
         sliderEnergy.maxValue = player.energy;
         sliderEnergy.value = player.energy;
+        ChangeTextMoney();
     }
 
     void Update()
@@ -102,4 +105,10 @@ public class PlayerUI : MonoBehaviour
     {
         sliderEnergy.value = value;
     }
+
+    public void ChangeTextMoney()
+    {
+        txtMoney.text = player.money.ToString() + " €";
+    }
+    
 }

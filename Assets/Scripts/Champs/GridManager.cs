@@ -6,7 +6,9 @@ using UnityEngine.Tilemaps;
 
 public class GridManager : MonoBehaviour
 {
+    [SerializeField] BanqueDeSons BanqueSons;
     [SerializeField] GameObject plantPrefab;
+    [SerializeField] GameObject fruitPrefab;
     [SerializeField] BiblioCase banqueCase;
     [SerializeField] BiblioTile banqueTile;
     [SerializeField] Tilemap tilemap;
@@ -15,8 +17,9 @@ public class GridManager : MonoBehaviour
     public float cellSize = 1f;
     Coroutine corout;
     bool isCoroutStarted;
-    private readonly Dictionary<Vector2Int, TypeCase> occupied = new();
+    private Dictionary<Vector2Int, TypeCase> occupied = new();
     public UnityEvent<float> OnWork;
+    AudioSource audioS;
 
     Vector3 Origin => tilemap.CellToWorld(Vector3Int.zero);
     public bool IsFree(Vector2Int cell) => IsInside(cell) && !occupied.ContainsKey(cell);
@@ -36,7 +39,7 @@ public class GridManager : MonoBehaviour
 
     void Awake()
     {
-        if (occupied.Count != 0) return; //Load ?
+        audioS=GetComponent<AudioSource>();
         CreateWorld();
     }
     void Start()
@@ -53,7 +56,6 @@ public class GridManager : MonoBehaviour
         {
             for (int j = 0; j < size.x; j++)
             {
-                Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Herbe, banqueTile));
                 switch (Random.Range(0, 6))
                 {
                     case 0:
@@ -62,7 +64,7 @@ public class GridManager : MonoBehaviour
                     case 1:
                         Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Rocher, banqueCase, banqueTile));
                         break;
-                    default: break;
+                    default: Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Herbe, banqueTile)); break;
                 }
             }
         }
@@ -103,23 +105,9 @@ public class GridManager : MonoBehaviour
         occupied[cell] = obj;
     }
 
-
-    IEnumerator Replace(Vector2Int cell, TypeCase oldObj, TypeCase newObj)
-    {
-        isCoroutStarted = true;
-        yield return new WaitForSeconds(timeRemove);
-        if (oldObj.IsSprite()) //supprime le gameobject et mets une tile d'herbe
-        {
-            Destroy(oldObj.plante);
-        }
-        Place(cell, newObj);
-
-        OnWork?.Invoke(oldObj.GetEnergy());
-        isCoroutStarted = false;
-    }
-
     public void StopAttack()
     {
+        audioS.Stop();
         if (isCoroutStarted)
         {
             StopCoroutine(corout);
@@ -139,7 +127,7 @@ public class GridManager : MonoBehaviour
             }
             else if (obj.plante.GetComponent<HarvestablePlant>().harvest == true)
             {
-                corout = StartCoroutine(Recolter(obj));
+                corout = StartCoroutine(Recolter(cell,obj));
             }
         }
         if (tool.type == Tool.Type.Arros && obj.type == TypeCase.Type.Plante)// si le player à l'arros et c'est une plante sur la case 
@@ -147,10 +135,31 @@ public class GridManager : MonoBehaviour
             corout = StartCoroutine(Arroser(cell, obj));
         }
     }
+    IEnumerator Replace(Vector2Int cell, TypeCase oldObj, TypeCase newObj)
+    {
+        isCoroutStarted = true;
+        switch (oldObj.type)
+        {
+            case TypeCase.Type.Arbre: PlaySound("Hache"); break;
+            case TypeCase.Type.Rocher: PlaySound("Pioche"); break;
+            case TypeCase.Type.Herbe: PlaySound("Houe"); break;
+            case TypeCase.Type.Terre: PlaySound("Planter"); break;
+        }
+        yield return new WaitForSeconds(timeRemove);
+        if (oldObj.IsSprite()) //supprime le gameobject et mets une tile d'herbe
+        {
+            Destroy(oldObj.plante);
+        }
+        Place(cell, newObj);
+
+        OnWork?.Invoke(oldObj.GetEnergy());
+        isCoroutStarted = false;
+    }
 
     IEnumerator Arroser(Vector2Int cell, TypeCase obj)
     {
         isCoroutStarted = true;
+        PlaySound("Arros");
         yield return new WaitForSeconds(timeRemove);
         obj.plante.GetComponent<HarvestablePlant>().Watered();
         ColorerTile(cell, Color.brown);
@@ -158,10 +167,17 @@ public class GridManager : MonoBehaviour
         isCoroutStarted = false;
     }
 
-    IEnumerator Recolter(TypeCase obj)
+    IEnumerator Recolter(Vector2Int cell, TypeCase obj)
     {
         isCoroutStarted = true;
+        PlaySound("Recolter");
         yield return new WaitForSeconds(timeRemove);
+
+        GameObject temp = new GameObject("PlacedFruit");
+       // fruitPrefab.GetComponent<Fruit>().prix=obj.plante.GetComponent<HarvestablePlant>()
+        fruitPrefab.GetComponent<SpriteRenderer>().sprite = obj.plante.GetComponent<SpriteRenderer>().sprite;
+        temp = Instantiate(fruitPrefab, CellToWorld(cell), Quaternion.identity, transform);
+
         obj.plante.GetComponent<HarvestablePlant>().Harvest();
         OnWork?.Invoke(obj.GetEnergy());
         isCoroutStarted = false;
@@ -177,6 +193,11 @@ public class GridManager : MonoBehaviour
         }
     }
 
+    void PlaySound(string son)
+    {
+        audioS.clip=BanqueSons.Obtenir(son);
+        audioS.Play();
+    }
 
     void OnDrawGizmos()
     {

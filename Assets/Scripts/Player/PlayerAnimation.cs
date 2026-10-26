@@ -15,7 +15,6 @@ public class PlayerAnimation : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
-
     void Update()
     {
         HandleAnimVariable();

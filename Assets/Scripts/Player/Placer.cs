@@ -9,8 +9,6 @@ public class Placer : MonoBehaviour
     [SerializeField] private GridManager grid;
     [SerializeField] private Transform feet;
     [SerializeField] private SpriteRenderer highlight;
-   // [SerializeField] private Color validColor = new Color(0f, 1f, 0f, 0.35f);
-    //[SerializeField] private Color invalidColor = new Color(1f, 0f, 0f, 0.35f);
     Vector2Int targetCell;
     PlayerAnimation playerAnim;
     PlayerController playerCont;
@@ -41,7 +39,6 @@ public class Placer : MonoBehaviour
         if (!inside) return;
 
         highlight.transform.position = grid.CellToWorld(targetCell);
-        //highlight.color = grid.IsFree(targetCell) ? validColor : invalidColor;
     }
 
     void Attack(string plant)
