@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe9fd1d4691a19479d786c3b149de88, type: 3}
+  m_Name: Ananas
+  m_EditorClassIdentifier: Assembly-CSharp::PlantData
+  plantName: Ananas
+  growthState:
+  - {fileID: -567439086853304433, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
+  - {fileID: 8105151658731668638, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
+  - {fileID: 3836210254766709903, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
+  harvestPossible: 1
+  harvestSprite: {fileID: -633847874, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
+  seedSprite: {fileID: 8003362964857521715, guid: dd73d04eaa163e6458bdf2d9d1a1acb9, type: 3}
+  harvestCrop: {fileID: 7095270138160594206, guid: 0dcd8565b6d17b047908c2715c06d0a1, type: 3}
+  planted: {fileID: 6228494214738888450, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
+  price: 4

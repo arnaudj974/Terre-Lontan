@@ -19,8 +19,7 @@ MonoBehaviour:
   - {fileID: -2035428738516297807, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
   harvestPossible: 1
   harvestSprite: {fileID: 5847049274800468493, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
-  growingTime: 0
-  maxGrowingTime: 0
   seedSprite: {fileID: -9129538434356760513, guid: dd73d04eaa163e6458bdf2d9d1a1acb9, type: 3}
   harvestCrop: {fileID: 4917670592580404476, guid: 0dcd8565b6d17b047908c2715c06d0a1, type: 3}
   planted: {fileID: -9146501901286005085, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
+  price: 1

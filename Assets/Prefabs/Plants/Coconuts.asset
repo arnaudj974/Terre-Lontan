@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe9fd1d4691a19479d786c3b149de88, type: 3}
+  m_Name: Coconuts
+  m_EditorClassIdentifier: Assembly-CSharp::PlantData
+  plantName: Coco
+  growthState:
+  - {fileID: -6513889345089917345, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
+  - {fileID: 3838599673191224881, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
+  - {fileID: 7975183512772578963, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
+  - {fileID: -5166329743284900749, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
+  - {fileID: 7472766423692034405, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
+  harvestPossible: 0
+  harvestSprite: {fileID: 0}
+  seedSprite: {fileID: -7264623449321555839, guid: dd73d04eaa163e6458bdf2d9d1a1acb9, type: 3}
+  harvestCrop: {fileID: -8645898532941186619, guid: 0dcd8565b6d17b047908c2715c06d0a1, type: 3}
+  planted: {fileID: 6228494214738888450, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
+  price: 5

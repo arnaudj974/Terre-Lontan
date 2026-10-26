@@ -19,6 +19,9 @@ MonoBehaviour:
   - Peas
   - Salad
   - Zucchini
+  - Ananas
+  - Banana
+  - Coconuts
   plantsData:
   - {fileID: 11400000, guid: aea1dce7da656e14883aa3b6e3b7944a, type: 2}
   - {fileID: 11400000, guid: 40f2a245cada17e44b471ad9120a56d2, type: 2}
@@ -26,3 +29,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6913255a9c78ba542b28f1649e920c60, type: 2}
   - {fileID: 11400000, guid: d5eaffbb6b5c2f143b1a8e0e49ee4fae, type: 2}
   - {fileID: 11400000, guid: fcdbed5cbc435e547923b15a2564549b, type: 2}
+  - {fileID: 11400000, guid: 19015a8069f947d44ba0ad150dcb0102, type: 2}
+  - {fileID: 11400000, guid: c47eec6b21971c24a91d74367cc1872b, type: 2}
+  - {fileID: 11400000, guid: 5119a1d821111854888113cd0c4fa8b5, type: 2}
