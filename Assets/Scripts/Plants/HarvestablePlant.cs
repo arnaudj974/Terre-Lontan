@@ -13,6 +13,7 @@ public class HarvestablePlant : MonoBehaviour
     int currentState = 0;
     public bool isNight;
     public bool harvest = false;
+    bool watered = false;
 
     void Start()
     {
@@ -36,7 +37,6 @@ public class HarvestablePlant : MonoBehaviour
         plantName = name;
         plantData = plantsCollection.getPlantByName(plantName);
         SetSprite(currentState);
-
     }
 
     List<string> GetPlantsNameInCollection()
@@ -49,6 +49,10 @@ public class HarvestablePlant : MonoBehaviour
         spriteRenderer.sprite = plantData.growthState[growthState];
     }
 
+    public void Watered()
+    {
+        watered = true;
+    }
 
     public void Harvest()
     {
@@ -73,6 +77,10 @@ public class HarvestablePlant : MonoBehaviour
 
     public void IsNight()
     {
-        GrowingPlant();
+        if (watered)
+        {
+           GrowingPlant();
+           watered = false;
+        }
     }
 }
