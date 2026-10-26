@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5563233122284425414}
   - component: {fileID: 5402081871725957992}
   - component: {fileID: 2947794095374445229}
+  - component: {fileID: 6452710073275248417}
   m_Layer: 5
   m_Name: testitemdrag
   m_TagString: Untagged
@@ -101,3 +102,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247cca7b75a30c845b2f3e12b63b969a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &6452710073275248417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921630071262037853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fd4176ebe31344fbf7836fe708ce3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  ID: 1

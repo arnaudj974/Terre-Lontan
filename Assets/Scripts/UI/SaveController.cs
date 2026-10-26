@@ -1,14 +1,19 @@
-using UnityEngine;
+using NUnit.Framework.Interfaces;
+using System.Collections.Generic;
 using System.IO;
 using Unity.Cinemachine;
+using UnityEngine;
 
 public class SaveController : MonoBehaviour
 {
     private string saveLocation;
+    private InventoryController InventoryController;
+   
 
     void Start()
     {
         saveLocation = Path.Combine(Application.persistentDataPath, "save.json");
+        InventoryController = FindFirstObjectByType<InventoryController>();
 
         LoadGame();
     }
@@ -26,7 +31,8 @@ public class SaveController : MonoBehaviour
         SaveData saveData = new SaveData
         {
             playerposition = GameObject.FindGameObjectWithTag("Player").transform.position,
-            mapBoundary = boundaryName
+            mapBoundary = boundaryName,
+            inventorySaveData = InventoryController.GetInventoryitems()
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
@@ -58,6 +64,7 @@ public class SaveController : MonoBehaviour
                     }
                 }
             }
+            InventoryController.SetInventoryItems(saveData.inventorySaveData);
         }
         else
         {
