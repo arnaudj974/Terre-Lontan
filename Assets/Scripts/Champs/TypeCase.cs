@@ -81,7 +81,7 @@ public class TypeCase
             Type.Arbre or Type.Rocher => 5f,
             Type.Herbe or Type.Terre => 3f,
             Type.Plante => 2f,
-            _=>2
+            _=>2f
         };
     }
 
