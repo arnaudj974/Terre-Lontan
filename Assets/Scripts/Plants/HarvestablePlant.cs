@@ -10,7 +10,7 @@ public class HarvestablePlant : MonoBehaviour
     [SerializeField] int daysPass;
   
     PlantData plantData;
-    int currentState = 0;
+    int currentState = -1;
     public bool isNight;
     public bool harvest = false;
     bool watered = false;
@@ -64,8 +64,7 @@ public class HarvestablePlant : MonoBehaviour
 
     public void Planted()
     {
-        currentState = 0;
-        SetSprite(currentState);
+        spriteRenderer.sprite = plantData.planted;
     }
 
     void GrowingPlant()

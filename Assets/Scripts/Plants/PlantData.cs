@@ -12,6 +12,7 @@ public class PlantData : ScriptableObject
     public int maxGrowingTime;
     public Sprite seedSprite;
     public Sprite harvestCrop;
+    public Sprite planted;
 
     public int GetMaxGrowthStates()
     {
