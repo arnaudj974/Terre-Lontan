@@ -13,7 +13,7 @@ public class HarvestablePlant : MonoBehaviour
     PlantData plantData;
     int currentState = -1;
     public bool isNight;
-    public bool harvest = false;
+    public bool harvest { get; private set; }
     bool watered = false;
 
     void Start()
