@@ -11,10 +11,12 @@ GameObject:
   - component: {fileID: 2064234508035937738}
   - component: {fileID: 3584396947401157439}
   - component: {fileID: 7985442849060314723}
+  - component: {fileID: -1329761896369928634}
+  - component: {fileID: 957234939295764101}
   - component: {fileID: 3143876960594756584}
   m_Layer: 0
   m_Name: Fruit
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 8017029517586084227, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,6 +131,31 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &-1329761896369928634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554186504893668476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fd4176ebe31344fbf7836fe708ce3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  ID: 0
+--- !u!114 &957234939295764101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554186504893668476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247cca7b75a30c845b2f3e12b63b969a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDrag
 --- !u!114 &3143876960594756584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,5 +168,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa07c3dc089f784285e93151c761a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  prix: 0
+  prix: 2
   sr: {fileID: 3584396947401157439}

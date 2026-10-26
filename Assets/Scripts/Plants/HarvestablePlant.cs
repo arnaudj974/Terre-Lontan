@@ -91,4 +91,9 @@ public class HarvestablePlant : MonoBehaviour
            watered = false;
         }
     }
+
+    public int GetPrice()
+    {
+        return plantData.price;
+    }
 }

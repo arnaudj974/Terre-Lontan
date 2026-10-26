@@ -174,9 +174,9 @@ public class GridManager : MonoBehaviour
         yield return new WaitForSeconds(timeRemove);
 
         GameObject temp = new GameObject("PlacedFruit");
-       // fruitPrefab.GetComponent<Fruit>().prix=obj.plante.GetComponent<HarvestablePlant>()
+        fruitPrefab.GetComponent<Fruit>().prix = obj.plante.GetComponent<HarvestablePlant>().GetPrice();
         fruitPrefab.GetComponent<SpriteRenderer>().sprite = obj.plante.GetComponent<SpriteRenderer>().sprite;
-        temp = Instantiate(fruitPrefab, CellToWorld(cell), Quaternion.identity, transform);
+        temp = Instantiate(fruitPrefab, CellToWorld(cell+Vector2Int.right), Quaternion.identity, transform);
 
         obj.plante.GetComponent<HarvestablePlant>().Harvest();
         OnWork?.Invoke(obj.GetEnergy());
