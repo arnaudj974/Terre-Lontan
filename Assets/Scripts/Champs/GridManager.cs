@@ -15,6 +15,8 @@ public class GridManager : MonoBehaviour
     public float cellSize = 1f;
     Coroutine coroutReplace;
     bool isCoroutReplaceStarted;
+    Coroutine coroutArrose;
+    bool isCoroutArroseStarted;
     private readonly Dictionary<Vector2Int, TypeCase> occupied = new();
     public UnityEvent<float> OnReplace;
 
@@ -38,6 +40,10 @@ public class GridManager : MonoBehaviour
     {
         if (occupied.Count != 0) return; //Load ?
         CreateWorld();
+    }
+    void Start()
+    {
+        WorldTime.instance.Sunset += IsNight;
     }
 
 
@@ -64,10 +70,20 @@ public class GridManager : MonoBehaviour
         }
     }
 
-
-    public void Place(Vector2Int cell, TypeCase obj)
+    public void PlaceTile(Vector2Int cell, TypeCase obj)
     {
         tilemap.SetTile(new Vector3Int(cell.x, cell.y, 0), obj.tile);
+    }
+    public void ColorerTile(Vector2Int cell, Color color)
+    {
+        Vector3Int pos = new Vector3Int(cell.x, cell.y, 0);
+
+        tilemap.SetTileFlags(pos, TileFlags.None);   // déverrouille la couleur
+        tilemap.SetColor(pos, color);
+    }
+    public void Place(Vector2Int cell, TypeCase obj)
+    {
+        PlaceTile(cell, obj);
         if (obj.IsSprite())
         {
             GameObject temp = new GameObject("PlacedSprite");
@@ -84,6 +100,7 @@ public class GridManager : MonoBehaviour
             obj.plante.GetComponent<HarvestablePlant>().SetPlantType(obj.name); //créer la nouvelle plante
             obj.plante.GetComponent<SpriteRenderer>().sortingOrder = -Mathf.RoundToInt(CellToWorld(cell).y * 10);
             temp = Instantiate(obj.plante, CellToWorld(cell), Quaternion.identity, transform);
+            obj.plante = temp;
         }
         occupied[cell] = obj;
     }
@@ -106,6 +123,7 @@ public class GridManager : MonoBehaviour
     public void StopAttack()
     {
         if(isCoroutReplaceStarted) StopCoroutine(coroutReplace);
+        if (isCoroutArroseStarted) StopCoroutine(coroutArrose);
     }
 
     public void ChangeCell(Vector2Int cell, Tool tool, string nomPlante)
@@ -117,6 +135,19 @@ public class GridManager : MonoBehaviour
             TypeCase newObj = obj.Evolution(obj.type, plantPrefab, nomPlante,banqueCase,banqueTile); // créer la nouvelle typecase qui va remplacer l'ancienne
             coroutReplace = StartCoroutine(Replace(cell, obj, newObj));
         }
+        if (tool.type == Tool.Type.Arros && obj.type == TypeCase.Type.Plante)// si le player à l'arros et c'est une plante sur la case 
+        {
+            coroutArrose = StartCoroutine(Arroser(cell,obj));
+        }
+    }
+
+    IEnumerator Arroser(Vector2Int cell, TypeCase obj)
+    {
+        isCoroutArroseStarted = true;
+        yield return new WaitForSeconds(timeRemove);
+        obj.plante.GetComponent<HarvestablePlant>().Watered();
+        ColorerTile(cell, Color.brown);
+        isCoroutArroseStarted = false;
     }
 
     public void IsNight()
@@ -124,6 +155,8 @@ public class GridManager : MonoBehaviour
         foreach (var item in occupied)
         {
             item.Value.IsNight();
+            PlaceTile(item.Key, item.Value);
+            ColorerTile(item.Key, Color.white);
         }
     }
     
