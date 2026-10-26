@@ -23,3 +23,4 @@ MonoBehaviour:
   maxGrowingTime: 7
   seedSprite: {fileID: -6535896555791932063, guid: dd73d04eaa163e6458bdf2d9d1a1acb9, type: 3}
   harvestCrop: {fileID: 9204449234282616850, guid: 0dcd8565b6d17b047908c2715c06d0a1, type: 3}
+  planted: {fileID: -9146501901286005085, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
