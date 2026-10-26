@@ -3,7 +3,7 @@ using UnityEngine.Tilemaps;
 
 public class TypeCase
 {
-    private BiblioCase biblioSprite;
+   // private BiblioCase biblioSprite;
     private BiblioTile biblioTile;
     public enum Type { Arbre, Rocher, Herbe, Terre, Plante };
     public Type type { get; private set; }
@@ -14,7 +14,8 @@ public class TypeCase
     public string name;
     public TypeCase(Type type, BiblioCase biblioSprite,BiblioTile biblioTile)
     {
-        this.biblioSprite = biblioSprite;
+        //this.biblioSprite = biblioSprite;
+        this.biblioTile = biblioTile;
         this.type = type;
         this.sprite = biblioSprite.ObtenirRand(type.ToString());
         this.tile = biblioTile.ObtenirRand("Herbe");
@@ -30,6 +31,7 @@ public class TypeCase
 
     public TypeCase(Type type,  BiblioTile biblioTile)
     {
+        this.biblioTile = biblioTile;
         this.type = type;
         this.tile = biblioTile.ObtenirRand(type.ToString());
         this.tool = type switch
@@ -44,6 +46,7 @@ public class TypeCase
 
     public TypeCase(GameObject plante,string name, BiblioTile biblioTile)
     {
+        this.biblioTile = biblioTile;
         this.tile= biblioTile.ObtenirRand("Terre");
         this.tool = new Tool(Tool.Type.Mains);
         this.type = Type.Plante;
@@ -78,7 +81,7 @@ public class TypeCase
             Type.Arbre or Type.Rocher => 5f,
             Type.Herbe or Type.Terre => 3f,
             Type.Plante => 2f,
-            _=>2
+            _=>2f
         };
     }
 
@@ -93,6 +96,12 @@ public class TypeCase
 
     public void IsNight()
     {
-        if (this.type == Type.Plante) this.plante.GetComponent<HarvestablePlant>().IsNight();
+        //if (this.type == Type.Plante) this.plante.GetComponent<HarvestablePlant>().IsNight();
+        if (this.type == Type.Terre)
+        {
+            this.type = Type.Herbe;
+            this.tool = new Tool(Tool.Type.Houe);
+            this.tile = this.biblioTile.ObtenirRand("Herbe");
+        }
     }
 }

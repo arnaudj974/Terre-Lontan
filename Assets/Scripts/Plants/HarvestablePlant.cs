@@ -10,15 +10,16 @@ public class HarvestablePlant : MonoBehaviour
     [SerializeField] int daysPass;
   
     PlantData plantData;
-    int currentState = 0;
+    int currentState = -1;
     public bool isNight;
-    public bool harvest = false;
+    public bool harvest { get; private set; }
     bool watered = false;
 
     void Start()
     {
         plantData = plantsCollection.getPlantByName(plantName);
-        SetSeedSprite();
+        //SetSeedSprite();
+        Planted();
         WorldTime.instance.Sunset += IsNight;
     }
 
@@ -36,7 +37,8 @@ public class HarvestablePlant : MonoBehaviour
     {   
         plantName = name;
         plantData = plantsCollection.getPlantByName(plantName);
-        SetSprite(currentState);
+        //Planted();
+        //SetSprite(currentState);
     }
 
     List<string> GetPlantsNameInCollection()
@@ -64,8 +66,7 @@ public class HarvestablePlant : MonoBehaviour
 
     public void Planted()
     {
-        currentState = 0;
-        SetSprite(currentState);
+        spriteRenderer.sprite = plantData.planted;
     }
 
     void GrowingPlant()
@@ -73,6 +74,10 @@ public class HarvestablePlant : MonoBehaviour
         currentState++;
         currentState = Mathf.Clamp(currentState, 0, plantData.GetMaxGrowthStatesForArray());
         SetSprite(currentState);
+        if(plantData.harvestPossible && plantData.GetMaxGrowthStatesForArray() == currentState)
+        {
+            harvest = true;
+        }
     }
 
     public void IsNight()
