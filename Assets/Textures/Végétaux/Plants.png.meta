@@ -597,6 +597,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -3026,7 +3039,7 @@ TextureImporter:
         serializedVersion: 2
         x: 64
         y: 81
-        width: 64
+        width: 32
         height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -3158,7 +3171,7 @@ TextureImporter:
         serializedVersion: 2
         x: 448
         y: 81
-        width: 64
+        width: 32
         height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -4296,6 +4309,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Plants_168
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 81
+        width: 32
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5029688, y: -0.006410917}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c25e4b7a9b40940b869a99489df707
+      internalID: 362125847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plants_169
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 81
+        width: 32
+        height: 24
+      alignment: 9
+      pivot: {x: 0.49999976, y: -0.00001335144}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2b63df3936f53547bad8836a3c157c8
+      internalID: -633847874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -4389,6 +4446,8 @@ TextureImporter:
       Plants_165: 1315754279932293017
       Plants_166: 7683485089274053362
       Plants_167: -3227291276861468421
+      Plants_168: 362125847
+      Plants_169: -633847874
       Plants_17: -6122111789870299419
       Plants_18: 2899441650435199170
       Plants_19: -2873419383981771206

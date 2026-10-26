@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class HarvestablePlant : MonoBehaviour
@@ -61,6 +62,9 @@ public class HarvestablePlant : MonoBehaviour
         if(harvest && plantData.harvestPossible)
         {
             spriteRenderer.sprite = plantData.harvestSprite;
+        }else if (!plantData.harvestPossible)
+        {
+            spriteRenderer.sprite = plantData.growthState[0];
         }
     }
 
