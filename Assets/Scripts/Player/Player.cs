@@ -1,18 +1,23 @@
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    public float maxWater = 5f;
     [SerializeField] float maxEnergy = 100f;
     public Tool tool { get; private set; } 
     public float energy { get; private set; }
+    public float water { get; private set; }
     public int money;
+    Vector3 startPos;
 
     public UnityEvent<float> OnEnergyChange;
+    public UnityEvent<float> OnWaterChange;
     public UnityEvent OnMoneyChange;
     void Awake()
     {
+        startPos = transform.position;
+        water = 0f;
         energy = maxEnergy;
         if (tool == null) tool = new Tool(4); // mets les mains par defaut
     }
@@ -33,6 +38,22 @@ public class Player : MonoBehaviour
         OnEnergyChange?.Invoke(energy);
     }
 
+    public void RemoweWater(float amount)
+    {
+        water -= amount;
+        OnWaterChange?.Invoke(water);
+    }
+
+    public void AddWater()
+    {
+        if (energy != 0 && water != maxWater)
+        {
+            RemoveEnergy(5f);
+            water = maxWater;
+            OnWaterChange?.Invoke(water);
+        }
+    }
+
     public void Vendre(int amount)
     {
         money += amount;
@@ -50,6 +71,7 @@ public class Player : MonoBehaviour
     }
     void IsNight()
     {
+        transform.position = startPos;
         energy = maxEnergy;
         OnEnergyChange?.Invoke(energy);
     }

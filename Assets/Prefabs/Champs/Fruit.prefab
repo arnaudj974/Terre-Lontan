@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fd4176ebe31344fbf7836fe708ce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  ID: 1
+  ID: 3
 --- !u!212 &7176430581089693051
 SpriteRenderer:
   serializedVersion: 2

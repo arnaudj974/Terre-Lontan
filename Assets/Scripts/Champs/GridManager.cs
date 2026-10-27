@@ -20,6 +20,7 @@ public class GridManager : MonoBehaviour
     bool isCoroutStarted;
     private Dictionary<Vector2Int, TypeCase> occupied = new();
     public UnityEvent<float> OnWork;
+    public UnityEvent<float> Onarros;
     AudioSource audioS;
 
     Vector3 Origin => tilemap.CellToWorld(Vector3Int.zero);
@@ -166,6 +167,7 @@ public class GridManager : MonoBehaviour
         obj.plante.GetComponent<HarvestablePlant>().Watered();
         ColorerTile(cell, Color.brown);
         OnWork?.Invoke(obj.GetEnergy());
+        Onarros?.Invoke(1f);
         isCoroutStarted = false;
     }
 
