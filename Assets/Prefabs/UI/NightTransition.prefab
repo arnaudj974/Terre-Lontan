@@ -148,14 +148,13 @@ GameObject:
   - component: {fileID: 8738006279084921594}
   - component: {fileID: 4118162596355709002}
   - component: {fileID: 2243256265823510060}
-  - component: {fileID: 5514261842739986812}
   m_Layer: 5
   m_Name: NightTransition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8738006279084921594
 RectTransform:
   m_ObjectHideFlags: 0
@@ -214,19 +213,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5514261842739986812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3347393254511872296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97380f7d654de824e8c24197ed784555, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneFader
-  fadeDuration: 1
-  text: {fileID: 170212822280294959}
-  fadeIn: 0
-  fadeOut: 0

@@ -11,7 +11,7 @@ public class SceneFader : MonoBehaviour
     private int _useRadialWipe = Shader.PropertyToID("_UseShutters");
 
     private int? _lastEffect;
-    private Image _image;
+    public Image _image;
     private int day = 0;
     private Material _material;
     public bool fadeIn = false;
@@ -22,7 +22,7 @@ public class SceneFader : MonoBehaviour
 
     void Awake()
     {
-        _image = GetComponent<Image>();
+        //_image = GetComponent<Image>();
         Material mat = _image.material;
         _image.material = new Material(mat);
         _material = _image.material;
@@ -67,7 +67,7 @@ public class SceneFader : MonoBehaviour
 
     IEnumerator HandleFadeScreen()
     {
-        gameObject.SetActive(true);
+        _image.gameObject.SetActive(true);
         FadeIn();
         yield return new WaitForSeconds(baseTransitionTime);
         text.gameObject.SetActive(true);
@@ -79,7 +79,7 @@ public class SceneFader : MonoBehaviour
         text.gameObject.SetActive(false);
         FadeOut();
         yield return new WaitForSeconds(baseTransitionTime);
-        gameObject.SetActive(false);
+        _image.gameObject.SetActive(false);
     }
     IEnumerator HandleFade(float targetAmount, float startAmount)
     {
