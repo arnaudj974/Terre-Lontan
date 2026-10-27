@@ -72,7 +72,9 @@ public class Player : MonoBehaviour
     void IsNight()
     {
         transform.position = startPos;
+        SetTool(4);
         energy = maxEnergy;
         OnEnergyChange?.Invoke(energy);
+        RemoweWater(water);
     }
 }

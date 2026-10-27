@@ -134,9 +134,11 @@ public class GridManager : MonoBehaviour
             }
         }
         else
-            if (tool.type == Tool.Type.Arros && obj.type == TypeCase.Type.Plante)// si le player à l'arros et c'est une plante sur la case 
+            if (obj.type == TypeCase.Type.Plante)
             {
-                corout = StartCoroutine(Arroser(cell, obj));
+                if (tool.type == Tool.Type.Arros) corout = StartCoroutine(Arroser(cell, obj));
+                else if (tool.type == Tool.Type.Hache) corout = StartCoroutine(Replace(cell,obj, new TypeCase(TypeCase.Type.Terre, banqueTile)));
+                    else PlaySound("Fail");
             }
             else PlaySound("Fail");
     }
@@ -151,13 +153,14 @@ public class GridManager : MonoBehaviour
             case TypeCase.Type.Terre: PlaySound("Planter"); break;
         }
         yield return new WaitForSeconds(timeRemove);
-        if (oldObj.IsSprite()) //supprime le gameobject et mets une tile d'herbe
+        if (!oldObj.IsTile()) //supprime le gameobject et mets une tile d'herbe
         {
             Destroy(oldObj.plante);
         }
         Place(cell, newObj);
 
         OnWork?.Invoke(oldObj.GetEnergy());
+        audioS.Stop();
         isCoroutStarted = false;
     }
 
@@ -170,6 +173,7 @@ public class GridManager : MonoBehaviour
         ColorerTile(cell, Color.brown);
         OnWork?.Invoke(obj.GetEnergy());
         Onarros?.Invoke(1f);
+        audioS.Stop();
         isCoroutStarted = false;
     }
 
@@ -188,6 +192,7 @@ public class GridManager : MonoBehaviour
 
         obj.plante.GetComponent<HarvestablePlant>().Harvest();
         OnWork?.Invoke(obj.GetEnergy());
+        audioS.Stop();
         isCoroutStarted = false;
     }
 
@@ -198,7 +203,7 @@ public class GridManager : MonoBehaviour
         {
             item.Value.IsNight();
             PlaceTile(item.Key, item.Value);
-            ColorerTile(item.Key, Color.white);
+            if (item.Value.type==TypeCase.Type.Plante) ColorerTile(item.Key, Color.white);
         }
     }
 
