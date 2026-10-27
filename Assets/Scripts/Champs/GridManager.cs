@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class GridManager : MonoBehaviour
 {
@@ -172,10 +173,11 @@ public class GridManager : MonoBehaviour
         isCoroutStarted = true;
         PlaySound("Recolter");
         yield return new WaitForSeconds(timeRemove);
-
+        Debug.Log(obj.plante.GetComponent<HarvestablePlant>().plantName);
         GameObject temp = new GameObject("PlacedFruit");
-        fruitPrefab.GetComponent<Fruit>().prix = obj.plante.GetComponent<HarvestablePlant>().GetPrice();
+        fruitPrefab.GetComponent<HarvestablePlant>().SetPlantType(obj.plante.GetComponent<HarvestablePlant>().plantName);
         fruitPrefab.GetComponent<SpriteRenderer>().sprite = obj.plante.GetComponent<SpriteRenderer>().sprite;
+        fruitPrefab.GetComponent<Image>().sprite = obj.plante.GetComponent<SpriteRenderer>().sprite;
         temp = Instantiate(fruitPrefab, CellToWorld(cell+Vector2Int.right), Quaternion.identity, transform);
 
         obj.plante.GetComponent<HarvestablePlant>().Harvest();
