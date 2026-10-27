@@ -119,37 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &109157867
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 109157868}
-  m_Layer: 0
-  m_Name: --UI--
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &109157868
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109157867}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &225980759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,14 +383,6 @@ PrefabInstance:
     - target: {fileID: 5137397637666081114, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
       propertyPath: m_Name
       value: PrefabScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292838456576911053, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 12.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292838456576911053, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.81
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -766,7 +727,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 730852324}
   - {fileID: 806169354}
-  - {fileID: 109157868}
   - {fileID: 1690437649}
   - {fileID: 225980759}
   - {fileID: 684962470}
