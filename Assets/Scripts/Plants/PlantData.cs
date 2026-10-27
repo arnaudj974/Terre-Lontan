@@ -4,7 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlantData", menuName = "Plant/Plant Data")]
 public class PlantData : ScriptableObject
 {
-    public string plantName;
+    public string displayName;
+    public string referenceName;
     public List<Sprite> growthState;
     public bool harvestPossible;
     public Sprite harvestSprite;

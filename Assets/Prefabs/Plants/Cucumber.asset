@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe9fd1d4691a19479d786c3b149de88, type: 3}
   m_Name: Cucumber
   m_EditorClassIdentifier: Assembly-CSharp::PlantData
-  plantName: Concombre
+  displayName: Concombre
+  referenceName: Cucumber
   growthState:
   - {fileID: 5342973406481538332, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
   - {fileID: -5343777985933255334, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
