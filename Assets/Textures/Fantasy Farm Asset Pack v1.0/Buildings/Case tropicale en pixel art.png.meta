@@ -1,0 +1,319 @@
+fileFormatVersion: 2
+guid: 398eb16c2d80d7843929b2c51691e4c2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2535277310159320436
+    second: Case tropicale en pixel art_0
+  - first:
+      213: 784221438383887859
+    second: Case tropicale en pixel art_1
+  - first:
+      213: -5250378703108435613
+    second: Case tropicale en pixel art_2
+  - first:
+      213: 945253661761921373
+    second: Case tropicale en pixel art_3
+  - first:
+      213: 3746577015391072580
+    second: Case tropicale en pixel art_4
+  - first:
+      213: 8035281376389832426
+    second: Case tropicale en pixel art_5
+  - first:
+      213: -3655667656847152661
+    second: Case tropicale en pixel art_6
+  - first:
+      213: 6109273941932485074
+    second: Case tropicale en pixel art_7
+  - first:
+      213: 9085302314916175901
+    second: Case tropicale en pixel art_8
+  - first:
+      213: -1949893458100660080
+    second: Case tropicale en pixel art_9
+  - first:
+      213: 4900662794497078322
+    second: Case tropicale en pixel art_10
+  - first:
+      213: -1004171999034317298
+    second: Case tropicale en pixel art_11
+  - first:
+      213: 3362326271177413611
+    second: Case tropicale en pixel art_12
+  - first:
+      213: 4656250798331040785
+    second: Case tropicale en pixel art_13
+  - first:
+      213: 7490185202627105461
+    second: Case tropicale en pixel art_14
+  - first:
+      213: -3591904467979339873
+    second: Case tropicale en pixel art_15
+  - first:
+      213: 5077626226941335308
+    second: Case tropicale en pixel art_16
+  - first:
+      213: -6890334551421697753
+    second: Case tropicale en pixel art_17
+  - first:
+      213: 1077093129807687149
+    second: Case tropicale en pixel art_18
+  - first:
+      213: 7166312314779336560
+    second: Case tropicale en pixel art_19
+  - first:
+      213: 8480695935748930849
+    second: Case tropicale en pixel art_20
+  - first:
+      213: -2073095580174870858
+    second: Case tropicale en pixel art_21
+  - first:
+      213: 4556108267666635299
+    second: Case tropicale en pixel art_22
+  - first:
+      213: 2937476743713241100
+    second: Case tropicale en pixel art_23
+  - first:
+      213: -2515601288135339836
+    second: Case tropicale en pixel art_24
+  - first:
+      213: 1228174008581694968
+    second: Case tropicale en pixel art_25
+  - first:
+      213: 231247806895010293
+    second: Case tropicale en pixel art_26
+  - first:
+      213: -4379999246068539945
+    second: Case tropicale en pixel art_27
+  - first:
+      213: -6708614304534574258
+    second: Case tropicale en pixel art_28
+  - first:
+      213: 3165019562894333886
+    second: Case tropicale en pixel art_29
+  - first:
+      213: -2635228071280798859
+    second: Case tropicale en pixel art_30
+  - first:
+      213: -2982815648173549874
+    second: Case tropicale en pixel art_31
+  - first:
+      213: 7142348448370426276
+    second: Case tropicale en pixel art_32
+  - first:
+      213: 878261748736979671
+    second: Case tropicale en pixel art_33
+  - first:
+      213: -668677805976421894
+    second: Case tropicale en pixel art_34
+  - first:
+      213: 8995915813185077917
+    second: Case tropicale en pixel art_35
+  - first:
+      213: 1734278138306595325
+    second: Case tropicale en pixel art_36
+  - first:
+      213: -7706124659523455763
+    second: Case tropicale en pixel art_37
+  - first:
+      213: 2010149716187764251
+    second: Case tropicale en pixel art_38
+  - first:
+      213: 7392036463075304682
+    second: Case tropicale en pixel art_39
+  - first:
+      213: -8173198170204972018
+    second: Case tropicale en pixel art_40
+  - first:
+      213: -1155850968418478320
+    second: Case tropicale en pixel art_41
+  - first:
+      213: -1932983062530346206
+    second: Case tropicale en pixel art_42
+  - first:
+      213: 1906025863124216244
+    second: Case tropicale en pixel art_43
+  - first:
+      213: -656576067849710767
+    second: Case tropicale en pixel art_44
+  - first:
+      213: 6996517798074732041
+    second: Case tropicale en pixel art_45
+  - first:
+      213: 5810247250068601744
+    second: Case tropicale en pixel art_46
+  - first:
+      213: -1618926692320476580
+    second: Case tropicale en pixel art_47
+  - first:
+      213: 1966918273488791326
+    second: Case tropicale en pixel art_48
+  - first:
+      213: -7525344586953438940
+    second: Case tropicale en pixel art_49
+  - first:
+      213: 2283239243876213057
+    second: Case tropicale en pixel art_50
+  - first:
+      213: -3421248025258162426
+    second: Case tropicale en pixel art_51
+  - first:
+      213: 5568727482967127573
+    second: Case tropicale en pixel art_52
+  - first:
+      213: 175657307337753135
+    second: Case tropicale en pixel art_53
+  - first:
+      213: 3422346771687005620
+    second: Case tropicale en pixel art_54
+  - first:
+      213: -3459661610519769414
+    second: Case tropicale en pixel art_55
+  - first:
+      213: 8497059709160280589
+    second: Case tropicale en pixel art_56
+  - first:
+      213: 7138663740923266208
+    second: Case tropicale en pixel art_57
+  - first:
+      213: 371567516478959872
+    second: Case tropicale en pixel art_58
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 150
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Case tropicale en pixel art_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1536
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8a88d808b2e0dcd0800000000000000
+      internalID: -2535277310159320436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b8878dbba14d06c4eb8de729a7d0b21f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1536.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Case tropicale en pixel art_0: -2535277310159320436
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
