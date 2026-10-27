@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: stones_0
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
   m_Sprite: {fileID: 5171221398253030913, guid: 1ac1e74ec21fbe44e8a07b0fb1697e0f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9803922, b: 0.9803922, a: 1}
   m_Transform:
     e00: 1
     e01: 0

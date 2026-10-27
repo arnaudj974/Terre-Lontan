@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BiblioCase
   entrees:
   - nom: Arbre0
-    sprite: {fileID: 7209657227957792324, guid: f676b270940f91144a28908b76806ec4, type: 3}
+    sprite: {fileID: 8770373422609272313, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
   - nom: Arbre1
-    sprite: {fileID: -4436173783040097349, guid: 1a4837a44ed258746aaf5dbb35b6b1da, type: 3}
+    sprite: {fileID: 7873097318456453801, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
   - nom: Arbre2
-    sprite: {fileID: 8926537203321239021, guid: c5df59f47b2010846b19f77f1942c424, type: 3}
+    sprite: {fileID: -2525185337393479436, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
   - nom: Rocher0
-    sprite: {fileID: 5171221398253030913, guid: 1ac1e74ec21fbe44e8a07b0fb1697e0f, type: 3}
+    sprite: {fileID: 3261505575801021880, guid: e5f791526e16fac4ab338a198b67c5d6, type: 3}
   - nom: Rocher1
-    sprite: {fileID: -1842656057284236593, guid: 1ac1e74ec21fbe44e8a07b0fb1697e0f, type: 3}
+    sprite: {fileID: 2023612499234653138, guid: e5f791526e16fac4ab338a198b67c5d6, type: 3}
   - nom: Rocher2
-    sprite: {fileID: -1866489290812987814, guid: 1ac1e74ec21fbe44e8a07b0fb1697e0f, type: 3}
+    sprite: {fileID: -1161109590580028399, guid: e5f791526e16fac4ab338a198b67c5d6, type: 3}

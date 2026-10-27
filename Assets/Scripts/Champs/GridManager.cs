@@ -130,13 +130,15 @@ public class GridManager : MonoBehaviour
             }
             else if (obj.plante.GetComponent<HarvestablePlant>().harvest == true)
             {
-                corout = StartCoroutine(Recolter(cell,obj));
+                corout = StartCoroutine(Recolter(cell, obj));
             }
         }
-        if (tool.type == Tool.Type.Arros && obj.type == TypeCase.Type.Plante)// si le player à l'arros et c'est une plante sur la case 
-        {
-            corout = StartCoroutine(Arroser(cell, obj));
-        }
+        else
+            if (tool.type == Tool.Type.Arros && obj.type == TypeCase.Type.Plante)// si le player à l'arros et c'est une plante sur la case 
+            {
+                corout = StartCoroutine(Arroser(cell, obj));
+            }
+            else PlaySound("Fail");
     }
     IEnumerator Replace(Vector2Int cell, TypeCase oldObj, TypeCase newObj)
     {
@@ -191,6 +193,7 @@ public class GridManager : MonoBehaviour
 
     public void IsNight()
     {
+        audioS.Stop();
         foreach (var item in occupied)
         {
             item.Value.IsNight();

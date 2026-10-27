@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BanqueDeSons
   entrees:
   - nom: Hache
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 31ffec33eb5fd51478cc96b0434643c1, type: 3}
   - nom: Pioche
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 203a11bdd13db9141a11012d25ef186a, type: 3}
   - nom: Houe
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 56a21636d7b4d2747a97c7577c012e0f, type: 3}
   - nom: Planter
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 4b3a06c1b2a1f854e94d8a402c0adbb8, type: 3}
   - nom: Arros
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 65e32b7dc4fedaa4c9ffc538d9dfd354, type: 3}
   - nom: Recolter
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 5cba361ac3505f948ae6c92ce5807f20, type: 3}
   - nom: Fail
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: da39d6f008ca4f046ad5a6c830875cf9, type: 3}
