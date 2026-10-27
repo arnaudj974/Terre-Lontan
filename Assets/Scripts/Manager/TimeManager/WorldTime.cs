@@ -13,7 +13,7 @@ public class WorldTime : MonoBehaviour
     private TimeSpan currentTime;
     private float minuteLength => dayLenght / 1440;
     private bool isDay;
-    private int day;
+    private int day = 0;
 
     public delegate void DelegateTimePass(TimeSpan currentTime);
     public DelegateTimePass TimePass;
@@ -55,17 +55,14 @@ public class WorldTime : MonoBehaviour
     void Update()
     {
         if(isDay == isDayTime()) return;
-        if(day != currentTime.Days)
-        {
-            day = currentTime.Days;
-            Day?.Invoke(day);
-        }
+
         if(isDayTime()){
             Sunrise?.Invoke();
         }else{ 
+            day++;
+            Day?.Invoke(day);
             Sunset?.Invoke();
         }
-  
         isDay = isDayTime();
     }
 

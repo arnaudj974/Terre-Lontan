@@ -71,7 +71,7 @@ public class SceneFader : MonoBehaviour
         text.gameObject.SetActive(true);
         text.SetText("Vous allez vous coucher maintenant que la nuit est tombée");
         yield return new WaitForSeconds(2f);
-        text.SetText("Jour " + day+1+" est terminé");
+        text.SetText("Jour " +day+" est terminé");
         yield return new WaitForSeconds(1f);
         text.gameObject.SetActive(false);
         FadeOut();
