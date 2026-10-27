@@ -70,7 +70,6 @@ public class WorldTime : MonoBehaviour
     {
         currentTime = TimeSpan.FromHours(hour);
     }
-
     public void SpendNight()
     {
         currentTime = TimeSpan.FromHours(timeSetting.startHour);
