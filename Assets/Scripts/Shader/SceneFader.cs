@@ -17,6 +17,9 @@ public class SceneFader : MonoBehaviour
     public bool fadeIn = false;
     public bool fadeOut = false;
 
+   [SerializeField] private float baseTransitionTime = 1f;
+   [SerializeField] private float textTransitionTime = 2f;
+
     void Awake()
     {
         _image = GetComponent<Image>();
@@ -64,18 +67,19 @@ public class SceneFader : MonoBehaviour
 
     IEnumerator HandleFadeScreen()
     {
-        
+        gameObject.SetActive(true);
         FadeIn();
-        yield return new WaitForSeconds(1f);
-        WorldTime.instance.SpendNight();
+        yield return new WaitForSeconds(baseTransitionTime);
         text.gameObject.SetActive(true);
         text.SetText("Vous allez vous coucher maintenant que la nuit est tombée");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(textTransitionTime);
         text.SetText("Jour " +day+" est terminé");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(baseTransitionTime);
+        WorldTime.instance.SpendNight();
         text.gameObject.SetActive(false);
         FadeOut();
-
+        yield return new WaitForSeconds(baseTransitionTime);
+        gameObject.SetActive(false);
     }
     IEnumerator HandleFade(float targetAmount, float startAmount)
     {
