@@ -30,11 +30,18 @@ public class SceneFader : MonoBehaviour
     void Start()
     {
         WorldTime.instance.Sunset += SpendNight;
+        WorldTime.instance.Day += UpdateDay;
     }
 
     void OnDisable()
     {
         WorldTime.instance.Sunset -= SpendNight;
+        WorldTime.instance.Day -= UpdateDay;
+    }
+
+    void UpdateDay(int day)
+    {
+        this.day = day;
     }
 
     void FadeIn()
@@ -57,13 +64,15 @@ public class SceneFader : MonoBehaviour
 
     IEnumerator HandleFadeScreen()
     {
-        day++;
+        
         FadeIn();
         yield return new WaitForSeconds(1f);
         WorldTime.instance.SpendNight();
         text.gameObject.SetActive(true);
-        text.SetText("Jour " + day);
+        text.SetText("Vous allez vous coucher maintenant que la nuit est tombée");
         yield return new WaitForSeconds(2f);
+        text.SetText("Jour " + day+1+" est terminé");
+        yield return new WaitForSeconds(1f);
         text.gameObject.SetActive(false);
         FadeOut();
 
