@@ -27,6 +27,9 @@ public class Placer : MonoBehaviour
     }
     void Update()
     {
+        canAttack = player.energy > 0;
+        if (player.tool.type == Tool.Type.Arros) canAttack = (player.water > 0 && player.energy > 0);
+
         targetCell = grid.WorldToCell(feet.position);
         UpdateHighlight(playerCont.moveDir == Vector2.zero && grid.IsInside(targetCell)); //mets les hightlight si le player ne bouge pas et qu'il est dans la grille
         if (grid.IsInside(targetCell)) playerAnim.SetOrder(-Mathf.RoundToInt(feet.position.y * 10)); //changer l'order du spriterender du player
@@ -70,8 +73,4 @@ public class Placer : MonoBehaviour
         }
     }
 
-    public void ChangeAttack(float f)
-    {
-        canAttack = f > 0;
-    }
 }

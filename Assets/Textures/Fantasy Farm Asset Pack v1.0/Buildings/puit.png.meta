@@ -1,0 +1,307 @@
+fileFormatVersion: 2
+guid: a8bad0edbc8abdb4eb346cdb5e4a53e4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8569314944932123192
+    second: puit_0
+  - first:
+      213: -3546593972161607097
+    second: puit_1
+  - first:
+      213: 2066181809315788911
+    second: puit_2
+  - first:
+      213: -1556942233488622148
+    second: puit_3
+  - first:
+      213: 4583502626939307225
+    second: puit_4
+  - first:
+      213: -4385300051371689909
+    second: puit_5
+  - first:
+      213: 2825852782963178876
+    second: puit_6
+  - first:
+      213: 6659417115709946085
+    second: puit_7
+  - first:
+      213: 5110839661220505095
+    second: puit_8
+  - first:
+      213: -1542642924043863686
+    second: puit_9
+  - first:
+      213: 4851244963539660816
+    second: puit_10
+  - first:
+      213: 6072677920065142979
+    second: puit_11
+  - first:
+      213: 7415959496247819032
+    second: puit_12
+  - first:
+      213: 7479448268764519801
+    second: puit_13
+  - first:
+      213: 3131541340960324646
+    second: puit_14
+  - first:
+      213: -8945646299494991083
+    second: puit_15
+  - first:
+      213: 4569772212177187328
+    second: puit_16
+  - first:
+      213: 1079261736788122178
+    second: puit_17
+  - first:
+      213: -1257752254335538165
+    second: puit_18
+  - first:
+      213: -8578200230105011774
+    second: puit_19
+  - first:
+      213: 1547283627923191142
+    second: puit_20
+  - first:
+      213: -1487339110036621309
+    second: puit_21
+  - first:
+      213: 3458435872448093681
+    second: puit_22
+  - first:
+      213: 4707714612662858675
+    second: puit_23
+  - first:
+      213: -5026662309135530703
+    second: puit_24
+  - first:
+      213: -1527328337868584110
+    second: puit_25
+  - first:
+      213: 2423825753839585421
+    second: puit_26
+  - first:
+      213: -6334246901882256212
+    second: puit_27
+  - first:
+      213: -7951147709053100033
+    second: puit_28
+  - first:
+      213: 3015087458106820106
+    second: puit_29
+  - first:
+      213: -702775522033207299
+    second: puit_30
+  - first:
+      213: 3980372186693913925
+    second: puit_31
+  - first:
+      213: -8775961381455515909
+    second: puit_32
+  - first:
+      213: 8431821608873016892
+    second: puit_33
+  - first:
+      213: 4704481026348292502
+    second: puit_34
+  - first:
+      213: -142173472694501841
+    second: puit_35
+  - first:
+      213: -6335346971500997653
+    second: puit_36
+  - first:
+      213: 5932362419224861268
+    second: puit_37
+  - first:
+      213: 2284961268565828831
+    second: puit_38
+  - first:
+      213: 6631932514097335637
+    second: puit_39
+  - first:
+      213: -6986049139472887567
+    second: puit_40
+  - first:
+      213: 984709556010798519
+    second: puit_41
+  - first:
+      213: 1875498030252142550
+    second: puit_42
+  - first:
+      213: -1170371888011119669
+    second: puit_43
+  - first:
+      213: -7608218642900192015
+    second: puit_44
+  - first:
+      213: 6670670442800936756
+    second: puit_45
+  - first:
+      213: -9098496627907817024
+    second: puit_46
+  - first:
+      213: 791871052373229878
+    second: puit_47
+  - first:
+      213: -2667563940128096546
+    second: puit_48
+  - first:
+      213: 6602742145224535024
+    second: puit_49
+  - first:
+      213: -8294513212306042443
+    second: puit_50
+  - first:
+      213: 7065472106676239431
+    second: puit_51
+  - first:
+      213: -47548805238047194
+    second: puit_52
+  - first:
+      213: -239949700386289404
+    second: puit_53
+  - first:
+      213: -6624290843659624142
+    second: puit_54
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: puit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1254
+        height: 1254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 832102d4a825ce670800000000000000
+      internalID: 8569314944932123192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 15959d744ee15264f895297e14bb8622
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1254.0,"y":1254.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      puit_0: 8569314944932123192
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,7 +8,9 @@ public class PlayerUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI txtMoney;
     [SerializeField] Camera cam;
-    [SerializeField] Slider sliderEnergy;
+    [SerializeField] Slider sliderWater;
+    [SerializeField] GameObject panelWater;
+    [SerializeField] Slider sliderEnergy;    
     [SerializeField] GameObject panelWheel;
     [SerializeField] Image imgWheel;
     [SerializeField] Sprite spriteWheelPioche;
@@ -23,6 +25,9 @@ public class PlayerUI : MonoBehaviour
     void Start()
     {
         panelWheel.SetActive(false);
+        panelWater.SetActive(false);
+        sliderWater.maxValue = player.maxWater;
+        sliderWater.value = 0f;
         sliderEnergy.maxValue = player.energy;
         sliderEnergy.value = player.energy;
         ChangeTextMoney();
@@ -75,6 +80,7 @@ public class PlayerUI : MonoBehaviour
 
     void ChangeSpriteWheel(int ind)
     {
+        panelWater.SetActive(ind==5);
         OnWheelChange?.Invoke(ind);
         imgWheel.sprite = ind switch
         {
@@ -104,6 +110,11 @@ public class PlayerUI : MonoBehaviour
     public void ChangeSlider(float value)
     {
         sliderEnergy.value = value;
+    }
+
+    public void ChangeSliderWater(float value)
+    {
+        sliderWater.value = value;
     }
 
     public void ChangeTextMoney()
