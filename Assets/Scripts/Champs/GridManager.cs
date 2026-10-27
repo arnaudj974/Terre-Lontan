@@ -99,6 +99,7 @@ public class GridManager : MonoBehaviour
         {
             GameObject temp = new GameObject("PlacedPlant");
             obj.plante.GetComponent<HarvestablePlant>().SetPlantType(obj.name); //créer la nouvelle plante
+            obj.plante.GetComponent<HarvestablePlant>().Planted();
             obj.plante.GetComponent<SpriteRenderer>().sortingOrder = -Mathf.RoundToInt(CellToWorld(cell).y * 10);
             temp = Instantiate(obj.plante, CellToWorld(cell), Quaternion.identity, transform);
             obj.plante = temp;
@@ -173,11 +174,12 @@ public class GridManager : MonoBehaviour
         isCoroutStarted = true;
         PlaySound("Recolter");
         yield return new WaitForSeconds(timeRemove);
-        Debug.Log(obj.plante.GetComponent<HarvestablePlant>().plantName);
+
         GameObject temp = new GameObject("PlacedFruit");
-        fruitPrefab.GetComponent<HarvestablePlant>().SetPlantType(obj.plante.GetComponent<HarvestablePlant>().plantName);
-        fruitPrefab.GetComponent<SpriteRenderer>().sprite = obj.plante.GetComponent<SpriteRenderer>().sprite;
-        fruitPrefab.GetComponent<Image>().sprite = obj.plante.GetComponent<SpriteRenderer>().sprite;
+        HarvestablePlant plant = obj.plante.GetComponent<HarvestablePlant>();
+        fruitPrefab.GetComponent<HarvestablePlant>().SetPlantType(plant.GetName());
+        fruitPrefab.GetComponent<SpriteRenderer>().sprite = plant.GetSpriteFruit();
+        fruitPrefab.GetComponent<Image>().sprite = plant.GetSpriteFruit();
         temp = Instantiate(fruitPrefab, CellToWorld(cell+Vector2Int.right), Quaternion.identity, transform);
 
         obj.plante.GetComponent<HarvestablePlant>().Harvest();

@@ -61,7 +61,7 @@ public class Placer : MonoBehaviour
         if (ctx.started && canAttack)
         {
             OnAttack?.Invoke(true);
-            Attack("Salad");
+            Attack("Chilli");
         }
         else if (ctx.canceled)
         {
