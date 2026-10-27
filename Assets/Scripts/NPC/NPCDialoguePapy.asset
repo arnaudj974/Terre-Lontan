@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e294439e87c8a45af5ae296c10bed4, type: 3}
   m_Name: NPCDialoguePapy
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: 
-  dialogueLines: []
+  npcName: Papy
+  dialogueLines:
+  - Hello gamin.
+  - "Tu veut acheter des graines ou ranger les l\xE9gumes que tu a r\xE9colter aujourd'hui
+    dans les cajettes pour le prochain march\xE9s forain."
+  autoProgressLines: 0100
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
   voicePitch: 1
-  autoProgressLines: 
   autoProgessDelay: 0

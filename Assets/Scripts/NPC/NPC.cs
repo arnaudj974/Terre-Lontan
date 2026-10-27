@@ -1,8 +1,7 @@
 using System.Collections;
-using Newtonsoft.Json.Converters;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
