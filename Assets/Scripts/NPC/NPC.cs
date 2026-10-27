@@ -36,7 +36,6 @@ public class NPC : MonoBehaviour
         isDialogueActive = true;
         dialogueIndex = 0;
         dialoguePanel.SetActive(true);
-
     }
 
     IEnumerator TypeLine()
