@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe9fd1d4691a19479d786c3b149de88, type: 3}
   m_Name: Banana
   m_EditorClassIdentifier: Assembly-CSharp::PlantData
-  plantName: Banane
+  displayName: Banane
+  referenceName: Banana
   growthState:
   - {fileID: -3031137596704136134, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
   - {fileID: -3377368900200519635, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
