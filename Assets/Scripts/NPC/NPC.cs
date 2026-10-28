@@ -8,19 +8,25 @@ public class NPC : MonoBehaviour
 {
     public NPCDialogue dialogueData;
     public GameObject dialoguePanel;
+    public GameObject ShopPanel;
     public TextMeshProUGUI dialogueText, nameNPC;
 
     private int dialogueIndex;
-    private bool isTyping, isDialogueActive;
+    private bool isTyping, isDialogueActive, isShopActive = false;
     private bool playerInZone = false;
 
     public void Interact(InputAction.CallbackContext ctx)
     {
-        
         if (ctx.started)
-        {  
+        {
+            if (playerInZone && isShopActive)
+            {
+                ShopPanel.SetActive(false);
+                isShopActive = false;
+                return;
+            }
             if(!playerInZone || dialogueData == null) return;
-            if(isDialogueActive)
+            if(isDialogueActive && !isShopActive)
             {
                 NextLine();
             }
@@ -55,6 +61,8 @@ public class NPC : MonoBehaviour
         }else
         {
             EndDialgue();
+            ShopPanel.SetActive(true);
+            isShopActive = true;
         }
     }
 
@@ -81,7 +89,6 @@ public class NPC : MonoBehaviour
         isDialogueActive = false;
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
-
     }
     void OnTriggerStay2D(Collider2D collision)
     {
@@ -96,6 +103,8 @@ public class NPC : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInZone = false;
+            ShopPanel.SetActive(false);
+            isShopActive = false;
         }
     }
 }

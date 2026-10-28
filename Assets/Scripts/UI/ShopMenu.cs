@@ -6,6 +6,8 @@ public class ShopMenu : MonoBehaviour
     public Transform papyInventory;
     public Transform playerInventory;
 
+    [SerializeField] Player player;
+
     private ItemDictio itemDictionary;
     private bool isPlayerInventoryNeedUpdate = true;
 
