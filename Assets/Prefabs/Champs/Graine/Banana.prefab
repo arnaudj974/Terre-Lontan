@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -2519078367257285486}
   - component: {fileID: 8252155131637954600}
   m_Layer: 5
-  m_Name: test 3
+  m_Name: Banana
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8672186938189080935, guid: 0dcd8565b6d17b047908c2715c06d0a1, type: 3}
+  m_Sprite: {fileID: 8003362964857521715, guid: dd73d04eaa163e6458bdf2d9d1a1acb9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -205,7 +205,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -8672186938189080935, guid: 0dcd8565b6d17b047908c2715c06d0a1, type: 3}
+  m_Sprite: {fileID: 8003362964857521715, guid: dd73d04eaa163e6458bdf2d9d1a1acb9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
