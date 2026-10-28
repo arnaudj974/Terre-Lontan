@@ -56,7 +56,7 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
                 originalSlot.CurrentItem = null;
             }
             transform.SetParent(dropSlot.transform);
-            dropSlot.CurrentItem = gameObject;
+            dropSlot.CurrentItem = gameObject.GetComponent<Item>();
         }
         else
         {

@@ -23,7 +23,7 @@ public class InventoryController : MonoBehaviour
             Slot slot = Instantiate(slotPrefab, InventoryPanel.transform).GetComponent<Slot>();
             if (i < itemPrefabs.Length)
             {
-                GameObject item = Instantiate(itemPrefabs[i], slot.transform);
+                Item item = Instantiate(itemPrefabs[i], slot.transform).GetComponent<Item>();
                 item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                 slot.CurrentItem = item;
             }
@@ -32,21 +32,22 @@ public class InventoryController : MonoBehaviour
 
     }
 
-    public bool AddItem(GameObject itemPrefabs)
+    #nullable enable
+    public Item? AddItem(Item itemPrefabs)
     {
         foreach (Transform slotTransform in InventoryPanel.transform)
         {
             Slot slot = slotTransform.GetComponent<Slot>();
             if (slot != null && slot.CurrentItem == null)
             {
-                GameObject newItem = Instantiate(itemPrefabs, slot.transform);
+                Item newItem = Instantiate(itemPrefabs, slot.transform);
                 newItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                 slot.CurrentItem = newItem;
-                return true;
+                return newItem;
             }
         }
         Debug.Log("inventory is full");
-        return false;
+        return null;
     }
 
     //public List<inventorySaveData> GetInventoryitems()

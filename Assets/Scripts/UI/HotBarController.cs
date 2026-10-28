@@ -99,10 +99,10 @@ public class HotBarController : MonoBehaviour
                 if (data.slotIndex < slotCount)
                 {
                     Slot slot = hotbarPanel.transform.GetChild(data.slotIndex).GetComponent<Slot>();
-                    GameObject itemPrefab = itemDictionary.GetItemPrefab(data.itemID);
+                    Item itemPrefab = itemDictionary.GetItemPrefab(data.itemID);
                     if (itemPrefab != null)
                     {
-                        GameObject item = Instantiate(itemPrefab, slot.transform);
+                        Item item = Instantiate(itemPrefab, slot.transform);
                         item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                         slot.CurrentItem = item;
                     }

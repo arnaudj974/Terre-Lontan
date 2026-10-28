@@ -4,11 +4,11 @@ using UnityEngine;
 public class ItemDictio : MonoBehaviour
 {
     public List<Item> itemPrefbas;
-    private Dictionary<int, GameObject> itemDictionary;
+    private Dictionary<int, Item> itemDictionary;
 
     private void Awake()
     {
-        itemDictionary = new Dictionary<int, GameObject>();
+        itemDictionary = new Dictionary<int, Item>();
 
         for(int i = 0; i < itemPrefbas.Count; i++)
         {
@@ -19,16 +19,16 @@ public class ItemDictio : MonoBehaviour
         }
         foreach(Item item in itemPrefbas)
         {
-           // itemDictionary[item.ID] = item.gameObject;
+           itemDictionary[item.ID] = item;
         }
     }
 
-    public GameObject GetItemPrefab(int itemID)
+    public Item GetItemPrefab(int itemID)
     {
-        itemDictionary.TryGetValue(itemID, out GameObject prefab);
+        itemDictionary.TryGetValue(itemID, out Item prefab);
         if(prefab == null)
         {
-     Debug.LogWarning($"Item with ID {itemID} not found in the dictionary.");
+            Debug.LogWarning($"Item with ID {itemID} not found in the dictionary.");
         }
         return prefab;
     }

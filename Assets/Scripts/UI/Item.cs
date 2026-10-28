@@ -32,6 +32,19 @@ public class Item : MonoBehaviour
         plantData = plantCollection.getPlantByName(name);
     }
 
+    public int GetPrice(PriceStatus status)
+    {
+        switch (status)
+        {
+            case PriceStatus.BUY:
+                return plantData.price;
+            case PriceStatus.SELL:
+                return plantData.price / 2;
+            default:
+                return 0;
+        }
+    }
+
     public void Fruit()
     {
         isFruit = true;

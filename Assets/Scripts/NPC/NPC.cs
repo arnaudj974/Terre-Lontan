@@ -1,9 +1,8 @@
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
+
 
 public class NPC : MonoBehaviour
 {
@@ -15,9 +14,6 @@ public class NPC : MonoBehaviour
     private bool isTyping, isDialogueActive;
     private bool playerInZone = false;
 
-    void Update()
-    {
-    }
     public void Interact(InputAction.CallbackContext ctx)
     {
         

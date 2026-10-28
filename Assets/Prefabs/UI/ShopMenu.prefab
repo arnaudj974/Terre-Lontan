@@ -605,7 +605,7 @@ GameObject:
   - component: {fileID: 4444769576759510433}
   - component: {fileID: 7205269176551735266}
   m_Layer: 5
-  m_Name: PlayerInventaryGrid
+  m_Name: PapyInventoryGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -993,7 +993,7 @@ GameObject:
   - component: {fileID: 6902002171110903169}
   - component: {fileID: 8014283545080472467}
   m_Layer: 5
-  m_Name: PlayerInventaryGrid
+  m_Name: PlayerInventoryGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1749,6 +1749,7 @@ GameObject:
   - component: {fileID: 3230852845844084519}
   - component: {fileID: 2411483759008095000}
   - component: {fileID: 6618490631370813434}
+  - component: {fileID: 3605176863823598332}
   m_Layer: 5
   m_Name: ShopMenu
   m_TagString: Untagged
@@ -1816,6 +1817,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3605176863823598332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983766937668081163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbc899203df91b18a678472e8ff4e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopMenu
+  seedsCollection: {fileID: 11400000, guid: d2da51705d603f87da8273b8d5973fc7, type: 2}
+  papyInventory: {fileID: 4444769576759510433}
+  playerInventory: {fileID: 6902002171110903169}
 --- !u!1 &6211637384570863043
 GameObject:
   m_ObjectHideFlags: 0

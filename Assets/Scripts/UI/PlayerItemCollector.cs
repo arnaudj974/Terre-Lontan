@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerItemCollector : MonoBehaviour
 {
     private InventoryController inventoryController;
-    private ItemDictio itemDictionaryRef;            
+    private ItemDictio itemDictionaryRef;
+
+    public UnityEvent OnChangeInventory; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,11 +24,12 @@ public class PlayerItemCollector : MonoBehaviour
             if (item != null)
             {
                 // Ajouter Item dans l'inventaire
-                 inventoryController.AddItem(collision.gameObject);
+                Item cloneItem = inventoryController.AddItem(item);
 
-                //if (itemAdded)
+                if (cloneItem != null)
                 {
-                    itemDictionaryRef.itemPrefbas.Add(item);
+                    OnChangeInventory?.Invoke();
+                    itemDictionaryRef.itemPrefbas.Add(cloneItem);
                     Destroy(collision.gameObject);
                 }
             }
