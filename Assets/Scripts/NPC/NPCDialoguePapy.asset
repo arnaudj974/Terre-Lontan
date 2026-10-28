@@ -18,7 +18,7 @@ MonoBehaviour:
   - "Tu veut acheter des graines ou ranger les l\xE9gumes que tu a r\xE9colter aujourd'hui
     dans les cajettes pour le prochain march\xE9s forain."
   autoProgressLines: 0101
-  typingSpeed: 0.01
+  typingSpeed: 0.05
   voiceSound: {fileID: 0}
   voicePitch: 1
   autoProgessDelay: 1
