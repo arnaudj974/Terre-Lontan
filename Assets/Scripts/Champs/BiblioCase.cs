@@ -31,4 +31,13 @@ public class BiblioCase : ScriptableObject
         Debug.LogWarning($"Sprite introuvable : {nom}");
         return null;
     }
+
+    public string Obtenir(Sprite s)
+    {
+        foreach (var e in entrees)
+            if (e.sprite == s) return e.nom;
+        Debug.LogWarning("Sprite introuvable");
+        return null;
+    }
+
 }

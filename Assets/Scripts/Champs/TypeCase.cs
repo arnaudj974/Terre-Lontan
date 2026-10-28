@@ -12,13 +12,13 @@ public class TypeCase
     public TileBase tile { get; private set; }
     public GameObject plante;
     public string name;
-    public TypeCase(Type type, BiblioCase biblioSprite,BiblioTile biblioTile)
+    public TypeCase(Type type, BiblioCase biblioSprite,BiblioTile biblioTile,string name)
     {
-        //this.biblioSprite = biblioSprite;
         this.biblioTile = biblioTile;
         this.type = type;
-        this.sprite = biblioSprite.ObtenirRand(type.ToString());
+        this.sprite = name != null ? biblioSprite.ObtenirRand(type.ToString()) : biblioSprite.Obtenir(name);
         this.tile = biblioTile.ObtenirRand("Herbe");
+        this.name = biblioSprite.Obtenir(this.sprite);
         this.tool = type switch
         {
             Type.Arbre => new Tool(Tool.Type.Hache),
@@ -96,7 +96,7 @@ public class TypeCase
 
     public void IsNight()
     {
-        //if (this.type == Type.Plante) this.plante.GetComponent<HarvestablePlant>().IsNight();
+        if (this.type == Type.Plante) this.plante.GetComponent<HarvestablePlant>().IsNight();
         if (this.type == Type.Terre)
         {
             this.type = Type.Herbe;

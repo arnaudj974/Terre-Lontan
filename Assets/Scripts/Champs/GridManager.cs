@@ -1,9 +1,12 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using System.IO;
 
 public class GridManager : MonoBehaviour
 {
@@ -42,7 +45,14 @@ public class GridManager : MonoBehaviour
     void Awake()
     {
         audioS=GetComponent<AudioSource>();
-        CreateWorld();
+
+        if (!File.Exists(path))
+        {
+            Debug.LogWarning("Aucune sauvegarde trouvée.");
+            CreateWorld();
+        }
+        else Load();
+        
     }
     void Start()
     {
@@ -61,10 +71,10 @@ public class GridManager : MonoBehaviour
                 switch (Random.Range(0, 6))
                 {
                     case 0:
-                        Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Arbre, banqueCase, banqueTile));
+                        Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Arbre, banqueCase, banqueTile,null));
                         break;
                     case 1:
-                        Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Rocher, banqueCase, banqueTile));
+                        Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Rocher, banqueCase, banqueTile,null));
                         break;
                     default: Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Herbe, banqueTile)); break;
                 }
@@ -99,8 +109,7 @@ public class GridManager : MonoBehaviour
         else if (obj.type == TypeCase.Type.Plante)
         {
             GameObject temp = new GameObject("PlacedPlant");
-            obj.plante.GetComponent<HarvestablePlant>().SetPlantType(obj.name); //créer la nouvelle plante
-            obj.plante.GetComponent<HarvestablePlant>().Planted();
+            obj.plante.GetComponent<HarvestablePlant>().Initialize(obj.name, obj.plante.GetComponent<HarvestablePlant>().currentState, obj.plante.GetComponent<HarvestablePlant>().harvest);
             obj.plante.GetComponent<SpriteRenderer>().sortingOrder = -Mathf.RoundToInt(CellToWorld(cell).y * 10);
             temp = Instantiate(obj.plante, CellToWorld(cell), Quaternion.identity, transform);
             obj.plante = temp;
@@ -120,6 +129,7 @@ public class GridManager : MonoBehaviour
 
     public void ChangeCell(Vector2Int cell, Tool tool, string nomPlante)
     {
+        InitPrefab();
         if (!occupied.TryGetValue(cell, out TypeCase obj)) return;
         if (obj.tool.Same(tool)) // si le joueur a le bon outil
         {
@@ -198,6 +208,7 @@ public class GridManager : MonoBehaviour
 
     public void IsNight()
     {
+        
         audioS.Stop();
         foreach (var item in occupied)
         {
@@ -205,12 +216,19 @@ public class GridManager : MonoBehaviour
             PlaceTile(item.Key, item.Value);
             if (item.Value.type==TypeCase.Type.Plante) ColorerTile(item.Key, Color.white);
         }
+        Save();
     }
 
     void PlaySound(string son)
     {
         audioS.clip=BanqueSons.Obtenir(son);
         audioS.Play();
+    }
+
+    void InitPrefab()
+    {
+        plantPrefab.GetComponent<HarvestablePlant>().currentState = -1;
+        plantPrefab.GetComponent<HarvestablePlant>().harvest = false;
     }
 
     void OnDrawGizmos()
@@ -231,4 +249,90 @@ public class GridManager : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(origin + dimensions / 2f, new Vector3(dimensions.x, dimensions.y, 0.1f));
     }
+
+    #region Save
+
+    string path => Path.Combine(Application.persistentDataPath, "map.json");
+
+    // ---------- Clés ----------
+    static string Key(Vector2Int v) => $"{v.x},{v.y}";
+
+    static Vector2Int ParseKey(string s)
+    {
+        var p = s.Split(',');
+        return new Vector2Int(int.Parse(p[0]), int.Parse(p[1]));
+    }
+
+    // ---------- Réglages JSON ----------
+    static JsonSerializerSettings Settings()
+    {
+        var settings = new JsonSerializerSettings();
+        settings.Converters.Add(new StringEnumConverter());
+        return settings;
+    }
+
+    // ---------- Sauvegarde ----------
+    public void Save()
+    {
+        var data = new Dictionary<string, TypeCaseData>();
+
+        foreach (var kvp in occupied)
+        {
+            TypeCase c = kvp.Value;
+
+            var d = new TypeCaseData
+            {
+                type = c.type,
+                name=c.name,
+                aPlante = c.plante != null
+            };
+
+            if (c.plante != null && c.plante.GetComponent<HarvestablePlant>()!=null)
+            {
+                var hp = c.plante.GetComponent<HarvestablePlant>();
+                d.plantName = hp.plantName;
+                d.currentState = hp.currentState;
+                d.harvest = hp.harvest;
+            }
+
+            data[Key(kvp.Key)] = d;
+        }
+
+        string json = JsonConvert.SerializeObject(data, Formatting.Indented, Settings());
+        File.WriteAllText(path, json);
+        Debug.Log($"Sauvegarde : {path}");
+    }
+
+    // ---------- Chargement ----------
+    public void Load()
+    {
+        string json = File.ReadAllText(path);
+        var data = JsonConvert.DeserializeObject<Dictionary<string, TypeCaseData>>(json, Settings());
+
+
+        foreach (var kvp in data)
+        {
+            Vector2Int pos = ParseKey(kvp.Key);
+            TypeCaseData d = kvp.Value;
+            if (d.type == TypeCase.Type.Plante)
+            {
+                plantPrefab.GetComponent<HarvestablePlant>().Initialize(d.plantName, d.currentState, d.harvest);
+            }
+            TypeCase obj = d.type switch
+            {
+                TypeCase.Type.Rocher or TypeCase.Type.Arbre => new TypeCase(d.type, banqueCase, banqueTile,d.name),
+                TypeCase.Type.Herbe or TypeCase.Type.Terre => new TypeCase(d.type, banqueTile),
+                TypeCase.Type.Plante => new TypeCase(plantPrefab, d.plantName, banqueTile),
+                _ => null
+            };
+            Place(pos, obj);
+        }
+        Debug.Log("Chargement terminé.");
+    }
 }
+
+
+
+
+    #endregion
+
