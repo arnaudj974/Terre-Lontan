@@ -107,6 +107,6 @@ MonoBehaviour:
   plantName: Chilli
   plantsCollection: {fileID: 11400000, guid: a4551c6d783255f4d90cfe935186bef8, type: 2}
   spriteRenderer: {fileID: 4892248833839391924}
-  currentState: -1
+  currentState: 2
   isNight: 0
-  harvest: 0
+  harvest: 1
