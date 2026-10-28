@@ -2,20 +2,28 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MenuController : MonoBehaviour
-{
+{ 
+    [SerializeField] PlayerInput playerInput;
     public GameObject menuCanvas;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         menuCanvas.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void MenuPlayer(InputAction.CallbackContext ctx)
     {
-        if (Keyboard.current.tabKey.wasPressedThisFrame)
+        if (ctx.performed)
         {
-            menuCanvas.SetActive(!menuCanvas.activeSelf);
+            menuCanvas.SetActive(true);
+            playerInput.SwitchCurrentActionMap("UI");
+        }
+    }
+    public void MenuUI(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            menuCanvas.SetActive(false);
+            playerInput.SwitchCurrentActionMap("Player");
         }
     }
 }
