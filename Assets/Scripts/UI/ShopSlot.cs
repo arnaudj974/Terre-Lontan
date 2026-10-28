@@ -1,9 +1,8 @@
-using System;
-using System.Diagnostics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ShopSlot : MonoBehaviour
+public class ShopSlot : MonoBehaviour, IPointerClickHandler
 {
     public Item currentItem;
     public ShopSlotType typeOfslot;
@@ -24,6 +23,30 @@ public class ShopSlot : MonoBehaviour
                     break;
             }
         } 
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("Clicked: " + currentItem?.nomDePlante);
+        switch (typeOfslot)
+        {
+            case ShopSlotType.PLAYER:
+                Sell();
+                break;
+            case ShopSlotType.SHOP:
+                Buy();
+                break;
+        }
+    }
+
+    void Buy()
+    {
+        ItemDictio itemDictio = FindFirstObjectByType<ItemDictio>();
+    }
+
+    void Sell()
+    {
+        ItemDictio itemDictio = FindFirstObjectByType<ItemDictio>();
     }
 
     public void SetActivePrice(bool active)
