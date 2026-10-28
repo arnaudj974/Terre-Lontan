@@ -6,6 +6,7 @@ using UnityEngine;
 public class ShopSlot : MonoBehaviour
 {
     public Item currentItem;
+    public ShopSlotType typeOfslot;
     public TextMeshProUGUI price;
     public TextMeshProUGUI priceIcon;
 

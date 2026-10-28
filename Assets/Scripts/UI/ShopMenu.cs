@@ -13,14 +13,7 @@ public class ShopMenu : MonoBehaviour
 
     void Start()
     {   
-        for(int i = 0; i < seedsCollection.getListItem().Count; i++)
-        {
-            ShopSlot currentSlot = papyInventory.GetChild(i).GetComponent<ShopSlot>();
-            Item cloneItem = Instantiate(seedsCollection.getItemByIndex(i),currentSlot.transform);
-            currentSlot.currentItem = cloneItem;
-            currentSlot.SetItemInfo(PriceStatus.BUY);
-            currentSlot.SetActivePrice(true);
-        }
+        UpdateShopInventory();
         UpdatePlayerInventory();
     }
 
@@ -30,6 +23,19 @@ public class ShopMenu : MonoBehaviour
         {
             UpdatePlayerInventory();
             isPlayerInventoryNeedUpdate = false;
+        }
+    }
+
+    void UpdateShopInventory()
+    {
+        for(int i = 0; i < seedsCollection.getListItem().Count; i++)
+        {
+            ShopSlot currentSlot = papyInventory.GetChild(i).GetComponent<ShopSlot>();
+            Item cloneItem = Instantiate(seedsCollection.getItemByIndex(i),currentSlot.transform);
+            currentSlot.currentItem = cloneItem;
+            currentSlot.typeOfslot = ShopSlotType.SHOP;
+            currentSlot.SetItemInfo(PriceStatus.BUY);
+            currentSlot.SetActivePrice(true);
         }
     }
 
@@ -44,6 +50,7 @@ public class ShopMenu : MonoBehaviour
             {
                 Item cloneItem = Instantiate(itemDictionary.itemPrefbas[i],currentSlot.transform);
                 currentSlot.currentItem = cloneItem;
+                currentSlot.typeOfslot = ShopSlotType.PLAYER;
                 currentSlot.SetItemInfo(PriceStatus.SELL);
                 currentSlot.SetActivePrice(true);
             }
