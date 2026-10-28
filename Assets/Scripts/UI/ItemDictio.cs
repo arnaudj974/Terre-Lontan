@@ -19,7 +19,7 @@ public class ItemDictio : MonoBehaviour
         }
         foreach(Item item in itemPrefbas)
         {
-            itemDictionary[item.ID] = item.gameObject;
+           // itemDictionary[item.ID] = item.gameObject;
         }
     }
 

@@ -15,9 +15,9 @@ public class SaveController : MonoBehaviour
         InventoryController = FindFirstObjectByType<InventoryController>();
         hotbarController = FindFirstObjectByType<HotBarController>();
         Debug.Log("Chemin de la sauvegarde : " + Application.persistentDataPath);
-        LoadGame();
+      //  LoadGame();
     }
-
+    /*
     public void Savegame()
     {
         CinemachineConfiner2D confiner = GameObject.FindFirstObjectByType<CinemachineConfiner2D>();
@@ -83,5 +83,5 @@ public class SaveController : MonoBehaviour
         {
             Savegame();
         }
-    }
+    } */
 }
