@@ -16,7 +16,7 @@ public class TypeCase
     {
         this.biblioTile = biblioTile;
         this.type = type;
-        this.sprite = name != null ? biblioSprite.ObtenirRand(type.ToString()) : biblioSprite.Obtenir(name);
+        this.sprite = name == null ? biblioSprite.ObtenirRand(type.ToString()) : biblioSprite.Obtenir(name);
         this.tile = biblioTile.ObtenirRand("Herbe");
         this.name = biblioSprite.Obtenir(this.sprite);
         this.tool = type switch

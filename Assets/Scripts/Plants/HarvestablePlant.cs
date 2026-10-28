@@ -62,6 +62,8 @@ public class HarvestablePlant : MonoBehaviour
         {
             spriteRenderer.sprite = plantData.growthState[0];
         }
+        harvest = false;
+        currentState--;
     }
 
     public void Planted()
