@@ -1,6 +1,8 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
@@ -11,22 +13,25 @@ public class NPC : MonoBehaviour
 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
+    private bool playerInZone = false;
 
-    public bool CanInteract()
+    void Update()
     {
-        return !isDialogueActive;
     }
-
-    public void Interact()
+    public void Interact(InputAction.CallbackContext ctx)
     {
-        if(dialogueData == null || !isDialogueActive) return;
-        if (isDialogueActive)
-        {
-
-        }
-        else
-        {
-            
+        
+        if (ctx.started)
+        {  
+            if(!playerInZone || dialogueData == null) return;
+            if(isDialogueActive)
+            {
+                NextLine();
+            }
+            else
+            {
+                StartDialogue();
+            }
         }
     }
 
@@ -34,7 +39,27 @@ public class NPC : MonoBehaviour
     {
         isDialogueActive = true;
         dialogueIndex = 0;
+        nameNPC.SetText("");
+        nameNPC.SetText(dialogueData.npcName);
         dialoguePanel.SetActive(true);
+        
+        StartCoroutine(TypeLine());
+    }
+
+    void NextLine()
+    {
+        if (isTyping)
+        {
+            StopAllCoroutines();
+            dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
+            isTyping = false;
+        }else if(++dialogueIndex < dialogueData.dialogueLines.Length)
+        {
+            StartCoroutine(TypeLine());
+        }else
+        {
+            EndDialgue();
+        }
     }
 
     IEnumerator TypeLine()
@@ -50,6 +75,31 @@ public class NPC : MonoBehaviour
         if(dialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
         {
             yield return new WaitForSeconds(dialogueData.autoProgessDelay);
+            NextLine();
+        }
+    }
+
+    public void EndDialgue()
+    {
+        StopAllCoroutines();
+        isDialogueActive = false;
+        dialogueText.SetText("");
+        dialoguePanel.SetActive(false);
+
+    }
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            playerInZone = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            playerInZone = false;
         }
     }
 }
