@@ -558,6 +558,17 @@
                 },
                 {
                     "name": "",
+                    "id": "68606ee4-d5a2-4e18-83a6-582cddbc4166",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Wheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b92eaa01-d191-4c56-bdaf-902806b7d699",
                     "path": "<Keyboard>/tab",
                     "interactions": "",

@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 public class PlayerUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI txtMoney;
+    [SerializeField] TextMeshProUGUI txtWarning;
     [SerializeField] Camera cam;
     [SerializeField] Slider sliderWater;
     [SerializeField] GameObject panelWater;
@@ -21,6 +23,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] Player player;
     public UnityEvent<int> OnWheelChange;
     bool wheelHeld;
+    bool isCoroutWarningStarted;
 
     void Start()
     {
@@ -122,4 +125,16 @@ public class PlayerUI : MonoBehaviour
         txtMoney.text = player.money.ToString() + " €";
     }
     
+    public void ChangeTextWarning(string txt)
+    {
+        if(!isCoroutWarningStarted) StartCoroutine(ShowWarning(txt));
+    }
+    IEnumerator ShowWarning(string txt)
+    {
+        isCoroutWarningStarted = true;
+        txtWarning.text = txt;
+        yield return new WaitForSeconds(3f);
+        txtWarning.text = "";
+        isCoroutWarningStarted = false;
+    }
 }

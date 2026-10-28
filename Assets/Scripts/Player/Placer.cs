@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -13,7 +14,7 @@ public class Placer : MonoBehaviour
     Player player;
     bool canAttack;
     public UnityEvent<bool> OnAttack;
-
+    public UnityEvent<string> OnAttackDisable;
     
 
     void Awake()
@@ -27,7 +28,6 @@ public class Placer : MonoBehaviour
     {
         canAttack = player.energy > 0;
         if (player.tool.type == Tool.Type.Arros) canAttack = (player.water > 0 && player.energy > 0);
-
         targetCell = grid.WorldToCell(feet.position);
         UpdateHighlight(playerCont.moveDir == Vector2.zero && grid.IsInside(targetCell)); //mets les hightlight si le player ne bouge pas et qu'il est dans la grille
         if (grid.IsInside(targetCell)) playerAnim.SetOrder(-Mathf.RoundToInt(feet.position.y * 10)); //changer l'order du spriterender du player
@@ -69,7 +69,15 @@ public class Placer : MonoBehaviour
             OnAttack?.Invoke(false);
             StopAttack();
         }
+        if (!canAttack)
+        {
+            OnAttackDisable?.Invoke(player.energy <= 0 ? "PLUS D'ENERGIE" : "ARROSOIR VIDE");
+        }
     }
 
+    public void SetAttack(bool etat)
+    {
+        canAttack = etat;
+    }
 
 }
