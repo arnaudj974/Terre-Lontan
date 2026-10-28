@@ -6,16 +6,16 @@ public class Item : MonoBehaviour
 {
     public int ID;
     public Image image;
-    public string NomDePlante;
-    public PlantsCollection plantcollection;
-    private PlantData PlantData;
-    private SpriteRenderer sprite;
-    private void Start()
+    public string nomDePlante;
+    public PlantsCollection plantCollection;
+    private PlantData plantData;
+    public SpriteRenderer sprite;
+    public bool isFruit;
+    private void Awake()
     {
-        sprite = GetComponent<SpriteRenderer>();
-        PlantData = plantcollection.getPlantByName(NomDePlante);
-        sprite.sprite = PlantData.seedSprite;
-        image.sprite = PlantData.seedSprite;
+        plantData = plantCollection.getPlantByName(nomDePlante);
+        sprite.sprite = plantData.seedSprite;
+        image.sprite = plantData.seedSprite;
     }
     public virtual void UseItem()
     {
@@ -23,7 +23,20 @@ public class Item : MonoBehaviour
     }
     public string PlantName()
     {
-        return PlantData.referenceName;
+        return plantData.referenceName;
+    }
+
+    public void SetPlantType(string name)
+    {
+        nomDePlante = name;
+        plantData = plantCollection.getPlantByName(name);
+    }
+
+    public void Fruit()
+    {
+        isFruit = true;
+        sprite.sprite = plantData.harvestCrop;
+        image.sprite = plantData.harvestCrop;
     }
 }
 
