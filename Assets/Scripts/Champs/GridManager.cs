@@ -211,8 +211,7 @@ public class GridManager : MonoBehaviour
 
     public void IsNight()
     {
-        
-        audioS.Stop();
+        StopAttack();
         foreach (var item in occupied)
         {
             item.Value.IsNight();
