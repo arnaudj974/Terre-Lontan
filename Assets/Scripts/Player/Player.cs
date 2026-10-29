@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
         {
             RemoveEnergy(5f);
             water = maxWater;
+            SetTool(5);
             OnWaterChange?.Invoke(water);
         }
     }

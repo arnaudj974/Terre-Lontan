@@ -159,7 +159,7 @@ public class GridManager : MonoBehaviour
         isCoroutStarted = true;
         switch (oldObj.type)
         {
-            case TypeCase.Type.Arbre: PlaySound("Hache"); break;
+            case TypeCase.Type.Arbre or TypeCase.Type.Plante: PlaySound("Hache"); break;
             case TypeCase.Type.Rocher: PlaySound("Pioche"); break;
             case TypeCase.Type.Herbe: PlaySound("Houe"); break;
             case TypeCase.Type.Terre: PlaySound("Planter"); break;

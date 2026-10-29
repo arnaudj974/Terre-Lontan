@@ -119,6 +119,7 @@ public class PlayerUI : MonoBehaviour
     public void ChangeSliderWater(float value)
     {
         sliderWater.value = value;
+        panelWater.SetActive(true);
     }
 
     public void IsNight()
