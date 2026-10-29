@@ -23,4 +23,4 @@ MonoBehaviour:
   seedSprite: {fileID: 8224592552397400518, guid: dd73d04eaa163e6458bdf2d9d1a1acb9, type: 3}
   harvestCrop: {fileID: -2453194478523169077, guid: 0dcd8565b6d17b047908c2715c06d0a1, type: 3}
   planted: {fileID: 1408628064316227398, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
-  price: 1
+  price: 2

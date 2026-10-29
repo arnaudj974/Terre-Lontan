@@ -438,9 +438,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5693286668265553172, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: size.x
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693286668265553172, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693286668265553172, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
       propertyPath: fruitPrefab
       value: 
       objectReference: {fileID: 215429683609327204, guid: 2ead2d7bba83e8947a976c24720ff456, type: 3}
+    - target: {fileID: 5693286668265553172, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: posDepartGrid.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6118058864613987842, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

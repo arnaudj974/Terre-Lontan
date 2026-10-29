@@ -9,6 +9,7 @@ using UnityEngine.Tilemaps;
 
 public class GridManager : MonoBehaviour
 {
+    [SerializeField] Vector3Int posDepartGrid;
     [SerializeField] BanqueDeSons BanqueSons;
     [SerializeField] GameObject plantPrefab;
     [SerializeField] GameObject fruitPrefab;
@@ -26,7 +27,7 @@ public class GridManager : MonoBehaviour
 
     AudioSource audioS;
 
-    Vector3 Origin => tilemap.CellToWorld(Vector3Int.zero);
+    Vector3 Origin => tilemap.CellToWorld(posDepartGrid);//(Vector3Int.zero);
     public bool IsFree(Vector2Int cell) => IsInside(cell) && !occupied.ContainsKey(cell);
 
     public Vector2Int WorldToCell(Vector3 world)
