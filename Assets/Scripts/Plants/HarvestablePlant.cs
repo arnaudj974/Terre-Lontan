@@ -55,15 +55,16 @@ public class HarvestablePlant : MonoBehaviour
 
     public void Harvest()
     {
-        if(harvest && plantData.harvestPossible)
+       /* if(harvest && plantData.harvestPossible)
         {
             spriteRenderer.sprite = plantData.harvestSprite;
         }else if (!plantData.harvestPossible)
         {
             spriteRenderer.sprite = plantData.growthState[0];
-        }
+        }*/
         harvest = false;
-        currentState--;
+        currentState=0;
+        SetSprite(currentState);
     }
 
     public void Planted()
@@ -76,7 +77,7 @@ public class HarvestablePlant : MonoBehaviour
         currentState++;
         currentState = Mathf.Clamp(currentState, 0, plantData.GetMaxGrowthStatesForArray());
         SetSprite(currentState);
-        if(plantData.harvestPossible && plantData.GetMaxGrowthStatesForArray() == currentState)
+        if(plantData.GetMaxGrowthStatesForArray() == currentState)
         {
             harvest = true;
         }

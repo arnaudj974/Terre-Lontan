@@ -23,6 +23,7 @@ public class GridManager : MonoBehaviour
     private Dictionary<Vector2Int, TypeCase> occupied = new();
     public UnityEvent<float> OnWork;
     public UnityEvent<float> Onarros;
+    public UnityEvent OnPlant;
 
     AudioSource audioS;
 
@@ -133,6 +134,7 @@ public class GridManager : MonoBehaviour
         if (!occupied.TryGetValue(cell, out TypeCase obj)) return;
         if (obj.tool.Same(tool)) // si le joueur a le bon outil
         {
+            if (obj.type == TypeCase.Type.Terre && nomPlante == "") { PlaySound("Fail"); return; }
             if (obj.type != TypeCase.Type.Plante)
             {
                 TypeCase newObj = obj.Evolution(obj.type, plantPrefab, nomPlante, banqueCase, banqueTile); // créer la nouvelle typecase qui va remplacer l'ancienne
@@ -168,7 +170,7 @@ public class GridManager : MonoBehaviour
             Destroy(oldObj.plante);
         }
         Place(cell, newObj);
-
+        if (newObj.type == TypeCase.Type.Plante) OnPlant?.Invoke(); // pour détruire l'item dans la hotbar
         OnWork?.Invoke(oldObj.GetEnergy());
         audioS.Stop();
         isCoroutStarted = false;
@@ -198,6 +200,7 @@ public class GridManager : MonoBehaviour
         Item item = temp.GetComponent<Item>();
         item.nomDePlante = obj.plante.GetComponent<HarvestablePlant>().GetName();
         item.SetPlantType(item.nomDePlante);
+        item.Fruit();
         item.ID = (int)System.DateTimeOffset.Now.ToUnixTimeSeconds();
 
         obj.plante.GetComponent<HarvestablePlant>().Harvest();
@@ -208,8 +211,7 @@ public class GridManager : MonoBehaviour
 
     public void IsNight()
     {
-        
-        audioS.Stop();
+        StopAttack();
         foreach (var item in occupied)
         {
             item.Value.IsNight();
