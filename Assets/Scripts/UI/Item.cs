@@ -24,9 +24,9 @@ public class Item : MonoBehaviour
             image.sprite = plantData.seedSprite;
         }
     }
-    public virtual void UseItem()
+    public string UseItem()
     {
-        Debug.Log($"Using item {ID} {nomDePlante}");
+        return nomDePlante;
     }
     public string PlantName()
     {

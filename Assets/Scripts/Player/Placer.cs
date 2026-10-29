@@ -13,6 +13,7 @@ public class Placer : MonoBehaviour
     PlayerController playerCont;
     Player player;
     bool canAttack;
+    string plantName="";
     public UnityEvent<bool> OnAttack;
     public UnityEvent<string> OnAttackDisable;
     
@@ -46,7 +47,7 @@ public class Placer : MonoBehaviour
     {
         if (grid.IsInside(targetCell))
         {
-            grid.ChangeCell(targetCell, player.tool,plant);
+            grid.ChangeCell(targetCell, player.tool, plant);
         }
     }
 
@@ -62,7 +63,7 @@ public class Placer : MonoBehaviour
         if (ctx.started && canAttack)
         {
             OnAttack?.Invoke(true);
-            Attack("Chilli");
+            Attack(plantName);
         }
         else if (ctx.canceled)
         {
@@ -78,6 +79,11 @@ public class Placer : MonoBehaviour
     public void SetAttack(bool etat)
     {
         canAttack = etat;
+    }
+
+    public void SetPlantName(string name)
+    {
+        plantName = name;
     }
 
 }

@@ -54,7 +54,7 @@ public class TypeCase
         this.name = name;
     }
 
-    public TypeCase Evolution(Type type,  GameObject plant, string nom, BiblioCase biblioSprite, BiblioTile biblioTile)
+    public TypeCase Evolution(Type type, GameObject plant, string nom, BiblioCase biblioSprite, BiblioTile biblioTile)
     {
         return type switch
         {

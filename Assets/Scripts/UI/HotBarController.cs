@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class HotBarController : MonoBehaviour
@@ -10,6 +12,8 @@ public class HotBarController : MonoBehaviour
 
     private ItemDictio itemDictionary;
     private Key[] hotbarKeys;
+
+    public UnityEvent<string> OnNameFound;
 
     private void Awake()
     {
@@ -35,13 +39,14 @@ public class HotBarController : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i < slotCount; i++)
-        {
-            if (Keyboard.current[hotbarKeys[i]].wasPressedThisFrame)
-            {
-                UseItemInSlot(i);
-            }
-        }
+        if (FindFirstItem() != -1) OnNameFound?.Invoke(hotbarPanel.transform.GetChild(FindFirstItem()).GetComponent<Slot>().CurrentItem.GetComponent<Item>().UseItem());
+        /*     for (int i = 0; i < slotCount; i++)
+             {
+                 if (Keyboard.current[hotbarKeys[i]].wasPressedThisFrame)
+                 {
+                     UseItemInSlot(i);
+                 }
+             }*/
     }
 
     void UseItemInSlot(int index)
@@ -57,6 +62,25 @@ public class HotBarController : MonoBehaviour
                     item.UseItem();
                 }
             }
+        }
+    }
+
+    public int FindFirstItem()
+    {
+        for (int i = 0; i < slotCount; i++)
+        {
+            if (hotbarPanel.transform.GetChild(i).GetComponent<Slot>().CurrentItem != null && !hotbarPanel.transform.GetChild(i).GetComponent<Slot>().CurrentItem.GetComponent<Item>().isFruit)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public void DeleteFirstSlotItem()
+    {
+        if (FindFirstItem() != -1)
+        {
+            Destroy(hotbarPanel.transform.GetChild(FindFirstItem()).GetComponent<Slot>().CurrentItem.gameObject);
         }
     }
 
