@@ -12,6 +12,7 @@ public class InventoryController : MonoBehaviour
     public GameObject slotPrefab; // Prefab de la case "slot"
     public int slotCount;
     public GameObject[] itemPrefabs;
+    public Item itemPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -76,53 +77,56 @@ public class InventoryController : MonoBehaviour
     }
 
 
-    //public List<inventorySaveData> GetInventoryitems()
-    //{
-    //    List<inventorySaveData> invData = new List<inventorySaveData>();
-    //    foreach (Transform slotTransform in InventoryPanel.transform)
-    //    {
-    //        Slot slot = slotTransform.GetComponent<Slot>();
-    //        if (slot.CurrentItem != null)
-    //        {
-    //            Item item = slot.CurrentItem.GetComponent<Item>();
-    //            invData.Add(new inventorySaveData { itemID = item.ID, slotIndex = slotTransform.GetSiblingIndex() });
-    //        }
+    public List<inventorySaveData> GetInventoryitems()
+    {
+        List<inventorySaveData> invData = new List<inventorySaveData>();
+        foreach (Transform slotTransform in InventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+            if (slot.CurrentItem != null)
+            {
+                Item item = slot.CurrentItem.GetComponent<Item>();
+                invData.Add(new inventorySaveData { itemID = item.ID, slotIndex = slotTransform.GetSiblingIndex(),nomPlante=item.nomDePlante,isFruit=item.isFruit });
+            }
+            }
+        return invData;
+    }
+    public void SetInventoryItems(List<inventorySaveData> inventorySaveData)
+    {
+        if (itemDictionary == null)
+        {
+            itemDictionary = FindFirstObjectByType<ItemDictio>();
+        }
+        //netoyer l'inventory panel pas de duplicat
+        foreach (Transform child in InventoryPanel.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        // cree nouveau slot
+       /* for (int i = 0; i < slotCount; i++)
+        {
+            Instantiate(slotPrefab, InventoryPanel.transform);
+        }*/
+        // populate slot avec item sauvegarde
+        foreach (inventorySaveData data in inventorySaveData)
+        {
+            if (data.slotIndex < slotCount)
+            {
+                Slot slot = InventoryPanel.transform.GetChild(data.slotIndex).GetComponent<Slot>();
+                if (itemPrefab != null)
+                {
+                    Item clone = itemPrefab;
+                    clone.nomDePlante = data.nomPlante;
+                    clone.ID = data.itemID;
+                    clone.isFruit = data.isFruit;
 
-    //    }
-    //    return invData;
-    //}
-    //public void SetInventoryItems(List<inventorySaveData> inventorySaveData)
-    //{
-    //    if (itemDictionary == null)
-    //    {
-    //        itemDictionary = FindFirstObjectByType<ItemDictio>();
-    //    }
-    //    //netoyer l'inventory panel pas de duplicat
-    //    foreach (Transform child in InventoryPanel.transform)
-    //    {
-    //        Destroy(child.gameObject);
-    //    }
-    //    // cree nouveau slot
-    //    for (int i = 0; i < slotCount; i++)
-    //    {
-    //        Instantiate(slotPrefab, InventoryPanel.transform);
-
-    //    }
-    //    // populate slot avec item sauvegarde
-    //    foreach (inventorySaveData data in inventorySaveData)
-    //    {
-    //        if (data.slotIndex < slotCount)
-    //        {
-    //            Slot slot = InventoryPanel.transform.GetChild(data.slotIndex).GetComponent<Slot>();
-    //            GameObject itemPrefab = itemDictionary.GetItemPrefab(data.itemID);
-    //            if (itemPrefab != null)
-    //            {
-    //                GameObject item = Instantiate(itemPrefab, slot.transform);
-    //                item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-    //                slot.CurrentItem = item;
-    //            }
-    //        }
-    //    }
-    //}
+                    Item item = Instantiate(clone, slot.transform);
+                    item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                    slot.CurrentItem = item;
+                    itemDictionary.itemPrefbas.Add(item);
+                }
+            }
+        }
+    }
 
 }

@@ -666,6 +666,10 @@ PrefabInstance:
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1195090526127276728, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: -2519078367257285486, guid: 0833a67292712fa4e9300f9917d0fa41, type: 3}
+    - target: {fileID: 1195090526127276728, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
       propertyPath: OnNameFound.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -829,6 +833,14 @@ PrefabInstance:
       propertyPath: OnPlant.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6029314906550671312, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: slotCount
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029314906550671312, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: -2519078367257285486, guid: 0833a67292712fa4e9300f9917d0fa41, type: 3}
     - target: {fileID: 6118058864613987842, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
