@@ -2,14 +2,14 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
-using UnityEngine.UI;
-using System.IO;
 
 public class GridManager : MonoBehaviour
 {
+    [SerializeField] Vector3Int posDepartGrid;
     [SerializeField] BanqueDeSons BanqueSons;
     [SerializeField] GameObject plantPrefab;
     [SerializeField] GameObject fruitPrefab;
@@ -24,9 +24,10 @@ public class GridManager : MonoBehaviour
     private Dictionary<Vector2Int, TypeCase> occupied = new();
     public UnityEvent<float> OnWork;
     public UnityEvent<float> Onarros;
+
     AudioSource audioS;
 
-    Vector3 Origin => tilemap.CellToWorld(Vector3Int.zero);
+    Vector3 Origin => tilemap.CellToWorld(posDepartGrid);//(Vector3Int.zero);
     public bool IsFree(Vector2Int cell) => IsInside(cell) && !occupied.ContainsKey(cell);
 
     public Vector2Int WorldToCell(Vector3 world)
@@ -194,16 +195,11 @@ public class GridManager : MonoBehaviour
         yield return new WaitForSeconds(timeRemove);
 
         GameObject temp = new GameObject("PlacedFruit");
-        /*fruitPrefab.GetComponent<Item>().nomDePlante = obj.plante.GetComponent<HarvestablePlant>().GetName();
-        temp = Instantiate(fruitPrefab, CellToWorld(cell + Vector2Int.right), Quaternion.identity, transform);
-        temp.GetComponent<Item>().SetPlantType(temp.GetComponent<Item>().nomDePlante);
-        temp.GetComponent<Item>().Fruit();*/
-
         temp = Instantiate(fruitPrefab, CellToWorld(cell + Vector2Int.right), Quaternion.identity, transform);
         Item item = temp.GetComponent<Item>();
         item.nomDePlante = obj.plante.GetComponent<HarvestablePlant>().GetName();
         item.SetPlantType(item.nomDePlante);
-        //item.Fruit();
+        item.ID = (int)System.DateTimeOffset.Now.ToUnixTimeSeconds();
 
         obj.plante.GetComponent<HarvestablePlant>().Harvest();
         OnWork?.Invoke(obj.GetEnergy());
