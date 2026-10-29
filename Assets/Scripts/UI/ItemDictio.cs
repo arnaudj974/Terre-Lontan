@@ -35,7 +35,13 @@ public class ItemDictio : MonoBehaviour
 
     public bool Remove(Item item)
     {
+        Debug.Log("item ID in itemDictio remove :"+item.ID+" gameobject id : "+item.GetInstanceID());
         return itemPrefbas.Remove(item) && itemDictionary.Remove(item.ID);   
+    }
+
+    public bool isInList(int id)
+    {
+        return itemPrefbas.Find(x => x.ID == id ) != null;
     }
     public bool Remove(int itemId)
     {
@@ -45,13 +51,16 @@ public class ItemDictio : MonoBehaviour
             return false;
         }
         else
-        {
-            return itemDictionary.Remove(item.ID) && itemPrefbas.Remove(item);
+        {   
+            bool isDestroy = itemDictionary.Remove(item.ID) && itemPrefbas.Remove(item);
+            if(isDestroy) Destroy(item.gameObject);
+            return isDestroy;
         }
     }
 
-    void  Add(Item item)
+    public void Add(Item item)
     {
+        Debug.Log("item ID in itemDictio Add :"+item.ID+" gameobject id : "+item.GetInstanceID());
         itemPrefbas.Add(item);
         itemDictionary.Add(item.ID,item);
     }

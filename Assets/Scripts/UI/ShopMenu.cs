@@ -9,21 +9,21 @@ public class ShopMenu : MonoBehaviour
     [SerializeField] Player player;
 
     private ItemDictio itemDictionary;
-    private bool isPlayerInventoryNeedUpdate = true;
 
     void Start()
     {   
         UpdateShopInventory();
-        UpdatePlayerInventory();
+        
     }
 
     void Update()
     {
-        if (isPlayerInventoryNeedUpdate)
+        itemDictionary = FindAnyObjectByType<ItemDictio>();
+        if(itemDictionary != null)
         {
-            UpdatePlayerInventory();
-            isPlayerInventoryNeedUpdate = false;
+            UpdatePlayerShop();
         }
+
     }
 
     void UpdateShopInventory()
@@ -39,10 +39,8 @@ public class ShopMenu : MonoBehaviour
         }
     }
 
-    void UpdatePlayerInventory()
+    void UpdatePlayerShop()
     {
-        itemDictionary = FindFirstObjectByType<ItemDictio>();
-        
         for(int i = 0; i < itemDictionary.itemPrefbas.Count; i++)
         {
             ShopSlot currentSlot = playerInventory.GetChild(i).GetComponent<ShopSlot>();
@@ -55,12 +53,6 @@ public class ShopMenu : MonoBehaviour
                 currentSlot.SetActivePrice(true);
             }
 
-        }
+        }    
     }
-
-    public void OnChangeInventory()
-    {
-        isPlayerInventoryNeedUpdate = true;
-    }
-
 }

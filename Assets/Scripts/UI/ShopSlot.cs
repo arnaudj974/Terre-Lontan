@@ -1,5 +1,7 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class ShopSlot : MonoBehaviour, IPointerClickHandler
@@ -8,8 +10,18 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
     public ShopSlotType typeOfslot;
     public TextMeshProUGUI price;
     public TextMeshProUGUI priceIcon;
+    public GameObject player;
+    private InventoryController inventoryController;
+    private ItemDictio itemDictio;
 
+    public UnityEvent OnChangeInventory;
     
+    void Start()
+    {
+        itemDictio = FindFirstObjectByType<ItemDictio>();
+        inventoryController = FindFirstObjectByType<InventoryController>();
+
+    }
     public void SetItemInfo(PriceStatus status)
     {
         if(currentItem != null)
@@ -27,7 +39,6 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Clicked: " + currentItem?.nomDePlante);
         switch (typeOfslot)
         {
             case ShopSlotType.PLAYER:
@@ -41,12 +52,31 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
 
     void Buy()
     {
-        ItemDictio itemDictio = FindFirstObjectByType<ItemDictio>();
+        Player p = player.GetComponent<Player>();
+        if (p.Acheter(currentItem.GetPrice(PriceStatus.BUY)))
+        {
+            Item newitem  = Instantiate(currentItem);
+            newitem.ID = (int) DateTimeOffset.Now.ToUnixTimeSeconds()+ (int) DateTimeOffset.Now.ToUnixTimeMilliseconds();
+            inventoryController.AddItem(newitem);
+            OnChangeInventory?.Invoke();
+            Destroy(newitem.gameObject); 
+        }
+
     }
 
     void Sell()
     {
-        ItemDictio itemDictio = FindFirstObjectByType<ItemDictio>();
+       bool removeStatus = itemDictio.Remove(currentItem.ID);
+        if (removeStatus)
+        {
+            player.GetComponent<Player>().Vendre(currentItem.GetPrice(PriceStatus.SELL));
+            Destroy(currentItem.gameObject);
+            currentItem = null;
+        }
+        SetActivePrice(false);
+
+       OnChangeInventory?.Invoke();
+       
     }
 
     public void SetActivePrice(bool active)

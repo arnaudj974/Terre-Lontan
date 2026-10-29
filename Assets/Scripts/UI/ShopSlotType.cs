@@ -3,5 +3,6 @@ using UnityEngine;
 public enum ShopSlotType 
 {
     PLAYER,
-    SHOP
+    SHOP,
+    NULL
 }

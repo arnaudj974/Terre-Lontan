@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryController : MonoBehaviour
@@ -32,6 +33,28 @@ public class InventoryController : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        foreach( Item item in itemDictionary.itemPrefbas)
+        {
+            if(!itemDictionary.isInList(item.ID)) DeleteClone(item);
+        }
+    }
+
+    void DeleteClone(Item item)
+    {
+        foreach (Transform slotTransform in InventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+            if(slot.CurrentItem.ID == item.ID)
+            {
+                Item destroyItem = slot.CurrentItem;
+                slot.CurrentItem = null;
+                Destroy(destroyItem.gameObject);
+            }
+        }
+    }
+
     #nullable enable
     public Item? AddItem(Item itemPrefabs)
     {
@@ -43,12 +66,15 @@ public class InventoryController : MonoBehaviour
                 Item newItem = Instantiate(itemPrefabs, slot.transform);
                 newItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                 slot.CurrentItem = newItem;
+                Debug.Log("item ID in inventoryController addItem :"+newItem.ID+" gameobject id : "+newItem.GetInstanceID());
+                itemDictionary.Add(newItem);
                 return newItem;
             }
         }
         Debug.Log("inventory is full");
         return null;
     }
+
 
     //public List<inventorySaveData> GetInventoryitems()
     //{

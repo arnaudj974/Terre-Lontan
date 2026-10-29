@@ -378,5 +378,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopSlot
   currentItem: {fileID: 0}
+  typeOfslot: 0
   price: {fileID: 6268404156205599033}
   priceIcon: {fileID: 2112688329841301040}
+  player: {fileID: 6739076495753132923, guid: 754192d92288d934ab5dfa96fa679ce0, type: 3}
+  OnChangeInventory:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3605176863823598332, guid: 3e728ebd73802064f97e1d84325d7782, type: 3}
+        m_TargetAssemblyTypeName: ShopMenu, Assembly-CSharp
+        m_MethodName: OnChangeInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
