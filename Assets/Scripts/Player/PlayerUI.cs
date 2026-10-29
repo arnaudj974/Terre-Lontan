@@ -34,6 +34,7 @@ public class PlayerUI : MonoBehaviour
         sliderEnergy.maxValue = player.energy;
         sliderEnergy.value = player.energy;
         ChangeTextMoney();
+        WorldTime.instance.Sunset += IsNight;
     }
 
     void Update()
@@ -120,6 +121,10 @@ public class PlayerUI : MonoBehaviour
         sliderWater.value = value;
     }
 
+    public void IsNight()
+    {
+        panelWater.SetActive(false);
+    }
     public void ChangeTextMoney()
     {
         txtMoney.text = player.money.ToString() + " €";

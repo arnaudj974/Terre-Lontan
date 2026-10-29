@@ -15,6 +15,11 @@ public class PlayerAnimation : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
+    void Start()
+    {
+        WorldTime.instance.Sunset += IsNight;
+    }
+
     void Update()
     {
         HandleAnimVariable();
@@ -35,5 +40,11 @@ public class PlayerAnimation : MonoBehaviour
     public void SetOrder(int i)
     {
         sr.sortingOrder = i;
+    }
+
+    public void IsNight()
+    {
+        anim.SetFloat("moveX", 0);
+        anim.SetFloat("moveY", -1);
     }
 }

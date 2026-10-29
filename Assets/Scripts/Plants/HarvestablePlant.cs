@@ -91,19 +91,9 @@ public class HarvestablePlant : MonoBehaviour
         }
     }
 
-    public int GetPrice()
-    {
-        return plantData.price;
-    }
-
     public string GetName()
     {
         return plantData.referenceName;
-    }
-
-    public Sprite GetSpriteFruit()
-    {
-        return plantData.harvestCrop;
     }
 
     public void Initialize(string plantName, int currentState,bool harvest)
