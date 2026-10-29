@@ -10,7 +10,7 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
     public ShopSlotType typeOfslot;
     public TextMeshProUGUI price;
     public TextMeshProUGUI priceIcon;
-    public GameObject player;
+    public Player p;
     private InventoryController inventoryController;
     private ItemDictio itemDictio;
 
@@ -20,7 +20,7 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
     {
         itemDictio = FindFirstObjectByType<ItemDictio>();
         inventoryController = FindFirstObjectByType<InventoryController>();
-
+        p = FindFirstObjectByType<Player>();
     }
     public void SetItemInfo(PriceStatus status)
     {
@@ -52,7 +52,6 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
 
     void Buy()
     {
-        Player p = player.GetComponent<Player>();
         if (p.Acheter(currentItem.GetPrice(PriceStatus.BUY)))
         {
             Item newitem  = Instantiate(currentItem);
@@ -69,7 +68,7 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
        bool removeStatus = itemDictio.Remove(currentItem.ID);
         if (removeStatus)
         {
-            player.GetComponent<Player>().Vendre(currentItem.GetPrice(PriceStatus.SELL));
+            p.Vendre(currentItem.GetPrice(PriceStatus.SELL));
             Destroy(currentItem.gameObject);
             currentItem = null;
         }

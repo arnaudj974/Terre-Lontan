@@ -57,11 +57,13 @@ public class Player : MonoBehaviour
 
     public void Vendre(int amount)
     {
+        Debug.Log("Vendre");
         money += amount;
         OnMoneyChange?.Invoke();
     }
     public bool Acheter(int amount)
     {
+        Debug.Log("Acheter");
         if (money - amount < 0) return false;
         else
         {
