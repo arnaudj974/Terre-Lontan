@@ -32,4 +32,27 @@ public class ItemDictio : MonoBehaviour
         }
         return prefab;
     }
+
+    public bool Remove(Item item)
+    {
+        return itemPrefbas.Remove(item) && itemDictionary.Remove(item.ID);   
+    }
+    public bool Remove(int itemId)
+    {
+        itemDictionary.TryGetValue(itemId, out Item item);
+        if(item == null)
+        {
+            return false;
+        }
+        else
+        {
+            return itemDictionary.Remove(item.ID) && itemPrefbas.Remove(item);
+        }
+    }
+
+    void  Add(Item item)
+    {
+        itemPrefbas.Add(item);
+        itemDictionary.Add(item.ID,item);
+    }
 }
