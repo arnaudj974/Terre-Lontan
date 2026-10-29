@@ -121,6 +121,7 @@ MonoBehaviour:
   nomDePlante: Chilli
   plantCollection: {fileID: 11400000, guid: a4551c6d783255f4d90cfe935186bef8, type: 2}
   sprite: {fileID: 2834626126189484793}
+  isFruit: 1
 --- !u!212 &2834626126189484793
 SpriteRenderer:
   serializedVersion: 2

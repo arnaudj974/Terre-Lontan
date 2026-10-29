@@ -14,8 +14,15 @@ public class Item : MonoBehaviour
     private void Awake()
     {
         plantData = plantCollection.getPlantByName(nomDePlante);
-        sprite.sprite = plantData.seedSprite;
-        image.sprite = plantData.seedSprite;
+        if (isFruit)
+        {
+            Fruit();
+        }
+        else
+        {
+            sprite.sprite = plantData.seedSprite;
+            image.sprite = plantData.seedSprite;
+        }
     }
     public virtual void UseItem()
     {
@@ -47,7 +54,6 @@ public class Item : MonoBehaviour
 
     public void Fruit()
     {
-        isFruit = true;
         sprite.sprite = plantData.harvestCrop;
         image.sprite = plantData.harvestCrop;
     }
