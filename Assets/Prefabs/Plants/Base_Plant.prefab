@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: -15
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5672623778664467425, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -107,6 +107,6 @@ MonoBehaviour:
   plantName: Chilli
   plantsCollection: {fileID: 11400000, guid: a4551c6d783255f4d90cfe935186bef8, type: 2}
   spriteRenderer: {fileID: 4892248833839391924}
-  currentState: 1
+  currentState: -1
   isNight: 0
   harvest: 0
