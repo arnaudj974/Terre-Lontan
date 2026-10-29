@@ -6,7 +6,7 @@ public class StartMenuController : MonoBehaviour
     public void OnStartClick()
     {
         // Load the main game scene
-        SceneManager.LoadScene("TestSeb");
+        SceneManager.LoadScene("Game");
     }
     public void OnExitClick()
     {
