@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,9 +8,9 @@ public class HotBarController : MonoBehaviour
     public GameObject hotbarPanel;
     public GameObject slotPrefab;
     public int slotCount = 10; // 1 - 0 du clavier
+    public Item itemPrefab;
 
     private ItemDictio itemDictionary;
-    private Key[] hotbarKeys;
 
     public UnityEvent<string> OnNameFound;
 
@@ -22,6 +21,7 @@ public class HotBarController : MonoBehaviour
 
     private void Start()
     {
+
         if (hotbarPanel.transform.childCount == 0)
         {
             for (int i = 0; i < slotCount; i++)
@@ -98,7 +98,7 @@ public class HotBarController : MonoBehaviour
                 Item item = slot.CurrentItem.GetComponent<Item>();
                 if (item != null)
                 {
-                    hotbarData.Add(new inventorySaveData { itemID = item.ID, slotIndex = slotTransform.GetSiblingIndex() });
+                    hotbarData.Add(new inventorySaveData { itemID = item.ID, slotIndex = slotTransform.GetSiblingIndex(), nomPlante = item.nomDePlante, isFruit = item.isFruit });
                 }
             }
         }
@@ -126,12 +126,17 @@ public class HotBarController : MonoBehaviour
                 if (data.slotIndex < slotCount)
                 {
                     Slot slot = hotbarPanel.transform.GetChild(data.slotIndex).GetComponent<Slot>();
-                    Item itemPrefab = itemDictionary.GetItemPrefab(data.itemID);
                     if (itemPrefab != null)
                     {
-                        Item item = Instantiate(itemPrefab, slot.transform);
+                        Item clone = itemPrefab;
+                        clone.nomDePlante = data.nomPlante;
+                        clone.ID = data.itemID;
+                        clone.isFruit = data.isFruit;
+
+                        Item item = Instantiate(clone, slot.transform);
                         item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                         slot.CurrentItem = item;
+                        itemDictionary.itemPrefbas.Add(item);
                     }
                 }
             }
