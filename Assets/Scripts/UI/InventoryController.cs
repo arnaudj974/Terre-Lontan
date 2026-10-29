@@ -13,23 +13,24 @@ public class InventoryController : MonoBehaviour
     public int slotCount;
     public GameObject[] itemPrefabs;
     public Item itemPrefab;
+    bool loaded;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
     {
         itemDictionary = FindFirstObjectByType<ItemDictio>(); // Trouver le script ItemDictio dans la scène
-
-        for (int i = 0; i < slotCount; i++)
-        {
-            Slot slot = Instantiate(slotPrefab, InventoryPanel.transform).GetComponent<Slot>();
-            if (i < itemPrefabs.Length)
+        if (!loaded) {
+            for (int i = 0; i < slotCount; i++)
             {
-                Item item = Instantiate(itemPrefabs[i], slot.transform).GetComponent<Item>();
-                item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-                slot.CurrentItem = item;
+                Slot slot = Instantiate(slotPrefab, InventoryPanel.transform).GetComponent<Slot>();
+                if (i < itemPrefabs.Length)
+                {
+                    Item item = Instantiate(itemPrefabs[i], slot.transform).GetComponent<Item>();
+                    item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                    slot.CurrentItem = item;
+                }
             }
-
         }
 
     }
@@ -103,10 +104,10 @@ public class InventoryController : MonoBehaviour
             Destroy(child.gameObject);
         }
         // cree nouveau slot
-       /* for (int i = 0; i < slotCount; i++)
+        for (int i = 0; i < slotCount; i++)
         {
             Instantiate(slotPrefab, InventoryPanel.transform);
-        }*/
+        }
         // populate slot avec item sauvegarde
         foreach (inventorySaveData data in inventorySaveData)
         {
@@ -127,6 +128,7 @@ public class InventoryController : MonoBehaviour
                 }
             }
         }
+        loaded = true;
     }
 
 }
