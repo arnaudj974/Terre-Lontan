@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class PlayerItemCollector : MonoBehaviour
 {
     private InventoryController inventoryController;
+    private HotBarController hotBarController;
     private ItemDictio itemDictionaryRef;
 
     public UnityEvent OnChangeInventory; 
@@ -12,6 +13,7 @@ public class PlayerItemCollector : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        hotBarController = FindFirstObjectByType<HotBarController>();
         inventoryController = FindFirstObjectByType<InventoryController>();
         itemDictionaryRef = FindFirstObjectByType<ItemDictio>();
     }
@@ -23,9 +25,9 @@ public class PlayerItemCollector : MonoBehaviour
             Item item = collision.GetComponent<Item>();
             if (item != null)
             {
-                // Ajouter Item dans l'inventaire
-                Item cloneItem = inventoryController.AddItem(item);
-
+                
+                Item cloneItem = hotBarController.AddItem(item); //ajout hotbar 1st
+                if(cloneItem==null) cloneItem= inventoryController.AddItem(item); // Ajouter Item dans l'inventaire
                 if (cloneItem != null)
                 {
                     OnChangeInventory?.Invoke();

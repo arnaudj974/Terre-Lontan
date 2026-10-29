@@ -46,7 +46,7 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         if (dropSlot != null)
         {
             if (dropSlot.CurrentItem != null)
-                {
+            {
                 dropSlot.CurrentItem.transform.SetParent(originalSlot.transform);
                 originalSlot.CurrentItem = dropSlot.CurrentItem;
                 dropSlot.CurrentItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;

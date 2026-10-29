@@ -18,12 +18,6 @@ public class HotBarController : MonoBehaviour
     private void Awake()
     {
         itemDictionary = FindFirstObjectByType<ItemDictio>();
-
-        hotbarKeys = new Key[slotCount];
-        for (int i = 0; i < slotCount; i++)
-        {
-            hotbarKeys[i] = i < 9 ? (Key)((int)Key.Digit1 + i) : Key.Digit0;
-        }
     }
 
     private void Start()
@@ -39,14 +33,7 @@ public class HotBarController : MonoBehaviour
 
     void Update()
     {
-        if (FindFirstItem() != -1) OnNameFound?.Invoke(hotbarPanel.transform.GetChild(FindFirstItem()).GetComponent<Slot>().CurrentItem.GetComponent<Item>().UseItem());
-        /*     for (int i = 0; i < slotCount; i++)
-             {
-                 if (Keyboard.current[hotbarKeys[i]].wasPressedThisFrame)
-                 {
-                     UseItemInSlot(i);
-                 }
-             }*/
+        if (FindFirstItem() != -1) OnNameFound?.Invoke(hotbarPanel.transform.GetChild(FindFirstItem()).GetComponent<Slot>().CurrentItem.GetComponent<Item>().UseItem()); //envoyer le nom de la plante en 1ere pos en mains
     }
 
     void UseItemInSlot(int index)
@@ -83,7 +70,23 @@ public class HotBarController : MonoBehaviour
             Destroy(hotbarPanel.transform.GetChild(FindFirstItem()).GetComponent<Slot>().CurrentItem.gameObject);
         }
     }
-
+#nullable enable    
+    public Item? AddItem(Item itemPrefabs)
+    {
+        foreach (Transform slotTransform in hotbarPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+            if (slot != null && slot.CurrentItem == null)
+            {
+                Item newItem = Instantiate(itemPrefabs, slot.transform);
+                newItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                slot.CurrentItem = newItem;
+                return newItem;
+            }
+        }
+        Debug.Log("inventory is full");
+        return null;
+    }
     public List<inventorySaveData> GetHotbarItems()
     {
         List<inventorySaveData> hotbarData = new List<inventorySaveData>();

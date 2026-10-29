@@ -130,6 +130,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926aac705cf812a46a8ac09226bba00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &613502223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8389776650661749839, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+  m_PrefabInstance: {fileID: 1522287903300939836}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa109de63a24824d9a02f5bda3df562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!114 &613502225 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3728286380459636886, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
@@ -640,11 +651,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 687732584157977279, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.28
+      value: 13.72
       objectReference: {fileID: 0}
     - target: {fileID: 687732584157977279, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.33
+      value: 34.15
       objectReference: {fileID: 0}
     - target: {fileID: 733337238895420988, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
@@ -2718,6 +2729,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[468].second.m_TileSpriteIndex
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 6217461046565632233, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 613502223}
     - target: {fileID: 6525071157240276155, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
