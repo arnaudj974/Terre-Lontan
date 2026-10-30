@@ -196,13 +196,28 @@ public class GridManager : MonoBehaviour
         PlaySound("Recolter");
         yield return new WaitForSeconds(timeRemove);
 
-        GameObject temp = new GameObject("PlacedFruit");
-        temp = Instantiate(fruitPrefab, CellToWorld(cell + Vector2Int.right), Quaternion.identity, transform);
-        Item item = temp.GetComponent<Item>();
-        item.nomDePlante = obj.plante.GetComponent<HarvestablePlant>().GetName();
-        item.SetPlantType(item.nomDePlante);
-        item.Fruit();
-        item.ID = Guid.NewGuid().ToString();
+        //créer entre 1 et 4 fruits
+        int count = 1;
+        bool create = true;
+        while (create && count<=4)   
+        {
+            Vector2Int pos = count switch
+            {
+                1 => Vector2Int.right,
+                2 => Vector2Int.left,
+                3 => Vector2Int.down,
+                4 => Vector2Int.up
+            };
+            GameObject temp = new GameObject("PlacedFruit");
+            temp = Instantiate(fruitPrefab, CellToWorld(cell + pos), Quaternion.identity, transform);
+            Item item = temp.GetComponent<Item>();
+            item.nomDePlante = obj.plante.GetComponent<HarvestablePlant>().GetName();
+            item.SetPlantType(item.nomDePlante);
+            item.Fruit();
+            item.ID = Guid.NewGuid().ToString();
+            count++;
+            create = UnityEngine.Random.Range(0, 6) > count;
+        }
 
         obj.plante.GetComponent<HarvestablePlant>().Harvest();
         OnWork?.Invoke(obj.GetEnergy());
