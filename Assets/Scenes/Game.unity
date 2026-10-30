@@ -18909,6 +18909,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6869771297716949180, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869771297716949180, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -65194
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869771297716949180, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -36695
+      objectReference: {fileID: 0}
     - target: {fileID: 7537996057932143811, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
       propertyPath: Loop
       value: 1
@@ -18917,11 +18929,64 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 8224272543328988166, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_text
+      value: "Viens parler \xE0 papy"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224272543328988166, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224272543328988166, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224272543328988166, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224272543328988166, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224272543328988166, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224272543328988166, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448017096300851616, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448017096300851616, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448017096300851616, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448017096300851616, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638928419469525947, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1704939280}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+--- !u!20 &1704939280 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1137565606224505941, guid: 169f8dc0fd48ad04b8482a688006b4aa, type: 3}
+  m_PrefabInstance: {fileID: 1704939279}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1722680684
 PrefabInstance:
   m_ObjectHideFlags: 0
