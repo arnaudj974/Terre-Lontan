@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
-    public int ID;
+    public string ID;
     public Image image;
     public string nomDePlante;
     public PlantsCollection plantCollection;

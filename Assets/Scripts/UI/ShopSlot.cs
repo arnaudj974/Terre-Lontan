@@ -6,7 +6,9 @@ using UnityEngine.EventSystems;
 
 public class ShopSlot : MonoBehaviour, IPointerClickHandler
 {
-    public Item currentItem;
+    #nullable enable
+    public Item? currentItem ;
+    public int childId;
     public ShopSlotType typeOfslot;
     public TextMeshProUGUI price;
     public TextMeshProUGUI priceIcon;
@@ -21,6 +23,38 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
         itemDictio = FindFirstObjectByType<ItemDictio>();
         inventoryController = FindFirstObjectByType<InventoryController>();
         p = FindFirstObjectByType<Player>();
+    }
+
+    void Update()
+    {
+        if(typeOfslot == ShopSlotType.SHOP) return;
+        if(typeOfslot == ShopSlotType.PLAYER && currentItem != null)
+        {
+            if(childId < itemDictio.itemPrefbas.Count)
+            {
+                if(currentItem.ID != itemDictio.itemPrefbas[childId].ID)
+                {
+                    currentItem = Instantiate(itemDictio.itemPrefbas[childId], this.transform);
+                    price.text = currentItem.GetPrice(PriceStatus.SELL).ToString();
+                    SetActivePrice(true);
+                }
+            }
+            else
+            {
+                Destroy(currentItem.gameObject);
+                currentItem = null;
+                SetActivePrice(false);
+            }
+        }
+        else if(typeOfslot == ShopSlotType.PLAYER && currentItem == null)
+        {
+            if(childId < itemDictio.itemPrefbas.Count)
+            {
+                currentItem = Instantiate(itemDictio.itemPrefbas[childId], this.transform);
+                price.text = currentItem.GetPrice(PriceStatus.SELL).ToString();
+                SetActivePrice(true);
+            }
+        }
     }
     public void SetItemInfo(PriceStatus status)
     {
@@ -39,6 +73,7 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if(currentItem == null) return;
         switch (typeOfslot)
         {
             case ShopSlotType.PLAYER:
@@ -55,7 +90,7 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
         if (p.Acheter(currentItem.GetPrice(PriceStatus.BUY)))
         {
             Item newitem  = Instantiate(currentItem);
-            newitem.ID = (int) DateTimeOffset.Now.ToUnixTimeSeconds()+ (int) DateTimeOffset.Now.ToUnixTimeMilliseconds();
+            newitem.ID = Guid.NewGuid().ToString();
             inventoryController.AddItem(newitem);
             OnChangeInventory?.Invoke();
             Destroy(newitem.gameObject); 
@@ -71,11 +106,10 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
             p.Vendre(currentItem.GetPrice(PriceStatus.SELL));
             Destroy(currentItem.gameObject);
             currentItem = null;
+            SetActivePrice(false);
         }
-        SetActivePrice(false);
 
        OnChangeInventory?.Invoke();
-       
     }
 
     public void SetActivePrice(bool active)

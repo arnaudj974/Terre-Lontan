@@ -1,20 +1,21 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemDictio : MonoBehaviour
 {
     public List<Item> itemPrefbas;
-    private Dictionary<int, Item> itemDictionary;
+    private Dictionary<string, Item> itemDictionary;
 
     private void Awake()
     {
-        itemDictionary = new Dictionary<int, Item>();
+        itemDictionary = new Dictionary<string, Item>();
 
         for(int i = 0; i < itemPrefbas.Count; i++)
         {
             if (itemPrefbas[i] != null)
             {
-                itemPrefbas[i].ID = i + 1;
+                itemPrefbas[i].ID = Guid.NewGuid().ToString();
             }
         }
         foreach(Item item in itemPrefbas)
@@ -23,7 +24,7 @@ public class ItemDictio : MonoBehaviour
         }
     }
 
-    public Item GetItemPrefab(int itemID)
+    public Item GetItemPrefab(string itemID)
     {
         itemDictionary.TryGetValue(itemID, out Item prefab);
         if(prefab == null)
@@ -39,11 +40,11 @@ public class ItemDictio : MonoBehaviour
         return itemPrefbas.Remove(item) && itemDictionary.Remove(item.ID);   
     }
 
-    public bool isInList(int id)
+    public bool isInList(string id)
     {
         return itemPrefbas.Find(x => x.ID == id ) != null;
     }
-    public bool Remove(int itemId)
+    public bool Remove(string itemId)
     {
         itemDictionary.TryGetValue(itemId, out Item item);
         if(item == null)

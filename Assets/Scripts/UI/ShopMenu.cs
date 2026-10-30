@@ -12,8 +12,7 @@ public class ShopMenu : MonoBehaviour
 
     void Start()
     {   
-        UpdateShopInventory();
-        
+        UpdateShopPapy();        
     }
 
     void Update()
@@ -26,7 +25,7 @@ public class ShopMenu : MonoBehaviour
 
     }
 
-    void UpdateShopInventory()
+    void UpdateShopPapy()
     {
         for(int i = 0; i < seedsCollection.getListItem().Count; i++)
         {
@@ -41,18 +40,28 @@ public class ShopMenu : MonoBehaviour
 
     void UpdatePlayerShop()
     {
-        for(int i = 0; i < itemDictionary.itemPrefbas.Count; i++)
-        {
-            ShopSlot currentSlot = playerInventory.GetChild(i).GetComponent<ShopSlot>();
-            if(currentSlot.currentItem == null)
-            {
-                Item cloneItem = Instantiate(itemDictionary.itemPrefbas[i],currentSlot.transform);
-                currentSlot.currentItem = cloneItem;
-                currentSlot.typeOfslot = ShopSlotType.PLAYER;
-                currentSlot.SetItemInfo(PriceStatus.SELL);
-                currentSlot.SetActivePrice(true);
-            }
+        // int i = 0;
+        // foreach(Transform slot in playerInventory.transform)
+        // {   
+        //     if(itemDictionary.itemPrefbas.Count == 0) return;
+        //     ShopSlot currentSlot = slot.GetComponent<ShopSlot>();
+        //     Debug.Log("shop menu update player inv slot item :"+currentSlot.currentItem);
+        //     if(i < itemDictionary.itemPrefbas.Count && currentSlot.currentItem == null )
+        //     {
+        //         Item cloneItem = Instantiate(itemDictionary.itemPrefbas[i],currentSlot.transform);
+        //         currentSlot.currentItem = cloneItem;
+        //         currentSlot.typeOfslot = ShopSlotType.PLAYER;
+        //         currentSlot.SetItemInfo(PriceStatus.SELL);
+        //         currentSlot.SetActivePrice(true);
+        //         i++;
+        //     }
+        //     else if(i > itemDictionary.itemPrefbas.Count)
+        //     {
+        //         currentSlot.currentItem = null;
+        //         currentSlot.typeOfslot = ShopSlotType.NULL;
+        //         currentSlot.SetActivePrice(false);
+        //     }
 
-        }    
+        // }    
     }
 }

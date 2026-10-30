@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -69,7 +70,7 @@ public class GridManager : MonoBehaviour
         {
             for (int j = 0; j < size.x; j++)
             {
-                switch (Random.Range(0, 6))
+                switch (UnityEngine.Random.Range(0, 6))
                 {
                     case 0:
                         Place(new Vector2Int(j, i), new TypeCase(TypeCase.Type.Arbre, banqueCase, banqueTile,null));
@@ -201,7 +202,7 @@ public class GridManager : MonoBehaviour
         item.nomDePlante = obj.plante.GetComponent<HarvestablePlant>().GetName();
         item.SetPlantType(item.nomDePlante);
         item.Fruit();
-        item.ID = (int)System.DateTimeOffset.Now.ToUnixTimeSeconds();
+        item.ID = Guid.NewGuid().ToString();
 
         obj.plante.GetComponent<HarvestablePlant>().Harvest();
         OnWork?.Invoke(obj.GetEnergy());

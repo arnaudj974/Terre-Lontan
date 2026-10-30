@@ -80,9 +80,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -305
+  m_SortingOrder: -85
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -8968550371163442005, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
+  m_Sprite: {fileID: -3665902485383732164, guid: 785bdae5c670d5744bcb4b563ad86a51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,9 +104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca427af1dd3a6f541a9172377f3c1f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HarvestablePlant
-  plantName: Peas
+  plantName: Chilli
   plantsCollection: {fileID: 11400000, guid: a4551c6d783255f4d90cfe935186bef8, type: 2}
   spriteRenderer: {fileID: 4892248833839391924}
-  currentState: 2
+  currentState: 0
   isNight: 0
-  harvest: 1
+  harvest: 0
