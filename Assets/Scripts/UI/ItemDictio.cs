@@ -22,6 +22,7 @@ public class ItemDictio : MonoBehaviour
         {
            itemDictionary[item.ID] = item;
         }
+        
     }
 
     public Item GetItemPrefab(string itemID)
@@ -45,9 +46,8 @@ public class ItemDictio : MonoBehaviour
         return itemPrefbas.Find(x => x.ID == id ) != null;
     }
     public bool Remove(string itemId)
-    {
+    {;
         itemDictionary.TryGetValue(itemId, out Item item);
-        Debug.Log("Sell item id : "+itemId+" item in dic: "+item.ID);
         if(item == null)
         {
             return false;
@@ -60,10 +60,13 @@ public class ItemDictio : MonoBehaviour
         }
     }
 
-    public void Add(Item item)
+    public bool Add(Item item)
     {
-        Debug.Log("item ID in itemDictio Add :"+item.ID+" gameobject id : "+item.GetInstanceID());
-        itemPrefbas.Add(item);
-        itemDictionary.Add(item.ID,item);
+        if(itemPrefbas.Count == 24) return false;
+        if(itemPrefbas.Count < 24){
+            itemPrefbas.Add(item);
+            itemDictionary.Add(item.ID,item);
+        }
+        return true;
     }
 }

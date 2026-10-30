@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -28,12 +29,14 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
     void Update()
     {
         if(typeOfslot == ShopSlotType.SHOP) return;
+        if(transform.childCount ==2 ) SetActivePrice(false);
         if(typeOfslot == ShopSlotType.PLAYER && currentItem != null)
         {
             if(childId < itemDictio.itemPrefbas.Count)
             {
                 if(currentItem.ID != itemDictio.itemPrefbas[childId].ID)
-                {
+                {   
+                    CleanChild();
                     currentItem = Instantiate(itemDictio.itemPrefbas[childId], this.transform);
                     price.text = currentItem.GetPrice(PriceStatus.SELL).ToString();
                     SetActivePrice(true);
@@ -43,6 +46,7 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
             {
                 Destroy(currentItem.gameObject);
                 currentItem = null;
+                CleanChild();
                 SetActivePrice(false);
             }
         }
@@ -96,6 +100,14 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
             Destroy(newitem.gameObject); 
         }
 
+    }
+
+    void CleanChild()
+    {
+        while (transform.childCount > 2)
+        {
+            Destroy(transform.GetChild(3).gameObject);
+        }
     }
 
     void Sell()
