@@ -137,7 +137,7 @@ public class HotBarController : MonoBehaviour
                         Item item = Instantiate(clone, slot.transform);
                         item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                         slot.CurrentItem = item;
-                        itemDictionary.itemPrefbas.Add(item);
+                        itemDictionary.Add(item);
                     }
                 }
             }
