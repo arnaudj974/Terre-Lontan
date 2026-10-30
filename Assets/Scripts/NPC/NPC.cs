@@ -11,6 +11,7 @@ public class NPC : MonoBehaviour
     public GameObject ShopPanel;
     public TextMeshProUGUI dialogueText, nameNPC;
 
+
     private int dialogueIndex;
     private bool isTyping, isDialogueActive, isShopActive = false;
     private bool playerInZone = false;
