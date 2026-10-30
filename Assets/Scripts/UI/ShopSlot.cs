@@ -100,7 +100,8 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
 
     void Sell()
     {
-       bool removeStatus = itemDictio.Remove(currentItem.ID);
+        
+        bool removeStatus = itemDictio.Remove(currentItem.ID);
         if (removeStatus)
         {
             p.Vendre(currentItem.GetPrice(PriceStatus.SELL));

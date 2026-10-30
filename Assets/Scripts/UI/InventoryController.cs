@@ -48,7 +48,7 @@ public class InventoryController : MonoBehaviour
         foreach (Transform slotTransform in InventoryPanel.transform)
         {
             Slot slot = slotTransform.GetComponent<Slot>();
-            if(slot.CurrentItem.ID == item.ID)
+            if(slot.CurrentItem != null && slot.CurrentItem.ID == item.ID)
             {
                 Item destroyItem = slot.CurrentItem;
                 slot.CurrentItem = null;

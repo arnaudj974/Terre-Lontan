@@ -30,7 +30,7 @@ public class PlayerItemCollector : MonoBehaviour
                 if (cloneItem != null)
                 {
                     OnChangeInventory?.Invoke();
-                    itemDictionaryRef.itemPrefbas.Add(cloneItem);
+                    itemDictionaryRef.Add(cloneItem);
                     Destroy(collision.gameObject);
                 }
             }

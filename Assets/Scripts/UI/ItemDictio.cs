@@ -41,12 +41,13 @@ public class ItemDictio : MonoBehaviour
     }
 
     public bool isInList(string id)
-    {
+    {   
         return itemPrefbas.Find(x => x.ID == id ) != null;
     }
     public bool Remove(string itemId)
     {
         itemDictionary.TryGetValue(itemId, out Item item);
+        Debug.Log("Sell item id : "+itemId+" item in dic: "+item.ID);
         if(item == null)
         {
             return false;
