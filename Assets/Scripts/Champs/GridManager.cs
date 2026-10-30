@@ -203,10 +203,10 @@ public class GridManager : MonoBehaviour
         {
             Vector2Int pos = count switch
             {
-                1 => Vector2Int.right,
                 2 => Vector2Int.left,
                 3 => Vector2Int.down,
-                4 => Vector2Int.up
+                4 => Vector2Int.up,
+                _ => Vector2Int.right,
             };
             GameObject temp = new GameObject("PlacedFruit");
             temp = Instantiate(fruitPrefab, CellToWorld(cell + pos), Quaternion.identity, transform);
