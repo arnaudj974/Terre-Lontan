@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8429530592586851408}
   m_HandleRect: {fileID: 3702313099673270169}
   m_Direction: 2
-  m_Value: -0.000006510417
+  m_Value: -0.0000061035157
   m_Size: 0.75
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1732,7 +1732,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2997856191754445648}
   m_HandleRect: {fileID: 25269961783866413}
   m_Direction: 2
-  m_Value: 0.9999996
+  m_Value: 1
   m_Size: 0.75
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1832,6 +1832,7 @@ MonoBehaviour:
   seedsCollection: {fileID: 11400000, guid: d2da51705d603f87da8273b8d5973fc7, type: 2}
   papyInventory: {fileID: 4444769576759510433}
   playerInventory: {fileID: 6902002171110903169}
+  player: {fileID: 0}
 --- !u!1 &6211637384570863043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,6 +2316,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (2)
@@ -2417,6 +2426,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (10)
@@ -2519,6 +2536,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (18)
@@ -2621,6 +2650,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (21)
@@ -2723,6 +2760,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (13)
@@ -2825,6 +2874,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (8)
@@ -2927,6 +2984,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (14)
@@ -3029,6 +3098,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (1)
@@ -3131,6 +3208,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (20)
@@ -3233,6 +3322,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (20)
@@ -3335,6 +3432,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (2)
@@ -3437,6 +3546,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (9)
@@ -3539,6 +3656,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (11)
@@ -3641,6 +3770,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (13)
@@ -3743,6 +3880,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (10)
@@ -3845,6 +3994,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (4)
@@ -3947,6 +4104,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (18)
@@ -4049,6 +4214,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (14)
@@ -4151,6 +4324,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (7)
@@ -4253,6 +4434,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (6)
@@ -4355,6 +4544,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (12)
@@ -4457,6 +4654,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (1)
@@ -4559,6 +4768,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (5)
@@ -4661,6 +4882,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (5)
@@ -4763,6 +4992,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (16)
@@ -4865,6 +5106,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (9)
@@ -4967,6 +5220,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (4)
@@ -5069,6 +5334,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (19)
@@ -5171,6 +5448,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (8)
@@ -5273,6 +5562,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (19)
@@ -5375,6 +5672,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (23)
@@ -5477,6 +5786,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (6)
@@ -5579,6 +5900,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (22)
@@ -5681,6 +6014,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (22)
@@ -5783,6 +6124,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (17)
@@ -5885,6 +6234,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (21)
@@ -5987,6 +6348,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (15)
@@ -6089,6 +6458,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (17)
@@ -6191,6 +6572,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (15)
@@ -6293,6 +6686,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (3)
@@ -6395,6 +6796,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (23)
@@ -6497,6 +6906,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 6268404156205599033, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_fontColor.b
       value: 0.1
@@ -6615,6 +7028,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (16)
@@ -6717,6 +7138,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (3)
@@ -6819,6 +7252,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (12)
@@ -6921,6 +7366,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (11)
@@ -7023,6 +7476,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 6268404156205599033, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_fontColor.b
       value: 0.1
@@ -7141,6 +7602,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: childId
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: typeOfslot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111695008363541733, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
+      propertyPath: OnChangeInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3605176863823598332}
     - target: {fileID: 8038503261633628079, guid: 83e05988ec3aa0c4d93f706c4fe86e74, type: 3}
       propertyPath: m_Name
       value: ShopSlot (7)
