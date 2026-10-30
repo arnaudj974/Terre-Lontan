@@ -104,9 +104,11 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
 
     void CleanChild()
     {
-        while (transform.childCount > 2)
+        int i = transform.childCount;
+        while (i > 2)
         {
-            Destroy(transform.GetChild(3).gameObject);
+            Destroy(transform.GetChild(i-1).gameObject);
+            i--;
         }
     }
 
