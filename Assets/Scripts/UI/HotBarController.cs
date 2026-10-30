@@ -67,6 +67,7 @@ public class HotBarController : MonoBehaviour
     {
         if (FindFirstItem() != -1)
         {
+            itemDictionary.Remove(hotbarPanel.transform.GetChild(FindFirstItem()).GetChild(0).GetComponent<Item>().ID);
             Destroy(hotbarPanel.transform.GetChild(FindFirstItem()).GetComponent<Slot>().CurrentItem.gameObject);
         }
     }
