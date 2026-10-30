@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   npcName: Papy
   dialogueLines:
-  - Hello gamin.
-  - "Tu veut acheter des graines ou ranger les l\xE9gumes que tu a r\xE9colter aujourd'hui
-    dans les cajettes pour le prochain march\xE9s forain."
+  - "Komment i l\xE9 gamin."
+  - "Tu veux acheter des graines ou ranger les l\xE9gumes que tu as r\xE9colt\xE9s
+    aujourd'hui dans les cagettes pour le prochain march\xE9 forain ?"
   autoProgressLines: 0101
   typingSpeed: 0.05
   voiceSound: {fileID: 0}

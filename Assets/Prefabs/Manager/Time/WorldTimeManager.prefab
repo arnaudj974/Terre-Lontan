@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldTime
   timeSetting: {fileID: 11400000, guid: 7205f99d2b4bbb34ab3058ef30b2cd4d, type: 2}
-  dayLenght: 10
+  dayLenght: 300
